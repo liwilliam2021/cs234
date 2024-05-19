@@ -38,6 +38,12 @@ COPY --link ./ /mnt/host/
 RUN mkdir -p /root/.cache/huggingface
 COPY --link --from=huggingface-cache ./ /root/.cache/huggingface/
 
+RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
+    --mount=target=/var/cache/apt,type=cache,sharing=locked \
+  apt-get install -y python3.10-distutils python3.10-dev
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+  venv/bin/pip install accelerate
 
 FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel AS deploy
 
