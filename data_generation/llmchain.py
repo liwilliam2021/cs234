@@ -130,7 +130,7 @@ class LLMChainPostprocessing(APICallPostprocessing):
             # print(string)
             # print(model_input.shape)
             with torch.no_grad():
-                output = model(model_input.cuda()).logits.cpu()[:, -N:]
+                output = model(model_input.cuda() if torch.cuda.is_available() else model_input).logits.cpu()[:, -N:]
             new_outputs = self.generate_continuations(
                 model_input,
                 output,

@@ -38,7 +38,7 @@ if __name__ == "__main__":
         revision="float16",
         torch_dtype=torch.float16,
         low_cpu_mem_usage=True,
-    ).cuda()
+    ) #.cuda()
     dataset = load_dataset("c4", "en", split="train", streaming=True)
     iter_data = iter(dataset)
     test = False

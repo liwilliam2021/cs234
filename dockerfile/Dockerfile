@@ -1,5 +1,5 @@
 
-FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel AS environment
+FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -26,18 +26,6 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
   virtualenv venv
 #COPY venv /mnt/host/venv
 
-#SHELL ["/root/miniconda3/bin/conda", "run", "--no-capture-output", "-n", "cs234_hw3", "/bin/bash", "-c"]
-
-COPY ../requirements.txt /mnt/host/requirements.txt
-#RUN mv requirements.txt requirements1.txt
-RUN --mount=type=cache,target=/root/.cache/pip \
-  venv/bin/pip install -r /mnt/host/requirements.txt
-
-COPY --link ./ /mnt/host/
-
-RUN mkdir -p /root/.cache/huggingface
-COPY --link --from=huggingface-cache ./ /root/.cache/huggingface/
-
 RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     --mount=target=/var/cache/apt,type=cache,sharing=locked \
   apt-get install -y python3.10-distutils python3.10-dev
@@ -45,7 +33,28 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 RUN --mount=type=cache,target=/root/.cache/pip \
   venv/bin/pip install accelerate
 
-FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel AS deploy
+#SHELL ["/root/miniconda3/bin/conda", "run", "--no-capture-output", "-n", "cs234_hw3", "/bin/bash", "-c"]
+
+COPY ../requirements.txt /mnt/host/requirements.txt
+#RUN mv requirements.txt requirements1.txt
+RUN --mount=type=cache,target=/root/.cache/pip \
+  venv/bin/pip install -r /mnt/host/requirements.txt
+
+# for caching the transformer model
+# consider removing explicit cache_dir
+RUN venv/bin/python -c "from transformers import AutoTokenizer; AutoTokenizer.from_pretrained(r'dmayhem93/toolformer_v0_epoch2', cache_dir='/root/.cache/huggingface/hub')"
+RUN venv/bin/python -c "import torch; from transformers import AutoModelForCausalLM; AutoModelForCausalLM.from_pretrained(r'dmayhem93/toolformer_v0_epoch2',torch_dtype=torch.float16,low_cpu_mem_usage=True, cache_dir='/root/.cache/huggingface/hub')"
+RUN venv/bin/python -c "import nltk; nltk.download('punkt')"
+
+COPY --link ./ /mnt/host/
+
+
+#RUN mkdir -p /root/.cache/huggingface
+#COPY --link --from=huggingface-cache ./ /root/.cache/huggingface/
+# run to download models and save to cache
+#RUN venv/bin/python alfred/test.py
+
+
 
 #COPY alfred.py ~/alfred.py
 #ENTRYPOINT ["/root/miniconda3/bin/conda", "init", "bash"
@@ -63,13 +72,13 @@ FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel AS deploy
 #COPY ../.mujoco /root/.mujoco
 
 # copy code
-RUN mkdir -p /mnt/host #/results
+RUN mkdir -p /mnt/host
 #COPY ../*.py /mnt/host
 #COPY ../data /mnt/host/data
 #COPY ../.git /mnt/host/.git
-RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
-    --mount=target=/var/cache/apt,type=cache,sharing=locked \
-  apt-get update
+#RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
+#    --mount=target=/var/cache/apt,type=cache,sharing=locked \
+#  apt-get update
 RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
     --mount=target=/var/cache/apt,type=cache,sharing=locked \
   apt-get install -y git
@@ -78,8 +87,8 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 #    git clone "https://$(cat /run/secrets/git_key)@github.com/pongnguy/cs234_pset3"
 
 ## copy venv
-COPY --link --from=environment /mnt/host/ /mnt/host/
-RUN touch /root/.no_auto_tmux
+#COPY --link --from=environment /mnt/host/ /mnt/host/
+#RUN touch /root/.no_auto_tmux
 
 WORKDIR /mnt/host
 ## copy conda
