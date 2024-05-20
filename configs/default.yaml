@@ -1,0 +1,25 @@
+model:
+  path: bigscience/bloom-560m
+  eos_token_id: 50256
+
+tokenizer:
+  path: bigscience/bloom-560m
+
+dataset:
+  path: the_pile
+
+data_generator:
+  api_start_character: "["
+  api_end_character: "]"
+  api_output_character: "→"
+
+  top_k_sampling: 3
+  sampling_threshold: 0.1
+  filtering_threshold: 0.05
+
+  max_new_tokens: 100
+
+  n_api_pad: 100
+
+inference:
+  top_k: 5
