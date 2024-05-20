@@ -5,6 +5,9 @@ openai
 langchain
 cohere
 torch
+accelerate
 datasets
 nltk
 langchain_community
+einops
+evaluate
