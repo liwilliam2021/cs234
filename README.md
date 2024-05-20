@@ -1,207 +1,143 @@
-<img src="./toolformer.png" width="500px"></img>
+# Toolformer
 
-## Toolformer - Pytorch (wip)
+Open-source implementation of [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) by Meta AI.
 
-Implementation of <a href="https://arxiv.org/abs/2302.04761">Toolformer</a>, Language Models That Can Use Tools, by MetaAI
+## Abstract
 
-## Appreciation
+Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\&A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.
 
-- <a href="https://stability.ai/">Stability.ai</a> for the generous sponsorship to work and open source cutting edge artificial intelligence research
+## How to run
 
-- <a href="https://github.com/conceptofmind">Enrico</a> for getting the ball rolling with the initial commit of different tools!
+### Inference
+Models are available on huggingface! [toolformer_v0](https://huggingface.co/dmayhem93/toolformer_v0_epoch2)
 
-- Thanks goes out to ChatGPT for doing all the regular expressions in this repository for parsing the functions and parameters for the API calls. I am terrible at regular expressions, so this was enormous help from the AI (with no hitches, it was perfect).
+Quick example on how to launch it below:
+```python
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-## Install
+tokenizer = AutoTokenizer.from_pretrained(r"dmayhem93/toolformer_v0_epoch2")
+model = AutoModelForCausalLM.from_pretrained(
+    r"dmayhem93/toolformer_v0_epoch2",
+    torch_dtype=torch.float16,
+    low_cpu_mem_usage=True,
+).cuda()
+generator = pipeline(
+    "text-generation", model=model, tokenizer=tokenizer, device=0
+) 
+```
+
+#### Model Performance
+##### v0
+The model is currently able to do retrieval. In a one shot setting it will pick it up without too much hand holding.
+For zero shot, adding a token bias to the <TOOLFORMER_API_START>(token index 50257) will get it started.
+
+Token bias seems to depend on the length of context, 2.5 with minimal context, 7.5 with a lot of context, seemed to be good numbers in the brief testing.
+
+Calculation and Calendar are a WIP, you can give it a shot, but don't expect good results.
+
+#### Tool Integration
+WIP
+
+Tool integration into sampling is a work in progress, so you will need to manually perform the tool integration.
+
+e.g. when it outputs <TOOLFORMER_API_START>Calculator(1 + 2)<TOOLFORMER_API_RESPONSE> you will need to input 3<TOOLFORMER_API_END> right after.
+
+For retrieval, copy/pasting search results seems to work, but pasting results from actual retrieval is better if you have it.
+
+To get some retrieval, here is a brief script on setting it up with some data you'll load in and retrieve from.
+```python
+from tools import Retriever
+import json
+
+
+if __name__ == '__main__':
+    retriever = Retriever()
+    ret_val = "location of New Orleans"
+    with open('retrieval_test_data.json', encoding='utf-8') as f:
+        ret_strings = json.load(f)
+    print(', '.join(retriever.retrieval(
+        ret_strings, ret_val, 3
+    )))
+```
+
+### Data generation
+Looking to make your own data?
 
 ```bash
-$ pip install toolformer-pytorch
-```
-``
-## Usage
-
-Example usage with giving language models awareness of current date and time.
-
-```python
-import torch
-from toolformer_pytorch import Toolformer, PaLM
-
-# simple calendar api call - function that returns a string
-
-def Calendar():
-    import datetime
-    from calendar import day_name, month_name
-    now = datetime.datetime.now()
-    return f'Today is {day_name[now.weekday()]}, {month_name[now.month]} {now.day}, {now.year}.'
-
-# prompt for teaching it to use the Calendar function from above
-
-prompt = f"""
-Your task is to add calls to a Calendar API to a piece of text.
-The API calls should help you get information required to complete the text.
-You can call the API by writing "[Calendar()]"
-Here are some examples of API calls:
-Input: Today is the first Friday of the year.
-Output: Today is the first [Calendar()] Friday of the year.
-Input: The president of the United States is Joe Biden.
-Output: The president of the United States is [Calendar()] Joe Biden.
-Input: [input]
-Output: 
-"""
-
-data = [
-    "The store is never open on the weekend, so today it is closed.",
-    "The number of days from now until Christmas is 30",
-    "The current day of the week is Wednesday."
-]
-
-# model - here using PaLM, but any nn.Module that returns logits in the shape (batch, seq, num_tokens) is fine
-
-model = PaLM(
-    dim = 512,
-    depth = 2,
-    heads = 8,
-    dim_head = 64
-).cuda()
-
-# toolformer
-
-toolformer = Toolformer(
-    model = model,
-    model_seq_len = 256,
-    teach_tool_prompt = prompt,
-    tool_id = 'Calendar',
-    tool = Calendar,
-    finetune = True
-)
-
-# invoking this will
-# (1) prompt the model with your inputs (data), inserted into [input] tag
-# (2) with the sampled outputs, filter out the ones that made proper API calls
-# (3) execute the API calls with the `tool` given
-# (4) filter with the specialized filter function (which can be used independently as shown in the next section)
-# (5) fine-tune on the filtered results
-
-filtered_stats = toolformer(data)
-
-# then, once you see the 'finetune complete' message
-
-response = toolformer.sample_model_with_api_calls("How many days until the next new years?")
-
-# hopefully you see it invoke the calendar and utilize the response of the api call...
-
+python data_generator.py --num_devices=x, --device_id=y
 ```
 
-The main novelty of the paper is defining a fitness score for the outputs from a transformer instructed to insert API calls. The score is used to filter the sampled outputs for finetuning the transformer to make API calls that decreases perplexity of the text that follows it.
+Will let you run it without collision on x devices, so if you only have one,
 
-```python
-import torch
-
-from toolformer_pytorch import (
-    Toolformer,
-    PaLM,
-    filter_tokens_with_api_response
-)
-
-# model
-
-palm = PaLM(
-    dim = 512,
-    num_tokens = 20000,
-    depth = 2,
-    heads = 8,
-    dim_head = 64
-).cuda()
-
-# mock some tokens
-
-mock_start_pos = 512
-mock_api_call_length = 10
-mock_api_start_id = 19998
-mock_api_stop_id = 19999
-
-tokens = torch.randint(0, 20000, (10, 1024)).cuda()
-tokens_with_api_response = torch.randint(0, 20000, (10, 1024)).cuda()
-tokens_without_api_response = torch.randint(0, 20000, (10, 1024)).cuda()
-
-tokens_with_api_response[:, mock_start_pos] = mock_api_start_id
-tokens_with_api_response[:, mock_start_pos + mock_api_call_length] = mock_api_stop_id
-
-tokens_without_api_response[:, mock_start_pos] = mock_api_start_id
-tokens_without_api_response[:, mock_start_pos + mock_api_call_length] = mock_api_stop_id
-
-# filter
-
-filtered_results = filter_tokens_with_api_response(
-    model = palm,
-    tokens = tokens,
-    tokens_with_api_response = tokens_with_api_response,
-    tokens_without_api_response = tokens_without_api_response,
-    filter_threshold = 1.,
-    api_start_token_id = mock_api_start_id,
-    api_end_token_id = mock_api_stop_id
-)
+```bash
+python data_generator.py --num_devices=1, --device_id=0
 ```
 
-To invoke the tools on a string generated by the language model, use `invoke_tools`
-
-```python
-from toolformer_pytorch import invoke_tools
-
-def inc(i):
-    return i + 1
-
-def dec(i):
-    return i - 1
-
-function_registry = dict(
-    inc = inc,
-    dec = dec
-)
-
-text = 'make the following api calls: [inc(1)] and [dec(2)] and [ignored(3)]'
-
-invoke_tools(function_registry, text)
-
-# make the following api calls: [inc(1) → 2] and [dec(2) → 1] and [ignored(3)]
+Each one uses an entire GPU, so if you want to run in a node with multiple GPUs please set your CUDA_VISIBLE_DEVICES, e.g.
+```bash
+export CUDA_VISIBLE_DEVICES=5
+python data_generator.py --num_devices=8, --device_id=5
 ```
 
-## Todo
+The easiest way to gather multiple tools would be to make a data_generator script for each tool you want to use
 
-- [x] create custom generate function for palm that can do external API calls
-    - [x] allow for generating tokens at different cursor indices
-    - [x] api token (which was left and right brackets in paper) needs to be customizable
-    - [ ] allow for customizing how to fine handling errors in function name, parameters, or execution and output
-- [ ] Toolformer should eventually calculate all statistics (how many properly sampled, filtered out by different criterias, the distribution of scores as well as how many were rejected) before the final fine-tuning
-- [ ] do end-to-end training in `Toolformer`
-    - [x] doing the prompting and bootstrapping the data
-    - [x] prefiltering of bootstrapped data followed by api calls and then another round of filtering
-        - [ ] keep track of all stats
-    - [x] take care of fine-tuning
-        - [ ] interleaving of datasets + optimizer hyperparams
-- [ ] hook up gpt-j
-- [ ] test for a simple calculator eval dataset
-- [ ] add a default callback within the Toolformer that automatically aligns the text and checks for validity before the filtering step - if the text was not copied correctly, the filtering step is not valid.
-- [ ] make sure final model, trained on many `Toolformer` instances, can be invoked with multiple tools  - start with batch size of 1 and work way up
+finally, after you have your results, some minimal postprocessing scripts are in [this folder](data_handling)
+
+You'll probably want to look at your data and figure out if there's any filtering needed.
+
+For an example of what it looks like after, our first dataset generation is [here](https://huggingface.co/datasets/dmayhem93/toolformer_raw_v0), and the 
+postprocessed outputs ready for HF trainer is [here](https://huggingface.co/datasets/dmayhem93/toolformer-v0-postprocessed)
+
+## How to train
+
+We used huggingface's run_clm.py which we put in this repository as train_gptj_toolformer.py.
+
+We used a batch size of 32 (4/device), command used is below
+```bash
+deepspeed train_gptj_toolformer.py --model_name_or_path=EleutherAI/gpt-j-6B --per_device_train_batch_size=4 \
+  --num_train_epochs 10 --save_strategy=epoch --output_dir=finetune_toolformer_v0 --report_to "wandb" \
+  --dataset_name dmayhem93/toolformer-v0-postprocessed --tokenizer_name customToolformer \
+  --block_size 2048 --gradient_accumulation_steps 1 --do_train --do_eval --evaluation_strategy=epoch \
+  --logging_strategy=epoch --fp16 --overwrite_output_dir --adam_beta1=0.9 --adam_beta2=0.999 \
+  --weight_decay=2e-02 --learning_rate=1e-05 --warmup_steps=100 --per_device_eval_batch_size=1 \
+  --cache_dir="hf_cache" --gradient_checkpointing=True --deepspeed ds_config_gpt_j.json
+```
 
 ## Citations
-
 ```bibtex
-@inproceedings{Schick2023ToolformerLM,
-    title   = {Toolformer: Language Models Can Teach Themselves to Use Tools},
-    author  = {Timo Schick and Jane Dwivedi-Yu and Roberto Dessi and Roberta Raileanu and Maria Lomeli and Luke Zettlemoyer and Nicola Cancedda and Thomas Scialom},
-    year    = {2023}
+@misc{https://doi.org/10.48550/arxiv.2302.04761,
+  doi = {10.48550/ARXIV.2302.04761},
+  
+  url = {https://arxiv.org/abs/2302.04761},
+  
+  author = {Schick, Timo and Dwivedi-Yu, Jane and Dessì, Roberto and Raileanu, Roberta and Lomeli, Maria and Zettlemoyer, Luke and Cancedda, Nicola and Scialom, Thomas},
+  
+  keywords = {Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Toolformer: Language Models Can Teach Themselves to Use Tools},
+  
+  publisher = {arXiv},
+  
+  year = {2023},
+  
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+@Article{dao2022flashattention,
+    title={Flashattention: Fast and memory-efficient exact attention with io-awareness},
+    author={Dao, Tri and Fu, Daniel Y and Ermon, Stefano and Rudra, Atri and R{'e}, Christopher},
+    journal={arXiv preprint arXiv:2205.14135},
+    year={2022}
+}
+
+@software{Liang_Long_Context_Transformer_2023,
+    author = {Liang, Kaizhao},
+    doi = {10.5281/zenodo.7651809},
+    month = {2},
+    title = {{Long Context Transformer v0.0.1}},
+    url = {https://github.com/github/linguist},
+    version = {0.0.1},
+    year = {2023}
 }
 ```
-
-```bibtex
-@article{Gao2022PALPL,
-    title   = {PAL: Program-aided Language Models},
-    author  = {Luyu Gao and Aman Madaan and Shuyan Zhou and Uri Alon and Pengfei Liu and Yiming Yang and Jamie Callan and Graham Neubig},
-    journal = {ArXiv},
-    year    = {2022},
-    volume  = {abs/2211.10435}
-}
-```
-
-*Reality is that which, when you stop believing it, doesn't go away.* – Philip K. Dick.
