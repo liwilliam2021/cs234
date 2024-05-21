@@ -14,11 +14,12 @@ weather_api = WeatherAPI(
 model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
 tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
 
-text = "39.2896246543727, -76.58026446823449"  # Patterson Park, Baltimore, MD
+text = "What is the weather in Baltimore, MD?"
+#text = "39.2896246543727, -76.58026446823449"  # Patterson Park, Baltimore, MD
 #text = "From this, we have 10 - 5 minutes = 5 minutes."
 apis = [weather_api]
 generator = DataGenerator(config, model, tokenizer, apis=apis)
 
-augumented_text_ids = generator.generate(text)
+augmented_text_ids = generator.generate(text)
 
-print(tokenizer.decode(augumented_text_ids[0][0], skip_special_tokens=True))
+print(tokenizer.decode(augmented_text_ids[0][0], skip_special_tokens=True))

@@ -3,12 +3,14 @@
 # %% auto 0
 __all__ = ['BaseAPI', 'CalculatorAPI', 'WolframAPI']
 
+import random
 # %% ../nbs/03_api.ipynb 4
 from abc import abstractclassmethod
 
 import wolframalpha
 from langchain import PromptTemplate
 
+import pandas as pd
 import sys
 import subprocess
 
@@ -59,22 +61,46 @@ class WeatherAPI(BaseAPI):
         #self.api_key = api_key
         #raise NotImplementedError
 
+
+    #def get_temperature(self, latitude: float, longitude: float) -> int:
+    def get_temperature(self, city: str) -> int:
+        #client = wolframalpha.Client(self.api_key)
+        #res = client.query(input=input)
+
+        # TODO compare with US cities CSV
+        def validCity(city: str):
+            # check if city is valid
+            # if valid, return True
+            # else, return False
+
+            df = pd.read_csv('../../us_cities.csv')
+            #print(df)
+            return random.random() > 0.5
+
+        # TODO integrate with only (hopefully free) weather API
+        # if input is a valid city name, returns a random temperature
+        if validCity(city):
+            return random.randint(40, 80)
+        else:
+            raise ValueError("Invalid city name")
+
+        # command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
+        # # print(command)
+        # ps = subprocess.Popen(command, shell=True, executable='/bin/bash', stdin=subprocess.DEVNULL,
+        #                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # result = ps.stdout.read().decode("utf-8")
+        # return int(result)
+
     def execute(self, input: str) -> str:
         #client = wolframalpha.Client(self.api_key)
         #res = client.query(input=input)
         # now sure how to handle generic string text, when the weatherAPI requires specific inputs
-        raise NotImplementedError
+        try:
+            return str(self.get_temperature(input))
+        except:
+            return ""
 
 
-    def get_temperature(self, latitude: float, longitude: float) -> int:
-        #client = wolframalpha.Client(self.api_key)
-        #res = client.query(input=input)
-        command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
-        # print(command)
-        ps = subprocess.Popen(command, shell=True, executable='/bin/bash', stdin=subprocess.DEVNULL,
-                              stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        result = ps.stdout.read().decode("utf-8")
-        return int(result)
 
 class SearchAPI(BaseAPI):
     def __init__(self, *args, api_key: str, **kargs):
