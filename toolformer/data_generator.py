@@ -72,13 +72,14 @@ class DataGenerator(nn.Module):
         with torch.no_grad():    
             while True:
                 logits = self.model(
-                    input_ids=prompt_and_generated_ids.unsqueeze(0),
-                ).logits
+input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
 
+                # Alfred returns the last row of second dimension, and all the columns of third dimension
                 last_logit = logits[0, -1, :]
                 probs = torch.softmax(last_logit, dim=-1)
                 api_start_prob = probs[self.api_start_token_id].to(self.device)
                 
+                # Alfred: returns tensor stack of index having api_start_prob greater than threshold
                 if api_start_prob > self.sampling_threshold:
                     api_pos_probs = torch.cat([
                         api_pos_probs,
