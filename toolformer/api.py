@@ -99,6 +99,51 @@ class WeatherAPI(BaseAPI):
             return ""
 
 
+class LocationAPI(BaseAPI):
+    def __init__(self, *args, cities_csv: str, **kargs):
+        super().__init__(*args, **kargs)
+        df = pd.read_csv(cities_csv)
+        #self.api_key = api_key
+        #raise NotImplementedError
+
+
+    # #def get_temperature(self, latitude: float, longitude: float) -> int:
+    # def get_state(self, city: str) -> int:
+    #     #client = wolframalpha.Client(self.api_key)
+    #     #res = client.query(input=input)
+
+        # check if city is valid
+    #def validCity(city: str):
+
+        # # returns the current temperature of the city
+        # if validCity(city):
+        #     # weatherAPI.com, api key: ecfeef9758ff455084241925242105
+        #     return random.randint(40, 80)
+        # else:
+        #     raise ValueError("Invalid city name")
+
+        # command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
+        # # print(command)
+        # ps = subprocess.Popen(command, shell=True, executable='/bin/bash', stdin=subprocess.DEVNULL,
+        #                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # result = ps.stdout.read().decode("utf-8")
+        # return int(result)
+
+    def execute(self, input: str) -> str:
+        #client = wolframalpha.Client(self.api_key)
+        #res = client.query(input=input)
+        # now sure how to handle generic string text, when the weatherAPI requires specific inputs
+        # return (df == city).any().any()
+        # return random.random() > 0.5
+        result = df.loc[:, ['city', 'state_name']][df['city'] == "Baltimore"]
+        # return result.size
+        if result.size > 0:
+            return result.iloc[0]['state_name']
+        else:
+            return ""
+
+
+
 
 class SearchAPI(BaseAPI):
     def __init__(self, *args, api_key: str, **kargs):

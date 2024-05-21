@@ -2,13 +2,13 @@ import torch.cuda
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from toolformer.data_generator import DataGenerator
-from toolformer.api import WeatherAPI
+from toolformer.api import LocationAPI
 from toolformer.prompt import qa_prompt
 from toolformer.utils import yaml2dict
 
 config = yaml2dict('../configs/default.yaml')
-weather_api = WeatherAPI(
-    "Weather", qa_prompt,
+location_api = LocationAPI(
+    "Location", qa_prompt, cities_csv='uscities.csv',
     sampling_threshold=0.2, filtering_threshold=0.2
 )
 
@@ -21,7 +21,7 @@ tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
 text = "From Baltimore, MD we have that Baltimore is in the state of Maryland"
 #text = "39.2896246543727, -76.58026446823449"  # Patterson Park, Baltimore, MD
 #text = "From this, we have 10 - 5 minutes = 5 minutes."
-apis = [weather_api]
+apis = [location_api]
 generator = DataGenerator(config, model, tokenizer, apis=apis)
 
 augmented_text_ids = generator.generate(text)
