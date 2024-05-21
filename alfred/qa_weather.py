@@ -1,3 +1,4 @@
+import torch.cuda
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from toolformer.data_generator import DataGenerator
@@ -10,6 +11,8 @@ weather_api = WeatherAPI(
     "Weather", qa_prompt,
     sampling_threshold=0.2, filtering_threshold=0.2
 )
+
+#device = ("cuda" if torch.cuda.is_available() else "cpu")
 
 model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
 tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
