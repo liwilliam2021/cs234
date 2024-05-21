@@ -14,7 +14,7 @@ weather_api = WeatherAPI(
 model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
 tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
 
-text = "What is the weather in Baltimore, MD?"
+text = "What is the temperature in Baltimore, MD?"
 #text = "39.2896246543727, -76.58026446823449"  # Patterson Park, Baltimore, MD
 #text = "From this, we have 10 - 5 minutes = 5 minutes."
 apis = [weather_api]

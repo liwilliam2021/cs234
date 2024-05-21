@@ -67,19 +67,17 @@ class WeatherAPI(BaseAPI):
         #client = wolframalpha.Client(self.api_key)
         #res = client.query(input=input)
 
-        # TODO compare with US cities CSV
+        # check if city is valid
         def validCity(city: str):
-            # check if city is valid
-            # if valid, return True
-            # else, return False
+            df = pd.read_csv('../../uscities.csv')
+            return (df == city).any().any()
+            #return random.random() > 0.5
 
-            df = pd.read_csv('../../us_cities.csv')
-            #print(df)
-            return random.random() > 0.5
 
-        # TODO integrate with only (hopefully free) weather API
-        # if input is a valid city name, returns a random temperature
+        # returns the current temperature of the city
         if validCity(city):
+            # TODO integrate with weather API
+            # weatherAPI.com, api key: ecfeef9758ff455084241925242105
             return random.randint(40, 80)
         else:
             raise ValueError("Invalid city name")
