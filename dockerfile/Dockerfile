@@ -93,6 +93,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
   venv/bin/pip install -r requirements.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip \
+  venv/bin/pip install jupyter
+
+RUN --mount=type=cache,target=/root/.cache/pip \
   venv/bin/pip install -e .
 
 
