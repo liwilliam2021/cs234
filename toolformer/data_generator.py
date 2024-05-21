@@ -62,12 +62,12 @@ class DataGenerator(nn.Module):
         """Sampling API positions."""
         # TODO: add support batch
         # the ids of the prompt and generated_ids
-        prompt_and_generated_ids = prompt_ids
+        prompt_and_generated_ids = prompt_ids.to(self.device)
         # only the ids of the generated_ids
         generated_ids = torch.tensor([]).to(self.device)
         i = torch.tensor([0]).to(self.device)
         
-        api_pos_probs = torch.tensor([])
+        api_pos_probs = torch.tensor([]).to(self.device)
         
         with torch.no_grad():    
             while True:
@@ -77,12 +77,12 @@ class DataGenerator(nn.Module):
 
                 last_logit = logits[0, -1, :]
                 probs = torch.softmax(last_logit, dim=-1)
-                api_start_prob = probs[self.api_start_token_id]
+                api_start_prob = probs[self.api_start_token_id].to(self.device)
                 
                 if api_start_prob > self.sampling_threshold:
                     api_pos_probs = torch.cat([
                         api_pos_probs,
-                        torch.tensor([api_start_prob, i]).unsqueeze(0)
+                        torch.tensor([api_start_prob, i]).unsqueeze(0).to(self.device)
                     ], dim=0)     
                 
                 # sampling a token
