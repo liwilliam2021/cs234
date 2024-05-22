@@ -92,7 +92,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                 next_token = next_token.unsqueeze(0)
                 
                 prompt_and_generated_ids = torch.cat([prompt_and_generated_ids, next_token], dim=0)
-                generated_ids = torch.cat([generated_ids, next_token], dim=0)
+                generated_ids = torch.cat([generated_ids, next_token], dim=0).to(self.device)
                 
                 if next_token == self.eos_token_id:
                     break
@@ -100,12 +100,11 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                     i += 1
         
         if api_pos_probs.numel() == 0:
-            api_positions = torch.tensor([])
+            api_positions = torch.tensor([]).to(self.device)
         else:
             _, indices = torch.sort(api_pos_probs[:, 0], descending=True)
             top_k_sampling = self.top_k_sampling
             api_positions = api_pos_probs[indices[:top_k_sampling], 1]
-                    
         return api_positions.long(), generated_ids.long()
 
     def obtain_api_response(
@@ -118,12 +117,16 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         MAX_PAD = 50
         
         # the ids before the start of an api call
-        pre_api_ids = torch.tensor([])
+        pre_api_ids = torch.tensor([]).to(self.device)
 
         for position in positions:
-            text_ids = torch.cat([generated_ids[:position], self.api_start_token_id], dim=0)
-            padded_text_ids = F.pad(text_ids, pad=(MAX_PAD - text_ids.shape[-1], 0), value=self.pad_token_id)
-            
+            #print(generated_ids[:position])
+            #print(self.api_start_token_id)
+            text_ids = torch.cat([generated_ids[:position], self.api_start_token_id.to(self.device)], dim=0)
+            padded_text_ids = F.pad(text_ids, pad=(MAX_PAD - text_ids.shape[-1], 0), value=self.pad_token_id).to(self.device)
+
+            #print(pre_api_ids)
+            #print(padded_text_ids)
             pre_api_ids = torch.cat([
                 pre_api_ids,
                 rearrange(padded_text_ids, "... -> 1 ...")
@@ -132,7 +135,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         PROMPT_LENGTH = len(prompt_ids)
         
         # TODO: optimzie this
-        prompt_and_pre_api_ids = torch.tensor([])
+        prompt_and_pre_api_ids = torch.tensor([]).to(self.device)
         for x in pre_api_ids:
             prompt_and_pre_api_ids = torch.cat([
                 prompt_and_pre_api_ids,
@@ -220,7 +223,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         losses,
         candidates: TensorType["seq_len"]
     ):
-        filtered_augmented_text_ids = torch.tensor([])
+        filtered_augmented_text_ids = torch.tensor([]).to(self.device)
         for i, position in enumerate(losses):
             negative_loss = min(losses[position][0], losses[position][1])
             positive_loss = losses[position][2]
@@ -312,7 +315,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
 
         conditioning_text_ids, target_ids = extract_conditioning_ids_and_target_ids(augmented_text_ids)
             
-        output = self.model(input_ids=conditioning_text_ids.long())
+        output = self.model(input_ids=conditioning_text_ids.long().to(self.device))
         logits = output.logits[:, -1, :]
                     
         def extract_target_logprob_from_logits(logits, target_ids):
@@ -360,17 +363,21 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         self,
         text: str,
     ) -> TensorType["n_apis", "n_candidates", "seq_len"]:
-        filtered_apis = torch.tensor([])
+        filtered_apis = torch.tensor([]).to(self.device)
         
         for api in self.apis:
             # TODO: add support batch
             prompt = api.prompt_template.format(input=text)
             prompt_ids = self.tokenizer(prompt, return_tensors="pt")["input_ids"][0]
+            prompt_ids = prompt_ids.to(self.device)
         
             # sampling positions
             api_start_idxs, generated_ids = self.sample_api_position(prompt_ids)
-            
+    
             # obtaining api responses
+            #print(prompt_ids)
+            #print(api_start_idxs)
+            #print(generated_ids)
             candidate_ids = self.obtain_api_response(prompt_ids, api_start_idxs, generated_ids)
 
             # filtering
