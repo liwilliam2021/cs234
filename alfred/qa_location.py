@@ -16,12 +16,14 @@ location_api = LocationAPI(
 
 #%%
 #device = ("cuda" if torch.cuda.is_available() else "cpu")
-model_name = "EleutherAI/gpt-j-6B"
+model_name = "hivemind/gpt-j-6B-8bit"   # use EleutherAI/gpt-j-6B for tokenizer
+#model_name = "EleutherAI/gpt-j-6B"
 # revision = "float16",
 # torch_dtype = torch.float16,
 #access_token = "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"
 model = AutoModelForCausalLM.from_pretrained(model_name) #, token=access_token)
-tokenizer = AutoTokenizer.from_pretrained(model_name) #, token=access_token)
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B") #, token=access_token)
+print('finished loading model')
 
 
 #%%
