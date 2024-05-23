@@ -74,7 +74,7 @@ RUN mkdir -p /mnt/host
 # this should not invalidate cache since the command is the same
 RUN --mount=type=secret,id=git-key \
     cd /mnt/host && \
-    git clone "https://pongnguy:$(cat /run/secrets/git-key)@github.com/liwilliam2021/cs234"
+    git clone "https://pongnguy:$(cat /run/secrets/git-key)@github.com/liwilliam2021/cs234" cs234_final
 #RUN mv /mnt/host/venv /mnt/host/cs234/venv
 
 WORKDIR /mnt/host/cs234
