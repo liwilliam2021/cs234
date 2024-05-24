@@ -17,18 +17,18 @@ location_api = LocationAPI(
 #%%
 #device = ("cuda" if torch.cuda.is_available() else "cpu")
 #model_name = "hivemind/gpt-j-6B-8bit"   # use EleutherAI/gpt-j-6B for tokenizer
-model_name = "bigscience/bloom-560m"
+model_name = "bigscience/bloom-1b1" #560m"
 #model_name = "EleutherAI/gpt-j-6B"
 #revision = "float16"
-torch_dtype = torch.float16
+#torch_dtype = torch.float16
 #access_token = "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"
-model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch_dtype) #, torch_dtype=torch_dtype) #, token=access_token)
+model = AutoModelForCausalLM.from_pretrained(model_name) #, torch_dtype=torch_dtype) #, torch_dtype=torch_dtype) #, token=access_token)
 tokenizer = AutoTokenizer.from_pretrained(model_name) #"EleutherAI/gpt-j-6B") #, token=access_token)
 print('finished loading model')
 
 
 texts= []
-texts.append("The landowners in Baltimore want to appeal to the state of Maryland for help.")
+#texts.append("The landowners in Baltimore want to appeal to the state of Maryland for help.")
 
 texts.append("From Baltimore, MD we have that Baltimore is in the state of Maryland.")
 
@@ -89,4 +89,8 @@ for text in texts:
 
     augmented_text_ids = generator.generate(text)
 
-    print(tokenizer.decode(augmented_text_ids[0][0], skip_special_tokens=True))
+    if len(augmented_text_ids[0]) > 0:
+        print(tokenizer.decode(augmented_text_ids[0][0], skip_special_tokens=True))
+    else:
+        print("no text_ids after filtering!")
+

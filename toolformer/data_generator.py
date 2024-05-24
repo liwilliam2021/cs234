@@ -25,9 +25,10 @@ class DataGenerator(nn.Module):
     def __init__(
         self,
         config: dict,
-        model: Callable, tokenizer: Callable,
+        model: Callable,
+        tokenizer: Callable,
         apis: List[BaseAPI],
-        device: str = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        device: str = torch.device("cuda" if torch.cuda.is_available() else "cpu"),
     ):
         super().__init__()
         start_character = config["data_generator"]["api_start_character"]
@@ -386,6 +387,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             #print(api_start_idxs)
             #print(generated_ids)
             candidate_ids = self.obtain_api_response(prompt_ids, api_start_idxs, generated_ids)
+            print(f"candidate_ids text is: {self.tokenizer.decode(candidate_ids[0], skip_special_tokens=True)}")
 
             # filtering
             text_ids = self.tokenizer(text, return_tensors="pt")["input_ids"][0]
