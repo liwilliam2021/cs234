@@ -110,11 +110,13 @@ class LocationAPI(BaseAPI):
 
     def execute(self, input: str) -> str:
         input = input.strip()
+        input = input.replace("'","")
+        input = input.replace('"', '')
         result = self.df.loc[:, ['city', 'state_name']][self.df['city'] == input]
         # return result.size
         with open('logs/qa_location.txt', 'a') as f:
             print(f"{datetime.now()}: checking input {input}", file=f)
-        if result.size > 0:
+        if len(result) > 0:
             # with open('alfred/log.txt', 'a') as f:
             #     print(f"returning from api {result.iloc[0]['state_name']}", file=f)
             print(f"LocationAPI returned value with city {input} having state {result.iloc[0]['state_name']}")
