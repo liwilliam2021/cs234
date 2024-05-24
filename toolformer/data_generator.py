@@ -227,7 +227,8 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         for i, position in enumerate(losses):
             negative_loss = min(losses[position][0], losses[position][1])
             positive_loss = losses[position][2]
-            
+
+            print(f'loss computed is {negative_loss - positive_loss}')
             if negative_loss - positive_loss >= self.filtering_threshold:
                 # filtered_augmented_text_ids.append(candidates[i])
                 filtered_augmented_text_ids = torch.cat([
@@ -304,6 +305,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             
             for _, api_start_position_dict in augmented_text_ids["api_start_positions"].items():
                 for _, seq_position_dict in api_start_position_dict["seq_positions"].items():
+                    # Alfred what are target_ids?
                     target_ids = torch.concat([target_ids, seq_position_dict["target_ids"]], dim=0)
                     for prompt_id in seq_position_dict["prompt_ids"]:
                         conditioning_text_ids = torch.cat([
@@ -313,8 +315,10 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         
             return conditioning_text_ids.long(), target_ids.long()
 
+        # Alfred what are these?
         conditioning_text_ids, target_ids = extract_conditioning_ids_and_target_ids(augmented_text_ids)
-            
+
+        # Alfred what is this asking of the model?
         output = self.model(input_ids=conditioning_text_ids.long().to(self.device))
         logits = output.logits[:, -1, :]
                     
@@ -327,6 +331,8 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             
         for _, api_start_position_dict in augmented_text_ids["api_start_positions"].items():
             for _, seq_position_dict in api_start_position_dict["seq_positions"].items():
+                # Alfred assigns losses in seq_positions with three rows
+                # Alfred for qa_location, last two rows are always the same!!
                 seq_position_dict["losses"] = log_probs[:3].squeeze(0)
                 log_probs = log_probs[3:]
         
@@ -336,6 +342,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                 for i in seq_positions:
                     losses = seq_positions[i]["losses"]
                     weights = seq_positions[i]["normalized_weight"]
+                    # Alfred adds weighted_losses, losses is a Tensor having three rows
                     seq_positions[i]["weighted_losses"] = -losses * weights
             
             return augmented_text_ids

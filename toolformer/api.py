@@ -13,6 +13,7 @@ from langchain import PromptTemplate
 import pandas as pd
 import sys
 import subprocess
+from datetime import datetime
 
 # %% ../nbs/03_api.ipynb 6
 class BaseAPI:
@@ -40,6 +41,7 @@ class BaseAPI:
 class CalculatorAPI(BaseAPI):
     def execute(self, input: str) -> str:
         try:
+            print(f"CalculatorAPI returned from input {input} having eval {eval(input)}")
             return eval(input)
         except:
             return ""
@@ -104,40 +106,18 @@ class LocationAPI(BaseAPI):
         super().__init__(*args, **kargs)
         self.df = pd.read_csv(cities_csv)
         #self.api_key = api_key
-        #raise NotImplementedError
 
-
-    # #def get_temperature(self, latitude: float, longitude: float) -> int:
-    # def get_state(self, city: str) -> int:
-    #     #client = wolframalpha.Client(self.api_key)
-    #     #res = client.query(input=input)
-
-        # check if city is valid
-    #def validCity(city: str):
-
-        # # returns the current temperature of the city
-        # if validCity(city):
-        #     # weatherAPI.com, api key: ecfeef9758ff455084241925242105
-        #     return random.randint(40, 80)
-        # else:
-        #     raise ValueError("Invalid city name")
-
-        # command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
-        # # print(command)
-        # ps = subprocess.Popen(command, shell=True, executable='/bin/bash', stdin=subprocess.DEVNULL,
-        #                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # result = ps.stdout.read().decode("utf-8")
-        # return int(result)
 
     def execute(self, input: str) -> str:
-        #client = wolframalpha.Client(self.api_key)
-        #res = client.query(input=input)
-        # now sure how to handle generic string text, when the weatherAPI requires specific inputs
-        # return (df == city).any().any()
-        # return random.random() > 0.5
-        result = self.df.loc[:, ['city', 'state_name']][self.df['city'] == "Baltimore"]
+        input = input.strip()
+        result = self.df.loc[:, ['city', 'state_name']][self.df['city'] == input]
         # return result.size
+        with open('logs/qa_location.txt', 'a') as f:
+            print(f"{datetime.now()}: checking input {input}", file=f)
         if result.size > 0:
+            # with open('alfred/log.txt', 'a') as f:
+            #     print(f"returning from api {result.iloc[0]['state_name']}", file=f)
+            print(f"LocationAPI returned value with city {input} having state {result.iloc[0]['state_name']}")
             return result.iloc[0]['state_name']
         else:
             return ""

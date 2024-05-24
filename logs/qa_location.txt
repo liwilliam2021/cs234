@@ -1,0 +1,7 @@
+2024-05-24 15:32:28.937518: checking input "Which state is Maryland?"
+2024-05-24 15:32:28.941144: checking input "Where is Baltimore?"
+2024-05-24 15:32:28.944350: checking input "Where is Baltimore?"
+2024-05-24 15:42:54.709914: checking input "Marlboro"
+2024-05-24 15:42:54.713940: checking input "Marlboro"
+2024-05-24 15:44:36.057198: checking input "Baltimore"
+2024-05-24 15:46:31.470368: checking input "Baltimore"

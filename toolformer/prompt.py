@@ -14,13 +14,28 @@ Your task is to add calls to a Calculator API to a piece of text. The API call s
 You can call the API by writing "Calculator(operation)!" where "operation" is the type of calculation you want to perform. Here are some examples of API calls:
 
 Input: John has 5 apples and his friend gave him 3 more. John now has 8 apples.
-Ouput: John has 5 apples and his friend gave him 3 more. John now has [Calculator("5 + 3")] 8 apples.
+Ouput: John has 5 apples and his friend gave him 3 more. John now has [Calculator("5 + 3")].
 
 Input: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get 4 pieces of candy.
-Output: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get [Calculator(24 / 6)] 4 pieces of candy.
+Output: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get [Calculator(24 / 6)].
 
 Input: From this, we have 4 * 30 minutes = 120 minutes.
-Output: From this, we have 4 * 30 minutes = [Calculator(4 * 30)] 120 minutes.
+Output: From this, we have 4 * 30 minutes = [Calculator(4 * 30)].
+
+Input: {input}
+Output:
+"""
+
+#%%
+location_prompt = """
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
 
 Input: {input}
 Output:

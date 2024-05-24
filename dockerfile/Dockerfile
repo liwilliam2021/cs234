@@ -43,7 +43,7 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
 #RUN mkdir -p /root/.cache/huggingface
 #COPY --link --from=huggingface-cache ./ /root/.cache/huggingface/
 # run to download models and save to cache
-#RUN venv/bin/python alfred/test.py
+#RUN venv/bin/python alfred/calculator.py
 
 
 
