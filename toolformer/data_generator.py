@@ -157,12 +157,27 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
 
             prompt_and_generated_ids = torch.cat([prompt_ids.to(self.device), modified_generation_ids], dim=0)
 
+            # A little hacky
+            stop_words_to_prevent_long_gen = [
+                self.tokenizer(word, return_tensors='pt')['input_ids'].squeeze()
+                for word in ["\n" , ".\n", ".\n\n"]
+            ]
+            class PreventLongGen (StoppingCriteria):
+                def __init__(self):
+                    super().__init__()
+                def __call__(self, input_ids: torch.LongTensor, score: torch.FloatTensor, **kwargs) -> bool:
+                    # print (torch.max(score[-1]))
+                    # print (thing.decode(input_ids[0][-1]), input_ids[0][-1])
+                    return input_ids[0][-1] in stop_words_to_prevent_long_gen
+
             baseline_ids = self.model.generate(
                   torch.Tensor(prompt_and_generated_ids).unsqueeze(0).to(self.device),
                   max_new_tokens=MAX_SEQ_LENGTH - api_idx,
                   repetition_penalty=1.2,
-                  temperature = 0
-            )[0][len(prompt_ids): ]
+                  temperature = 0,
+                  stopping_criteria= StoppingCriteriaList([PreventLongGen()]),
+                  return_dict_in_generate=True, output_scores=True
+            )[0].squeeze()[len(prompt_ids): ]
             baselines.append (baseline_ids)
 
             i = api_idx + 1 + len (api_tokens)
@@ -194,28 +209,16 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                         if task_prompt:
                             new_prompt_ids = self.tokenizer(task_prompt, return_tensors="pt")["input_ids"][0].to(self.device)
                         else:
-                            new_prompt_ids = torch.tensor([])
-
-                        # A little hacky
-                        stop_words_to_prevent_long_gen = [
-                            self.tokenizer(word, return_tensors='pt')['input_ids'].squeeze()
-                            for word in ["\n" , ".\n"]
-                        ]
-                        class PreventLongGen (StoppingCriteria):
-                            def __init__(self):
-                                super().__init__()
-                            def __call__(self, input_ids: torch.LongTensor, score: torch.FloatTensor, **kwargs) -> bool:
-                                # print (torch.max(score[-1]))
-                                # print (thing.decode(input_ids[0][-1]))
-                                return input_ids[0][-1] in stop_words_to_prevent_long_gen
+                            new_prompt_ids = torch.tensor([]).to(self.device)
 
                         final_ids = torch.cat (
                             [new_prompt_ids, modified_generation_ids]
                         ).unsqueeze(0).to(self.device)
+                        max_new_tokens = (len (baseline_ids) - len(final_ids)) * 1.1
                         # Done in one step to resolve weird reptition problem
                         full_output_ids = self.model.generate(
-                              final_ids,
-                              max_new_tokens=MAX_SEQ_LENGTH - api_idx,
+                              final_ids.long(),
+                              max_new_tokens= max_new_tokens,
                               repetition_penalty=1.2,
                               temperature = 0,
                               stopping_criteria= StoppingCriteriaList([PreventLongGen()]),
@@ -224,6 +227,19 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                         
                         # Remove the prompt
                         candidate_ids = full_output_ids[len(new_prompt_ids): ]
+                        # Truncate overgeneration
+                        end_indices = [
+                            self.tokenizer(word, return_tensors='pt')['input_ids'].squeeze()
+                            for word in [".", "\n" , ".\n", ".\n\n"]
+                        ]
+                        mask = torch.zeros_like(candidate_ids , dtype=torch.bool)
+                        for end_index in end_indices:
+                            mask = mask | (candidate_ids == end_index)
+                        last_end_index = mask.nonzero(as_tuple=True)[0][-1].item()
+
+                        # Truncate the tensor after the last "." character
+                        candidate_ids = candidate_ids[:last_end_index + 1]
+
                         candidates.append (candidate_ids)
                         break
                     else:
@@ -238,6 +254,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
     
     def should_not_filter_api_candidate (self, original_text, api_candidate_ids, baseline_ids, human = True):
         api_candidate = self.tokenizer.decode (api_candidate_ids)
+        
         baseline = self.tokenizer.decode (baseline_ids)
         if human: # Do human eval
             print ("Candidate:", api_candidate)
@@ -276,7 +293,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
 
             # sampling positions
             api_start_idxs, generated_ids = self.sample_api_position(prompt_ids)
-            
+
             # A little messy right now
             candidates, baselines = self.generate_api_candidates_and_baselines (
               api_start_idxs, generated_ids, prompt_ids, api, task_prompt=task_prompt

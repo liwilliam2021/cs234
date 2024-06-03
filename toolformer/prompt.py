@@ -80,8 +80,14 @@ You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is t
 Input: The weather in New York is clear with a few clouds.
 Output: The weather in New York is [WeatherAPI("New York")].
 
-Input: Dubai is experiencing sunny weather with no clouds in sight.
-Output: Dubai is experiencing [WeatherAPI("Dubai")].
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
 
 Input: {input}
 Output:
