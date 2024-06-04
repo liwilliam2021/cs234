@@ -1,0 +1,237 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "id": "919e59fef4cbdd13",
+   "metadata": {
+    "collapsed": true,
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:04.838879Z",
+     "start_time": "2024-06-02T22:13:02.153249Z"
+    }
+   },
+   "source": [
+    "import torch\n",
+    "from transformers import AutoModelForCausalLM, AutoTokenizer\n",
+    "from trl import DPOTrainer, DPOConfig\n",
+    "from datasets import load_dataset, Dataset\n",
+    "import json"
+   ],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/mnt/pycharmprojects/cs234_final/venv/lib/python3.10/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html\n",
+      "  from .autonotebook import tqdm as notebook_tqdm\n"
+     ]
+    }
+   ],
+   "execution_count": 1
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:29.178325Z",
+     "start_time": "2024-06-02T22:13:28.346224Z"
+    }
+   },
+   "cell_type": "code",
+   "source": [
+    "# load model and dataset - dataset needs to be in a specific format\n",
+    "model = AutoModelForCausalLM.from_pretrained(\"gpt2\")\n",
+    "tokenizer = AutoTokenizer.from_pretrained(\"gpt2\")\n",
+    "tokenizer.pad_token = tokenizer.eos_token"
+   ],
+   "id": "394f3cb9900a6844",
+   "outputs": [],
+   "execution_count": 6
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:29.190668Z",
+     "start_time": "2024-06-02T22:13:29.179111Z"
+    }
+   },
+   "cell_type": "code",
+   "source": [
+    "# get dataset\n",
+    "#train_dataset = load_dataset(\"imdb\", split=\"train\")\n",
+    "dpo_dataset_dict = {\n",
+    "    \"prompt\": [\n",
+    "        \"hello\",\n",
+    "        \"how are you\",\n",
+    "        \"What is your name?\",\n",
+    "        \"What is your name?\",\n",
+    "        \"Which is the best programming language?\",\n",
+    "        \"Which is the best programming language?\",\n",
+    "        \"Which is the best programming language?\",\n",
+    "    ],\n",
+    "    \"chosen\": [\n",
+    "        \"hi nice to meet you\",\n",
+    "        \"I am fine\",\n",
+    "        \"My name is Mary\",\n",
+    "        \"My name is Mary\",\n",
+    "        \"Python\",\n",
+    "        \"Python\",\n",
+    "        \"Java\",\n",
+    "    ],\n",
+    "    \"rejected\": [\n",
+    "        \"leave me alone\",\n",
+    "        \"I am not fine\",\n",
+    "        \"Whats it to you?\",\n",
+    "        \"I dont have a name\",\n",
+    "        \"Javascript\",\n",
+    "        \"C++\",\n",
+    "        \"C++\",\n",
+    "    ],\n",
+    "}\n",
+    "train_dataset = Dataset.from_dict(dpo_dataset_dict)\n",
+    "#print(train_dataset[\"prompt\"][0])"
+   ],
+   "id": "f2af03837979bc29",
+   "outputs": [],
+   "execution_count": 7
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:48.830175Z",
+     "start_time": "2024-06-02T22:13:29.191478Z"
+    }
+   },
+   "cell_type": "code",
+   "source": [
+    "# load trainer\n",
+    "NUM_TRAIN_EPOCHS = 10\n",
+    "OUTPUT_DIR = f\"output/epoch={NUM_TRAIN_EPOCHS}\"\n",
+    "training_args = DPOConfig(\n",
+    "    beta=0.1,\n",
+    "    # does not automatically save model output\n",
+    "    output_dir=OUTPUT_DIR,\n",
+    "    num_train_epochs=NUM_TRAIN_EPOCHS\n",
+    ")\n",
+    "trainer = DPOTrainer(\n",
+    "    model=model,\n",
+    "    args=training_args,\n",
+    "    tokenizer=tokenizer,\n",
+    "    train_dataset=train_dataset,\n",
+    ")\n",
+    "\n",
+    "# train\n",
+    "results = trainer.train()"
+   ],
+   "id": "1b1a421c40d6a14f",
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/mnt/pycharmprojects/trl/trl/trainer/dpo_trainer.py:363: UserWarning: `max_length` is not set in the DPOConfig's init it will default to `512` by default, but you should do it yourself in the future.\n",
+      "  warnings.warn(\n",
+      "/mnt/pycharmprojects/trl/trl/trainer/dpo_trainer.py:376: UserWarning: `max_prompt_length` is not set in the DPOConfig's init it will default to `128` by default, but you should do it yourself in the future.\n",
+      "  warnings.warn(\n",
+      "/mnt/pycharmprojects/trl/trl/trainer/dpo_trainer.py:411: UserWarning: When using DPODataCollatorWithPadding, you should set `remove_unused_columns=False` in your TrainingArguments we have set it for you, but you should do it yourself in the future.\n",
+      "  warnings.warn(\n",
+      "Map: 100%|██████████| 7/7 [00:00<00:00, 508.71 examples/s]\n",
+      "Could not estimate the number of tokens of the input, floating-point operations will not be computed\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "<IPython.core.display.HTML object>"
+      ],
+      "text/html": [
+       "\n",
+       "    <div>\n",
+       "      \n",
+       "      <progress value='10' max='10' style='width:300px; height:20px; vertical-align: middle;'></progress>\n",
+       "      [10/10 00:15, Epoch 10/10]\n",
+       "    </div>\n",
+       "    <table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       " <tr style=\"text-align: left;\">\n",
+       "      <th>Step</th>\n",
+       "      <th>Training Loss</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "  </tbody>\n",
+       "</table><p>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "execution_count": 8
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:49.235074Z",
+     "start_time": "2024-06-02T22:13:48.831435Z"
+    }
+   },
+   "cell_type": "code",
+   "source": [
+    "# save results\n",
+    "with open(f\"{OUTPUT_DIR}/results.json\", \"w\") as f:\n",
+    "    json.dump(results.metrics, f)\n",
+    "model.save_pretrained(OUTPUT_DIR)"
+   ],
+   "id": "acd8167d78b2f6fb",
+   "outputs": [],
+   "execution_count": 9
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:49.238264Z",
+     "start_time": "2024-06-02T22:13:49.236027Z"
+    }
+   },
+   "cell_type": "code",
+   "source": "",
+   "id": "initial_id",
+   "outputs": [],
+   "execution_count": 9
+  },
+  {
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2024-06-02T22:13:49.241850Z",
+     "start_time": "2024-06-02T22:13:49.239569Z"
+    }
+   },
+   "cell_type": "code",
+   "source": "",
+   "id": "a0f8b17498771e3c",
+   "outputs": [],
+   "execution_count": 9
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
