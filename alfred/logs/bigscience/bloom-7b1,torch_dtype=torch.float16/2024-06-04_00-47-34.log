@@ -1,0 +1,121 @@
+2024-06-04 00:47:34,772 [INFO] [location <module> 40] model=bigscience/bloom-7b1, torch_dtype=float16
+2024-06-04 00:47:43,869 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-04 00:47:43,870 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-04 00:47:43,870 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-04 00:47:43,870 [INFO] [data_generator generate 325] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")].
+
+
+2024-06-04 00:47:43,871 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-04 00:47:43,871 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-04 00:47:43,871 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Baltimore, MD we have that Baltimore is in the state of Maryland.
+Output:
+From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-04 00:47:45,304 [INFO] [api execute 135] LocationAPI returned value with city=Baltimore having state=Maryland
+2024-06-04 00:47:45,305 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-04 00:47:45,305 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland
+2024-06-04 00:47:45,867 [INFO] [data_generator generate 331] Candidates:
+2024-06-04 00:47:45,868 [INFO] [data_generator generate 333] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland. The city has a population of 1,093,000 people and an area of 2,942 square miles.
+
+2024-06-04 00:47:45,868 [INFO] [data_generator generate 334] Baselines:
+2024-06-04 00:47:45,868 [INFO] [data_generator generate 336] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")].
+
+The input and output will be separated with one or more spaces (or tabs). You may use any number of spaces between them but no line breaks
+2024-06-04 00:47:53,208 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-04 00:47:53,208 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-04 00:47:53,208 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-04 00:47:53,209 [INFO] [data_generator generate 325] From Cleveland, OH we have that Seattle is in the state of [Location("Seattle")].
+
+
+2024-06-04 00:47:53,209 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-04 00:47:53,209 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Cleveland, OH we have that Seattle is in the state of [Location
+2024-06-04 00:47:53,209 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Cleveland, OH we have that Seattle is in the state of Ohio.
+Output:
+From Cleveland, OH we have that Seattle is in the state of [Location
+2024-06-04 00:47:54,445 [INFO] [api execute 135] LocationAPI returned value with city=Seattle having state=Washington
+2024-06-04 00:47:54,446 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-04 00:47:54,446 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Cleveland, OH we have that Seattle is in the state of [Location("Seattle")]→Washington
+2024-06-04 00:47:54,939 [INFO] [data_generator generate 331] Candidates:
+2024-06-04 00:47:54,939 [INFO] [data_generator generate 333] From Cleveland, OH we have that Seattle is in the state of [Location("Seattle")]→Washington. The city has a population of 1,000,000 and an area of 2,500 square miles.
+
+2024-06-04 00:47:54,939 [INFO] [data_generator generate 334] Baselines:
+2024-06-04 00:47:54,939 [INFO] [data_generator generate 336] From Cleveland, OH we have that Seattle is in the state of [Location("Cleveland")].
+
+The input and output will be separated with one or more spaces (or tabs). You may use any number of spaces between them but no line breaks. 
+
+2024-06-04 00:48:01,234 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-04 00:48:01,234 [INFO] [data_generator generate 323] tensor([13,  7], device='cuda:0')
+2024-06-04 00:48:01,235 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-04 00:48:01,235 [INFO] [data_generator generate 325] From Cleveland, OH we have that Portland is in the state of [Location("Portland")].
+
+
+2024-06-04 00:48:01,236 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-04 00:48:01,236 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Cleveland, OH we have that Portland is in the state of [Location
+2024-06-04 00:48:01,236 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Cleveland, OH we have that Portland is in the state of Texas.
+Output:
+From Cleveland, OH we have that Portland is in the state of [Location
+2024-06-04 00:48:02,567 [INFO] [api execute 135] LocationAPI returned value with city=Portland having state=Oregon
+2024-06-04 00:48:02,567 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-04 00:48:02,567 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Cleveland, OH we have that Portland is in the state of [Location("Portland")]→Oregon
+2024-06-04 00:48:03,045 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-04 00:48:03,045 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Cleveland, OH we have that [Location
+2024-06-04 00:48:03,046 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Cleveland, OH we have that Portland is in the state of Texas.
+Output:
+From Cleveland, OH we have that [Location
+2024-06-04 00:48:04,486 [INFO] [api execute 135] LocationAPI returned value with city=Portland having state=Oregon
+2024-06-04 00:48:04,486 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-04 00:48:04,486 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Cleveland, OH we have that [Location("Portland")]→Oregon
+2024-06-04 00:48:04,837 [INFO] [data_generator generate 331] Candidates:
+2024-06-04 00:48:04,837 [INFO] [data_generator generate 333] From Cleveland, OH we have that Portland is in the state of [Location("Portland")]→Oregon. The city has a population of 1,000,000 and an area of 2,500 square miles.
+
+2024-06-04 00:48:04,837 [INFO] [data_generator generate 333] From Cleveland, OH we have that [Location("Portland")]→Oregon. We can also say the same thing about New York City and Washington DC.
+
+2024-06-04 00:48:04,837 [INFO] [data_generator generate 334] Baselines:
+2024-06-04 00:48:04,838 [INFO] [data_generator generate 336] From Cleveland, OH we have that Portland is in the state of [Location("Portland")].
+
+The input and output will be separated with one or more spaces (or tabs). You may use any number of spaces between them but no line breaks
+2024-06-04 00:48:04,838 [INFO] [data_generator generate 336] From Cleveland, OH we have that [Location("Portland"), State("Texas")].
+
+The output must be formatted as follows:
+[City, State]
+
+For example, if your input was "From New York City, NY we
