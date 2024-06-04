@@ -11,8 +11,8 @@ calculator_api = CalculatorAPI(
     sampling_threshold=0.2, filtering_threshold=0.2
 )
 
-model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
-tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
+model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
+tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
 
 text = "From this, we have 10 - 5 minutes = 5 minutes."
 apis = [calculator_api]

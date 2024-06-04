@@ -11,8 +11,8 @@ search_api = SearchAPI(
     sampling_threshold=0.2, filtering_threshold=0.2
 )
 
-model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
-tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
+model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
+tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
 
 text = "39.2896246543727, -76.58026446823449"  # Patterson Park, Baltimore, MD
 #text = "From this, we have 10 - 5 minutes = 5 minutes."

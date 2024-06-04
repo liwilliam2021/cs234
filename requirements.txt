@@ -3,3 +3,11 @@ transformers
 #toolformer  # from this repository, install manually
 torch
 dill>=0.3.0,<0.3.7
+torchtyping
+einops
+openai
+#wolfram-alpha-api
+langchain
+python-dotenv
+pytest
+jupyterlab

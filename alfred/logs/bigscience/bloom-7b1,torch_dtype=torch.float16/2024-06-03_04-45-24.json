@@ -1,0 +1,16 @@
+{
+  "feedback": [
+    {
+      "text": "From Baltimore, MD we have that Baltimore is in the state of Maryland.",
+      "status": "accepted"
+    },
+    {
+      "text": "From Cleveland, OH we have that Seattle is in the state of Ohio.",
+      "status": "rejected"
+    },
+    {
+      "text": "From Cleveland, OH we have that Portland is in the state of Texas.",
+      "status": "accepted"
+    }
+  ]
+}

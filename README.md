@@ -3,7 +3,14 @@
 
 ## Alfred
 
-First trying out connecting up to a WeatherAPI and get simple weather related information
+First trying out connecting up to a LocationAPI and get simple weather related information
+
+```bash
+docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dockerfile --build-arg="SERVICE_ACCOUNT='$(cat /home/alfred/.keys/flock-zerobudget-5f5733b793c1.json)'" --build-arg="SSH_KEY='$(cat /home/alfred/.ssh/id_rsa)'" .; docker push gcr.io/flock-zerobudget/cs234-final:base
+docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dockerfile --build-arg='SERVICE_ACCOUNT=${{ secrets.SERVICE_ACCOUNT }}' --build-arg='SSH_KEY=${{ secrets.SSH_KEY }}' .
+
+docker run -p 22:22 -p 8080:8080 gcr.io/flock-zerobudget/cs234-final:base 
+```
 
 ### TODO
 

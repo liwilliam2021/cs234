@@ -21,6 +21,7 @@ calculator_api = CalculatorAPI(
 # @pytest.mark.skip(reason="haven't implemented yet")
 def test_inference(model, tokenizer, default_config):
     text = "From this, we have 10 - 5 minutes = 5 minutes."
+    device = ("cuda" if torch.cuda.is_available() else "cpu")
 
     # After fine-tune a model with augmented data,
     # the model should be able to call the API without few-shot learning
@@ -35,9 +36,11 @@ def test_inference(model, tokenizer, default_config):
     toolformer = ToolFormer(
         model,
         apis=[calculator_api],
-        config=default_config
+        config=default_config,
+        device=device
     )
 
+    # Alfred implicitly calls the forward method
     output_ids = toolformer(
         input_ids=encoded_text["input_ids"],
         attention_mask=encoded_text["attention_mask"],

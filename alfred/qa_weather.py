@@ -14,8 +14,8 @@ weather_api = WeatherAPI(
 
 #device = ("cuda" if torch.cuda.is_available() else "cpu")
 
-model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m")
-tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m")
+model = AutoModelForCausalLM.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
+tokenizer = AutoTokenizer.from_pretrained("bigscience/bloom-560m,torch_dtype=None")
 
 #text = "What is the temperature in Baltimore, MD?"
 text = "From Baltimore, MD we have that Baltimore is in the state of Maryland"

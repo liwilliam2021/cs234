@@ -1,0 +1,31 @@
+2024-06-03 23:13:00,871 [INFO] [location <module> 40] model=bigscience/bloom-560m, torch_dtype=float16
+{ "feedback": [ 2024-06-03 23:13:06,825 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-03 23:13:06,825 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-03 23:13:06,826 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-03 23:13:06,826 [INFO] [data_generator generate 325] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")].
+
+
+2024-06-03 23:13:06,827 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-03 23:13:06,827 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-03 23:13:06,828 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Baltimore, MD we have that Baltimore is in the state of Maryland.
+Output:
+From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-03 23:13:08,419 [INFO] [api execute 135] LocationAPI returned value with city=Baltimore having state=Maryland
+2024-06-03 23:13:08,420 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-03 23:13:08,420 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland
+2024-06-03 23:13:09,008 [INFO] [data_generator generate 331] Candidates:
+2024-06-03 23:13:09,009 [INFO] [data_generator generate 333] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland. The following code will return a list containing all cities and states within Maryland.
+
+2024-06-03 23:13:09,009 [INFO] [data_generator generate 334] Baselines:
+2024-06-03 23:13:09,009 [INFO] [data_generator generate 336] From Baltimore, MD we have that Baltimore is in the state of [Location ("Baltimore-MD")
+[location="Baltic"][ {"text": "From Baltimore, MD we have that Baltimore is in the state of Maryland.", "status": "accepted" },

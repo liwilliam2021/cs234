@@ -1,3 +1,5 @@
+import os
+
 import torch.cuda
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -6,7 +8,50 @@ from toolformer.api import LocationAPI
 from toolformer.prompt import location_prompt
 from toolformer.utils import yaml2dict
 
+from dvc.repo import Repo
+from datetime import datetime
+from dotenv import load_dotenv
+
+from huggingface_hub import snapshot_download, login
+
+load_dotenv()
+access_token = os.environ.get("HF_TOKEN")
+# login(token = access_token)
+#snapshot_download(repo_id ="meta-llama/Llama-2-13b")
+
+import logging
+
 config = yaml2dict('configs/default.yaml')
+match config['model']['torch_dtype']:
+    case 'float16':
+        torch_dtype = torch.float16
+    case 'float32':
+        torch_dtype = torch.float32
+    case 'float64':
+        torch_dtype = torch.float64
+    case 'bfloat16':
+        torch_dtype = torch.bfloat16
+    case _:
+        raise ValueError('torch_dtype is invalid')
+
+
+DATE_TIME = datetime.strftime(datetime.now(),"%F_%H-%M-%S")
+LOG_PATH = f'alfred/logs/{config["model"]["path"]},torch_dtype={torch_dtype}/{DATE_TIME}.log'
+os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+OUTPUT_PATH = f'alfred/logs/{config["model"]["path"]},torch_dtype={torch_dtype}/{DATE_TIME}.json'
+os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] [%(module)s %(funcName)s %(lineno)d] %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_PATH),
+        logging.StreamHandler()
+    ]
+)
+
+logging.info(f"model={config['model']['path']}, torch_dtype={config['model']['torch_dtype']}")
+
 # Alfred: needs to look for QA based on the qa_prompt which was given
 location_api = LocationAPI(
     "Location", location_prompt, cities_csv='alfred/uscities.csv',
@@ -15,15 +60,8 @@ location_api = LocationAPI(
 
 
 #%%
-#device = ("cuda" if torch.cuda.is_available() else "cpu")
-#model_name = "hivemind/gpt-j-6B-8bit"   # use EleutherAI/gpt-j-6B for tokenizer
-model_name = "bigscience/bloom-1b1" #560m"
-#model_name = "EleutherAI/gpt-j-6B"
-#revision = "float16"
-#torch_dtype = torch.float16
-#access_token = "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"
-model = AutoModelForCausalLM.from_pretrained(model_name) #, torch_dtype=torch_dtype) #, torch_dtype=torch_dtype) #, token=access_token)
-tokenizer = AutoTokenizer.from_pretrained(model_name) #"EleutherAI/gpt-j-6B") #, token=access_token)
+model = AutoModelForCausalLM.from_pretrained(config['model']['path'], torch_dtype=torch_dtype)
+tokenizer = AutoTokenizer.from_pretrained(config['model']['path']) #"EleutherAI/gpt-j-6B") #, token=access_token)
 print('finished loading model')
 
 
@@ -79,6 +117,9 @@ texts.append("From Cleveland, OH we have that Portland is in the state of Texas.
 # parts of the region took advantage of the City’s growth economy."""
 #              )
 #%%
+with open(OUTPUT_PATH, 'a') as f:
+    f.write('{ "feedback": [ ')
+
 for text in texts:
     #text = "What is the temperature in Baltimore, MD?"
     #text = "From Baltimore, MD we have that Baltimore is in the state of Maryland."
@@ -87,10 +128,36 @@ for text in texts:
     apis = [location_api]
     generator = DataGenerator(config, model, tokenizer, apis=apis)
 
-    augmented_text_ids = generator.generate(text)
+    with open(OUTPUT_PATH, 'a') as f:
+        augmented_text_ids = generator.generate(text, human=True)
+        if len(augmented_text_ids) > 0:
+            for single_augmented in augmented_text_ids:
+                f.write('{' + f'"text": "{text}", ')
+                #assert augmented_text_ids is not None
+                #if len(augmented_text_ids[0]) > 0:
+                decoded = tokenizer.decode(single_augmented, skip_special_tokens=True)
+                f.write(f'"status": "accepted" ')
+                #print(f"accepted this one: {decoded}")
+                f.write('},')
+        else:
+            f.write('{' + f'"text": "{text}", ')
+            f.write(f'"status": "rejected" ')
+            f.write('},')
+            #print(f"filtered out text: {text}")
+        # remove last comma according to JSON format
 
-    if len(augmented_text_ids[0]) > 0:
-        print(tokenizer.decode(augmented_text_ids[0][0], skip_special_tokens=True))
-    else:
-        print("no text_ids after filtering!")
+# remove last comma according to JSON format
+with open(OUTPUT_PATH, 'rb+') as f:
+    f.seek(-1, os.SEEK_END)
+    f.truncate()
+with open(OUTPUT_PATH, 'a') as f:
+    f.write('] }')
 
+
+#else:
+#print("no text_ids after filtering!")
+
+# add log to dvc
+# repo = Repo(".")
+# repo.add(OUTPUT_PATH)
+# repo.push()

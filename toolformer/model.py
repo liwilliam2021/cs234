@@ -23,7 +23,8 @@ class ToolFormer(nn.Module):
         self,
         model: AutoModelForCausalLM,
         apis: List[BaseAPI],
-        config: dict
+        config: dict,
+        device: str
     ):
         super().__init__()
         self.model = model
@@ -39,17 +40,18 @@ class ToolFormer(nn.Module):
         end_character = config["data_generator"]["api_end_character"]
         output_character = config["data_generator"]["api_output_character"]
         
-        self.api_start_token_id = tokenizer(f' {start_character}', return_tensors="pt")["input_ids"][0]
-        self.api_end_token_id = tokenizer(end_character, return_tensors="pt")["input_ids"][0]
-        self.api_output_token_id = tokenizer(f'{output_character}', return_tensors="pt")["input_ids"][0]
+        self.api_start_token_id = tokenizer(f' {start_character}', return_tensors="pt")["input_ids"][0].to(device)
+        self.api_end_token_id = tokenizer(end_character, return_tensors="pt")["input_ids"][0].to(device)
+        self.api_output_token_id = tokenizer(f'{output_character}', return_tensors="pt")["input_ids"][0].to(device)
 
         self.eos_token_ids = tokenizer(
             [".", ".\n\n"],
             return_tensors="pt"
-        )["input_ids"].squeeze()
+        )["input_ids"].squeeze().to(device)
 
         # TODO: support batch
-        self.api_request_content: torch.Tensor = torch.tensor([])
+        self.api_request_content: torch.Tensor = torch.tensor([]).to(device)
+        self.device = device
     
     def _sampling(self, probs: TensorType["batch_size", "seq_len"]) -> TensorType["batch_size", "seq_len"]:
         return torch.argmax(probs, dim=-1)
@@ -82,12 +84,12 @@ class ToolFormer(nn.Module):
         **kwargs
     ) -> TensorType["batch_size", "seq_len"]:
         # check padding to the left
-        generated_ids = input_ids
+        generated_ids = input_ids.to(self.device)
         
         for _ in range(max_new_tokens):
             output_ids = self.model(
                 input_ids=generated_ids,
-                attention_mask=attention_mask,
+                attention_mask=attention_mask.to(self.device),
                 **kwargs
             )
             
@@ -101,7 +103,7 @@ class ToolFormer(nn.Module):
                     # if the api end token is in the top_k_idx, then we will execute the api
                     # and then add api_end_token_id to the generated_ids
                     # TODO: add support batch
-                    api_output_ids = self.execute_api(self.api_request_content[0])
+                    api_output_ids = self.execute_api(self.api_request_content[0]).to(self.device)
                     if api_output_ids is not None:
                         pred_ids = torch.cat([
                             self.api_output_token_id,
@@ -122,14 +124,14 @@ class ToolFormer(nn.Module):
                     self.add_idx_to_api_request_content(pred_ids)
                 else:
                     pred_ids = self._sampling(probs)
-            
+
             generated_ids = torch.cat([
                 generated_ids,
                 rearrange(pred_ids, '... -> 1 ...')
             ], dim=1)
             
             attention_mask = torch.cat([
-                attention_mask,
+                attention_mask.to(self.device),
                 rearrange(torch.ones_like(pred_ids), '... -> 1 ...')
             ], dim=1)
             

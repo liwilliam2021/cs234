@@ -1,0 +1,99 @@
+2024-06-03 23:47:21,126 [INFO] [location <module> 40] model=bigscience/bloom-560m, torch_dtype=float16
+2024-06-03 23:47:27,139 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-03 23:47:27,140 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-03 23:47:27,141 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-03 23:47:27,141 [INFO] [data_generator generate 325] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")].
+
+
+2024-06-03 23:47:27,142 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-03 23:47:27,142 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-03 23:47:27,142 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Baltimore, MD we have that Baltimore is in the state of Maryland.
+Output:
+From Baltimore, MD we have that Baltimore is in the state of [Location
+2024-06-03 23:47:28,656 [INFO] [api execute 135] LocationAPI returned value with city=Baltimore having state=Maryland
+2024-06-03 23:47:28,657 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-03 23:47:28,657 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland
+2024-06-03 23:47:29,150 [INFO] [data_generator generate 331] Candidates:
+2024-06-03 23:47:29,150 [INFO] [data_generator generate 333] From Baltimore, MD we have that Baltimore is in the state of [Location("Baltimore")]→Maryland. The following code will return a list containing all cities and states within Maryland.
+
+2024-06-03 23:47:29,150 [INFO] [data_generator generate 334] Baselines:
+2024-06-03 23:47:29,150 [INFO] [data_generator generate 336] From Baltimore, MD we have that Baltimore is in the state of [Location ("Baltimore-MD")
+[location="Baltic"]
+2024-06-03 23:47:33,671 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-03 23:47:33,671 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-03 23:47:33,672 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-03 23:47:33,672 [INFO] [data_generator generate 325] From Cleveland, OH we have that Seattle is in the state of [Location("Ohio")].
+
+
+2024-06-03 23:47:33,672 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-03 23:47:33,673 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Cleveland, OH we have that Seattle is in the state of [Location
+2024-06-03 23:47:33,673 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Cleveland, OH we have that Seattle is in the state of Ohio.
+Output:
+From Cleveland, OH we have that Seattle is in the state of [Location
+2024-06-03 23:47:34,790 [INFO] [api execute 135] LocationAPI returned value with city=Ohio having state=Illinois
+2024-06-03 23:47:34,791 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-03 23:47:34,791 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Cleveland, OH we have that Seattle is in the state of [Location("Ohio")]→Illinois
+2024-06-03 23:47:35,218 [INFO] [data_generator generate 331] Candidates:
+2024-06-03 23:47:35,218 [INFO] [data_generator generate 333] From Cleveland, OH we have that Seattle is in the state of [Location("Ohio")]→Illinois. The distance between these two cities ranges from 1 to 2 miles.
+
+2024-06-03 23:47:35,218 [INFO] [data_generator generate 334] Baselines:
+2024-06-03 23:47:35,219 [INFO] [data_generator generate 336] From Cleveland, OH we have that Seattle is in the state of [Location ("Cleveland ")) ]
+2024-06-03 23:47:40,543 [INFO] [data_generator generate 322] Samples API positions:
+2024-06-03 23:47:40,544 [INFO] [data_generator generate 323] tensor([13], device='cuda:0')
+2024-06-03 23:47:40,545 [INFO] [data_generator generate 324] Generated IDs:
+2024-06-03 23:47:40,545 [INFO] [data_generator generate 325] From Cleveland, OH we have that Portland is in the state of [Location("Portland")].
+
+
+2024-06-03 23:47:40,545 [INFO] [data_generator generate_api_candidates_and_baselines 189] Baseline:
+2024-06-03 23:47:40,546 [INFO] [data_generator generate_api_candidates_and_baselines 190] modified_generation_ids: From Cleveland, OH we have that Portland is in the state of [Location
+2024-06-03 23:47:40,546 [INFO] [data_generator generate_api_candidates_and_baselines 193] prompt_and_generated_ids: 
+Your task is to add calls to a Location API to a piece of text. The questions should help you get information required to complete the text.
+You can call the API by writing "[Location(city)]" where "city" is the city of the state you are asking for. Here are some examples of API calls:
+
+Input: From Los Angeles, CA we have that Los Angeles is in the state of California.
+Output: From Los Angeles, CA we have that Los Angeles is in the state of [Location("Los Angeles")].
+
+Input: From Seattle, WA we have that Seattle is in the state of Washington.
+Output: From Seattle, WA we have that Seattle is in the state of [Location("Seattle")].
+
+Input: From Cleveland, OH we have that Portland is in the state of Texas.
+Output:
+From Cleveland, OH we have that Portland is in the state of [Location
+2024-06-03 23:47:42,675 [INFO] [api execute 135] LocationAPI returned value with city=Portland having state=Oregon
+2024-06-03 23:47:42,675 [INFO] [data_generator generate_api_candidates_and_baselines 232] Candidates:
+2024-06-03 23:47:42,675 [INFO] [data_generator generate_api_candidates_and_baselines 233] modified_generation_ids: From Cleveland, OH we have that Portland is in the state of [Location("Portland")]→Oregon
+2024-06-03 23:47:43,160 [INFO] [data_generator generate 331] Candidates:
+2024-06-03 23:47:43,160 [INFO] [data_generator generate 333] From Cleveland, OH we have that Portland is in the state of [Location("Portland")]→Oregon. The city has a population density (in square miles per 100 people).
+2024-06-03 23:47:43,160 [INFO] [data_generator generate 334] Baselines:
+2024-06-03 23:47:43,160 [INFO] [data_generator generate 336] From Cleveland, OH we have that Portland is in the state of [Location ("Cleveland Ohio State University ")
+The first two lines will be used as an example and then you'll need your code snippet below. 
+public class MyApi {
+    public static void main
+] }2024-06-03 23:47:45,350 [INFO] [scm_context __call__ 123] 
+To track the changes with git, run:
+
+	git add alfred/output.dvc
+2024-06-03 23:47:45,350 [INFO] [scm_context __call__ 124] 
+To enable auto staging, run:
+
+	dvc config core.autostage true
