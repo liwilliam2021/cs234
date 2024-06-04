@@ -18,6 +18,7 @@ from transformers.utils import torch_only_method
 
 from .api import BaseAPI
 from .utils import ask_gpt
+from .gpt import *
 
 MAX_SEQ_LENGTH = 50
 
@@ -127,10 +128,17 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         task_prompt = None
     ):
         API_NAME = api.name
+
+        def remove_surrounding_quotes(s):
+            if s.startswith('"') and s.endswith('"'):
+                return s[1:-1]
+            elif s.startswith("'") and s.endswith("'"):
+                return s[1:-1]
+            return s
         
         def extract_api_request_content(text: str, api_name: str) -> str:
             """Extract the content of an API request from a given text."""
-            start_tag = f"{api_name}("
+            start_tag = f"{api_name}API("
             end_tag = ")"
             start_idx = text.find(start_tag)
             if start_idx == -1:
@@ -139,13 +147,13 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             end_idx = text.find(end_tag, start_idx)
             if end_idx == -1:
                 return None
-            return text[start_idx:end_idx]
+            return remove_surrounding_quotes(text[start_idx:end_idx])
         
         def extract_api_syntax(text: str, api_name: str) -> str:
             """Extract the API Syntax from a given text."""
             pattern = r"\[{}\(.*?\)\]".format(api_name)
             matches = re.findall(pattern, text)
-            return matches
+            return remove_surrounding_quotes(matches)
 
         candidates = []
         baselines = []
@@ -232,13 +240,14 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                             self.tokenizer(word, return_tensors='pt')['input_ids'].squeeze()
                             for word in [".", "\n" , ".\n", ".\n\n"]
                         ]
-                        mask = torch.zeros_like(candidate_ids , dtype=torch.bool)
+                        mask = torch.zeros_like(candidate_ids, dtype=torch.bool)
                         for end_index in end_indices:
                             mask = mask | (candidate_ids == end_index)
-                        last_end_index = mask.nonzero(as_tuple=True)[0][-1].item()
+                        if len (mask.nonzero(as_tuple=True)):
+                            last_end_index = mask.nonzero(as_tuple=True)[0][-1].item()
 
-                        # Truncate the tensor after the last "." character
-                        candidate_ids = candidate_ids[:last_end_index + 1]
+                            # Truncate the tensor after the last "." character
+                            candidate_ids = candidate_ids[:last_end_index + 1]
 
                         candidates.append (candidate_ids)
                         break
@@ -252,19 +261,37 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             
         return candidates, baselines
     
-    def should_not_filter_api_candidate (self, original_text, api_candidate_ids, baseline_ids, human = True):
+    def should_not_filter_api_candidate (self, original_text, api_candidate_ids, baseline_ids, human = False):
         api_candidate = self.tokenizer.decode (api_candidate_ids)
         
         baseline = self.tokenizer.decode (baseline_ids)
+        return_val = None
         if human: # Do human eval
             print ("Candidate:", api_candidate)
             print ("Baseline1:", original_text)
             print ("Baseline2:", baseline)
             while True:
                 res = input ("Respond with True if the Candidate is better than the Baselines, and False otherwise\n")
-                if res == "True": return True
-                elif res == "False": return False
+                if res == "True": 
+                  return_val = True
+                  break
+                elif res == "False": 
+                  return_val = False
+                  break
                 else: print ("Please only respond True or False")
+        if len (self.apis) == 1 and "Weather" == self.apis[0].name:
+            messages = get_weather_eval_prompt (original_text, api_candidate)
+            res = ask_gpt (messages)
+            if "True" in res: 
+              return_val2 = True
+            else:
+              return_val2 = False
+
+            if return_val == None: 
+              return_val = return_val2
+            elif return_val != return_val2:
+              print (res)
+              
         else:
             messages = [{
                 "role": "system",
@@ -276,12 +303,15 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
             res = ask_gpt (messages)
             if res == "True": return True
             else: return False
+        
+        return return_val
 
 
     def generate(
         self,
         text: str,
-        task_prompt=None
+        task_prompt=None,
+        human=False
     ) -> TensorType["n_apis", "n_candidates", "seq_len"]:
         filtered_apis = torch.tensor([]).to(self.device)
         
@@ -304,7 +334,8 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                 if self.should_not_filter_api_candidate (
                     text,
                     api_candidate_ids,
-                    baseline_ids
+                    baseline_ids,
+                    human = human
                 ): filtered_candidates_ids.append (api_candidate_ids)
         
         return filtered_candidates_ids 
