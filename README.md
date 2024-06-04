@@ -29,25 +29,6 @@ Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.
 Paper: [Toolformer: Language Models Can Teach Themselves to Use
 Tools](https://arxiv.org/abs/2302.04761)
 
-**I’m implementing ToolFormer on stream. Wanna watch it in action? Go:
-[twitch.tv/xrsrke](https://twitch.tv/xrsrke)**
-
-### TODO
-
-- ✅ Augment data with batch size 1 :)
-- [ ] Support agument a batch of text
-- [ ] Execute API calls in parallel
-- ✅ Inference with batch size 1 :)
-- [ ] Inference with batch size more than 1 :)
-- [ ] Support Data Generation to GPU
-- [ ] Add 🤗 Accelerate
-
-**API**
-
-- ✅ Support add custom API
-- ✅ Calculator API
-- ✅ WolframeAlpha API
-
 ### Install
 
 Install from PipPy
@@ -139,13 +120,6 @@ print(calculator_prompt)
 
     Input: {input}
     Output:
-
-### Resources
-
-Here’re resources that i used to implement this
-
-- How to sampling APIs call: https://www.youtube.com/live/RLcr4bqGsEQ
-- How to calculate the loss: https://youtu.be/lQI9S5ngfHQ
 
 ### Citations
 

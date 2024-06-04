@@ -54,7 +54,8 @@ class TooledInference(nn.Module):
     def generate_with_api_call(
         self,
         prompt_ids: TensorType["seq_len"], # the ids of the prompt
-        bias_apis: False
+        bias_apis = False,
+        estimated_length = None
     ) -> Tuple[
         TensorType["n_positions"], # The positions of api call
         TensorType["seq_len"] # The generated text
@@ -88,8 +89,12 @@ class TooledInference(nn.Module):
             return remove_surrounding_quotes(text[start_idx:end_idx])
         
         api_started = False
+        max_gen_length =  MAX_SEQ_LENGTH
+        if estimated_length:
+            max_gen_length = min (MAX_SEQ_LENGTH, 1.1 * estimated_length)
+
         with torch.no_grad():    
-            while i < MAX_SEQ_LENGTH:
+            while i < max_gen_length:
                 logits = self.model(input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                 last_logit = logits[0, -1, :]
                 probs = torch.softmax(last_logit, dim=-1)
@@ -101,7 +106,7 @@ class TooledInference(nn.Module):
                     next_token = torch.argmax(probs, dim=-1)
                     next_token = next_token.unsqueeze(0)
 
-                if i == MAX_SEQ_LENGTH - 1: 
+                if i == max_gen_length - 1: 
                     # Prevent infinite generation
                     next_token = torch.tensor([self.eos_token_id]).to(self.device)
                 
