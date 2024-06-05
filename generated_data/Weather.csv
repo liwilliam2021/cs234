@@ -1,4 +1,4 @@
-input,candidate,text
+input,text,candidate
 "
 Could you provide the current weather conditions in London and the forecast for the next few hours?","London is currently facing heavy rain, so it’s best to carry an umbrella.","London is currently facing [WeatherAPI(""London"")]→overcast clouds. The forecast for the next hour or so will be overcast with a chance of showers and thunderstorms.
 "
@@ -446,3 +446,363 @@ What is the current weather in London today?,"London is quite chilly today, bett
 What is the current weather in Delhi and how might it affect visibility of the city lights tonight?,"Delhi has a smoggy atmosphere, limiting outdoor activities is advisable.","Since the weather in Delhi is [WeatherAPI(""Delhi"")]→haze, it will be difficult to see any city lights. The sky may look like a blanket of fog.
 "
 What is the current weather forecast for Miami tonight?,"A storm is brewing over Miami tonight, be prepared for heavy rain.","A storm is brewing over Miami tonight, be prepared for [WeatherAPI(""Miami"")]→scattered clouds and showers."
+What is the weather forecast for London today?,The forecast for London shows it will be mostly cloudy with a chance of light rain. ,"The forecast for London shows it will be mostly [WeatherAPI(""London"")]→overcast clouds with a chance of showers and thunderstorms. The weather is likely to remain cloudy throughout the day, but there are some chances that rain may fall in the evening.
+"
+What is the weather forecast for London?,The forecast for London shows it will be mostly cloudy with a chance of light rain. ,"The forecast for London shows it will be [WeatherAPI(""London"")]→overcast clouds with a chance of showers and thunderstorms."
+What's the weather forecast for today in Chicago?,"The weather in Chicago is cool and windy, so a light jacket may be necessary.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying warm and pleasant weather, perfect for outdoor activities.","Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What is the weather forecast for Sydney, Australia today? And when does the sun rise there?","Sydney is enjoying warm and pleasant weather, perfect for outdoor activities.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+"What will the weather be like in Rio de Janeiro, Brazil today?","Rio de Janeiro is hot and sunny, so don't forget to pack your sunglasses and sunscreen.","Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→clear sky, sunny and warm. The temperature in Rio de Janeiro will be around 25°C during the day and about 24°C at night.
+"
+"What is the current weather like in Moscow, and what are the expected high and low temperatures for the day?",Moscow is experiencing chilly temperatures with a chance of snow flurries later in the day.,"Moscow is experiencing [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of −6°C and minimum temperature of 0°C. The average wind speed in Moscow during the forecast period was about 3 m/s.
+"
+"What is the current weather forecast for Moscow, Russia?",Moscow is experiencing chilly temperatures with a chance of snow flurries later in the day.,"Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+What is the weather forecast for London today?,The weather forecast for London predicts partly cloudy skies and a high of 72°F.,"The weather forecast for London predicts [WeatherAPI(""London"")]→overcast clouds, with a high of around 10 degrees Celsius. The average temperature is expected to be about 7 degrees Celsius.
+"
+What's the weather forecast for Miami today?,Miami is warm and humid today with a chance of afternoon thunderstorms.,"Miami is [WeatherAPI(""Miami"")]→scattered clouds, with a high of about 70 degrees."
+What's the weather forecast for today in Chicago?,"The weather in Chicago is windy and chilly, so bundle up if you're going outside.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+What's the weather forecast for London today?,The weather in London is mostly cloudy with a chance of rain.,"The weather in London is [WeatherAPI(""London"")]→overcast clouds, with a high of around 10°C and low of about 4°C."
+"What is the current weather like in Tokyo, and what is the forecast for the rest of the day?",Tokyo is experiencing partly cloudy skies with mild temperatures.,"Tokyo is experiencing [WeatherAPI(""Tokyo"")]→broken clouds, and the sky will be cloudy. The weather forecast for Tokyo in Japan is:
+"
+What is the weather forecast for London today?,The weather forecast for London predicts overcast skies and a high chance of rain.,"The weather forecast for London predicts [WeatherAPI(""London"")]→overcast clouds, with a high of around 10 degrees Celsius. The average temperature is expected to be about 7 degrees Celsius.
+"
+What's the weather forecast for Chicago today?,"Chicago is experiencing chilly temperatures, so bundle up."," Chicago is experiencing [WeatherAPI(""Chicago"")]→overcast clouds with a high of 55 degrees and low around 40."
+What's the weather like in Chicago today? And what's the forecast for the next few days?,"Chicago is experiencing chilly temperatures, so bundle up."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+What's the weather like in London right now?,London is having a typical cloudy day. An umbrella may come in handy.,"London is having [WeatherAPI(""London"")]→broken clouds, and the forecast says that it will be raining for a few hours."
+What will the weather be like in Tokyo over the next day?,Tokyo will see partly cloudy skies with a chance of light showers.,"Tokyo will see [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night. Very mild.
+"
+"What's the current weather like in Sydney, Australia?","Sydney is enjoying a beautiful sunny day, perfect for a day at the beach.","Sydney is enjoying a beautiful [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying a beautiful sunny day, perfect for a day at the beach.","Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What's the weather forecast for Sydney, Australia today? And when is sunrise?","Sydney is enjoying a beautiful sunny day, perfect for a day at the beach.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+What is the weather forecast for Berlin today?,Berlin is experiencing cool temperatures with a slight breeze today.,"Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What's the weather forecast for Sydney, Australia today and when will the sun rise there?",Sydney is experiencing a beautiful day with plenty of sunshine and a pleasant high of 72°F.,"Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+What's the weather like in Miami today and for the next few days?,"Miami is hot and humid today, with temperatures reaching the mid-90s°F.","Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+"What's the weather like in Miami today, and what's the forecast for the next few days?","Miami is hot and humid today, with temperatures reaching the mid-90s°F (mid-30s°C).","Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+"What is the current weather like in Miami, Florida?",The weather in Miami is humid with a chance of thunderstorms later in the afternoon.,"The weather in Miami is [WeatherAPI(""Miami"")]→few clouds, sunny
+"
+"What is the current weather like in London, and what is the forecast for tomorrow?","London is experiencing overcast weather with occasional drizzles, typical for this time of year.","London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining. The weather will be cloudy with a chance of showers in the morning.
+"
+What's the current weather like in Amsterdam?,Amsterdam is experiencing cool temperatures with intermittent rain showers.," Amsterdam is experiencing [WeatherAPI(""Amsterdam"")]→scattered clouds and light rain showers."
+How's the weather looking today in London?,"The weather in London is cloudy with a chance of rain, so bring an umbrella just in case.","The weather in London is [WeatherAPI(""London"")]→broken clouds, rain showers and a few flurries."
+"Hi there! I'm planning a trip to Miami and was wondering if you could give me a quick summary of what the weather is like there right now. Also, if it's not too much trouble, could you provide a brief forecast for the next few days? I want to make sure I pack appropriately. Thanks in advance!",Miami is hot and humid with scattered thunderstorms expected in the afternoon.,"Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+What's the weather forecast for Chicago today?,"Chicago's weather is windy and chilly, so bundle up in layers."," Chicago's weather is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low of 39."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying a warm and sunny day, ideal for outdoor activities.","Sydney is enjoying a [WeatherAPI(""Sydney"")]→clear sky, and the sun will be shining."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying a warm and sunny day, ideal for outdoor activities.","Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What is the current weather in Sydney, Australia and when does the sun rise there today?","Sydney is enjoying a warm and sunny day, ideal for outdoor activities.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+"What is the weather like in Berlin today, and what are the expected temperature ranges and precipitation?","Berlin's weather is partly cloudy with mild temperatures, comfortable for exploring the city.","Berlin's weather is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C. The average daily precipitation amounts to about 1 mm.
+"
+What is the current weather forecast for Mexico City?,Mexico City's forecast indicates hazy skies due to high levels of air pollution today.,"Since Mexico City's forecast indicates [WeatherAPI(""Mexico City"")]→broken clouds, the weather is likely to be cloudy."
+What is the weather forecast for Tokyo in the next 24 hours?,"Tokyo is bracing for an approaching typhoon, with strong winds and heavy rainfall.","Tokyo is [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night."
+What's the weather looking like in Sydney today?,The weather forecast for Sydney shows it will be partly cloudy with a high of 72°F (22°C).,"The weather forecast for Sydney shows it will be [WeatherAPI(""Sydney"")]→clear sky with a high of around 70°."
+"What is the current weather like in London, including precipitation and cloud cover?","The weather in London is overcast with a chance of rain, so bring an umbrella.","The weather in London is [WeatherAPI(""London"")]→broken clouds, rain showers and a few flurries."
+"Describe the current weather in Miami, Florida in a casual, conversational way:","It's a beautiful sunny day in Miami, perfect for going to the beach.","It's a beautiful [WeatherAPI(""Miami"")]→few clouds, but the sun is shining.”
+"
+What's the weather outlook for London today?,The weather forecast for London shows it will be partly cloudy.,"The weather forecast for London shows it will be [WeatherAPI(""London"")]→broken clouds, with a chance of showers and thunderstorms."
+What is the weather forecast for Tokyo for the next day?,Tokyo is expecting heavy rain and thunderstorms this evening.,"Tokyo is expecting [WeatherAPI(""Tokyo"")]→moderate rain (total 10mm), heaviest during Tue night. Mild temperatures are in the range of 9°C to 13°C.
+"
+What's the weather forecast for Tokyo over the next day or so?,Tokyo is expecting heavy rain and thunderstorms this evening.,"Tokyo is [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night."
+"What is the current weather like in Sydney, Australia and what does the upcoming forecast look like?",Sydney is having a beautiful day with clear skies and mild temperatures.,"Sydney is having [WeatherAPI(""Sydney"")]→clear sky, and the weather forecast for Sydney is:
+"
+"What is the current weather and sunrise time in Sydney, Australia?",Sydney is having a beautiful day with clear skies and mild temperatures.,"Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+What is the weather like in Sydney today?,"It's a beautiful sunny day in Sydney, perfect for a day at the beach.","It's a beautiful [WeatherAPI(""Sydney"")]→clear sky.
+"
+"What's the current weather like in London, and what is the forecast for tomorrow?","London is experiencing a mix of sun and clouds, with a chance of showers later.","London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying a warm and sunny day, perfect for outdoor activities.","Sydney is enjoying a [WeatherAPI(""Sydney"")]→clear sky, and the sun will be shining."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying a warm and sunny day, perfect for outdoor activities.","Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What's the weather forecast for Sydney, Australia today? Also, when is sunrise in Sydney?","Sydney is enjoying a warm and sunny day, perfect for outdoor activities.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+What's the weather like in Berlin today?,"In Berlin, it's a cool and cloudy day, with a slight breeze.","In Berlin, it's [WeatherAPI(""Berlin"")]→overcast clouds with a chance of rain."
+"What is the current weather like in Sydney, Australia?","Sydney is enjoying warm and breezy weather, great for a day at the beach.","Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What is the current weather like in Rio de Janeiro, Brazil?","In Rio de Janeiro, the weather is warm and sunny, perfect for enjoying the beach.","In Rio de Janeiro, the weather is [WeatherAPI(""Rio de Janeiro"")]→scattered clouds with a high of about 30 degrees Celsius and low around 20 degrees Celsius. The wind blows from the SSE at an average speed of 10 km/h.
+"
+What's the weather forecast for Tokyo over the next day or so?,"Tokyo is experiencing a mix of sun and clouds, with a chance of afternoon showers.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night. Mild temperatures are in the range of 9°C to 13°C.
+"
+"What is the current weather like in Berlin, Germany? Please provide details on the sky conditions, maximum temperature, and wind speed.","Berlin is having a chilly and overcast day, so a warm coat is a must.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+What's the weather forecast for today in Chicago?,"The weather in Chicago is windy and cool, typical for this time of year.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+"Prompt: I'm thinking of taking a trip to Miami this weekend. Can you tell me what the weather is like there today, and give me a brief forecast for the next few days?","It's a hot and humid day in Miami, which is perfect beach weather.","It's a [WeatherAPI(""Miami"")]→few clouds, and the sun is shining. The weather forecast for today is:
+"
+"What is the current weather in London, and what is the forecast for tomorrow?","London is experiencing some light rain showers, so grab an umbrella.","London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining."
+"What's the weather forecast for Sydney, Australia today?","Sydney is experiencing a pleasant, mild day with a mix of sun and clouds.","Sydney is [WeatherAPI(""Sydney"")]→overcast clouds, with a high of about 70 degrees."
+
+"
+What is the weather forecast for the next few days in Moscow?,"It's a chilly morning in Moscow, with temperatures around 45°F (7°C).","It's a chilly morning in Moscow, with temperatures around [WeatherAPI(""Moscow"")]→moderate rain (total 3mm), mostly falling on Thu night. Most of the time it is cloudy.
+"
+"What is the current weather like in Berlin, Germany?","Berlin is experiencing a mix of sun and clouds, with temperatures around 68°F (20°C)."," Berlin is experiencing [WeatherAPI(""Berlin"")]→overcast clouds with a high of about 30 degrees Celsius."
+What is the current weather like in Miami?,"Miami is facing a tropical storm warning, with heavy rain and strong winds expected.","Miami is facing [WeatherAPI(""Miami"")]→broken clouds and rain."
+What's the weather forecast for Miami today?,Miami is enjoying a warm and humid day with temperatures in the mid-80s Fahrenheit.,"Miami is enjoying [WeatherAPI(""Miami"")]→few clouds and sunny skies. The temperature will be around 25°C, while the humidity level will reach about 70%.
+"
+"What is the current weather and forecast like in Miami, Florida?",Miami is enjoying a warm and humid day with temperatures in the mid-80s Fahrenheit.,"Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+What's the weather forecast for Tokyo over the next 24 hours?,"Tokyo is experiencing a mix of sun and clouds, with a chance of light showers in the afternoon.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night. Mild temperatures are in the range of 9°C to 13°C.
+"
+What's the weather like in Chicago today?,"The weather in Chicago is chilly and overcast, with temperatures in the low 40s Fahrenheit.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+"What is the current weather in London, and what is the forecast for tomorrow?",London is experiencing cool temperatures and partly cloudy skies today.,"London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining."
+"What is the current weather like in London, and what is the forecast for the next few days?",London is experiencing cool temperatures and partly cloudy skies today.,"London is [WeatherAPI(""London"")]→broken clouds, rain and snow. The weather forecast for London is:
+"
+"What is the current weather like in London? Please include details about the sky conditions, wind speed, and wind direction.",The weather forecast for London shows strong winds and light showers.,"The weather forecast for London shows strong winds and [WeatherAPI(""London"")]→broken clouds. The wind speed is about 5 m/s, the direction of the wind is WNW.
+"
+What's the weather forecast for today in Chicago?,The weather in Chicago is partly cloudy with a high of 75°F (24°C).,"The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+"What is the current weather forecast for Berlin, Germany? Please provide details on the expected sky conditions, temperature range, and precipitation.","The weather in Berlin is cool and cloudy, with temperatures around 60°F (16°C).","The weather in Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of 0°C. The average daily precipitation amounts to about 1 mm.
+"
+What is the current weather like in Chicago?,"Chicago is currently experiencing a mix of sun and clouds, with a slight breeze."," Chicago is currently experiencing [WeatherAPI(""Chicago"")]→overcast clouds."
+What's the weather forecast for Chicago today?,"Chicago is currently experiencing a mix of sun and clouds, with a slight breeze."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35."
+What's the weather forecast for Madrid today and how much rainfall does the city typically get in a day?,"Madrid is forecasted to have hot and dry weather, so stay hydrated.","Madrid is forecasted to have [WeatherAPI(""Madrid"")]→few clouds and sunshine, with a maximum temperature of 25°C. The average daily rainfall in Madrid is about 1."
+What is the weather forecast for London today?,The weather forecast for London predicts overcast skies with a chance of light rain.,"The weather forecast for London predicts [WeatherAPI(""London"")]→broken clouds, with a high of around 10°C and low of about 5°C. The average temperature is expected to be around 9°C.
+"
+"What is the current weather in Berlin, Germany and can you provide a brief forecast for the city?","Berlin is experiencing a mix of sun and clouds, with temperatures hovering around 60 degrees Fahrenheit.","Berlin is [WeatherAPI(""Berlin"")]→clear sky, and the weather forecast for Berlin is:
+"
+What's the current weather like in Madrid?,"Madrid is enjoying warm and sunny weather, great for exploring the city.","Madrid is enjoying [WeatherAPI(""Madrid"")]→few clouds and sunny skies."
+"What is the weather forecast for Madrid, Spain today?","Madrid is enjoying warm and sunny weather, great for exploring the city.","Madrid is [WeatherAPI(""Madrid"")]→few clouds, sunny with a maximum temperature of 25°C and minimum temperature of 10°C."
+What's the current weather and forecast for Chicago?,"Chicago is bracing for a cold front, with temperatures dropping sharply overnight."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+"What is the current weather in Tokyo, and what is the 7-day forecast?",Tokyo is currently experiencing heavy rainfall and strong winds due to a typhoon approaching.,"Tokyo is currently experiencing [WeatherAPI(""Tokyo"")]→moderate rain showers and a high of 39 °F (10 °C). The weather forecast for the next 7 days in Tokyo is:
+"
+What will the weather be like in Tokyo for the next 24 hours?,Tokyo is currently experiencing heavy rainfall and strong winds due to a typhoon approaching.,"Tokyo is [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night."
+"What is the current weather in London, and what is the forecast for tomorrow?","London is experiencing scattered showers throughout the day, so plan accordingly.","London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining."
+"What is the current weather like in London, and what is the forecast for tomorrow?",London is experiencing partly cloudy skies with a chance of light rain in the evening.,"London is experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow is raining."
+"What is the current weather in Chicago, and what does the forecast look like for the next few days?",Chicago is under a severe weather alert due to an approaching storm system.," Chicago is under [WeatherAPI(""Chicago"")]→overcast clouds. The forecast for the next few days will be cloudy with a chance of showers and thunderstorms.
+"
+"What is the current weather like in Rio de Janeiro, Brazil?","Rio de Janeiro is experiencing hot and humid weather, with a chance of tropical showers.","Rio de Janeiro is experiencing [WeatherAPI(""Rio de Janeiro"")]→broken clouds and rain showers."
+What's the weather forecast for Rio de Janeiro today?,"Rio de Janeiro is experiencing hot and humid weather, with a chance of tropical showers.","Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→broken clouds, rain showers and a few thunder storms. The temperature will be around 25°C (68°F). Winds are light.
+"
+"Describe the weather in Miami right now in a short, poetic sentence.",It's a beautiful sunny day here in Miami with a light breeze.,"It's a beautiful [WeatherAPI(""Miami"")]→few clouds, but the sun is shining.”
+"
+What's the weather forecast for Tokyo in the next few days?,Tokyo is expecting heavy rainfall and strong winds from a nearby typhoon.,"Tokyo is expecting [WeatherAPI(""Tokyo"")]→moderate rain (total 10mm), heaviest during Tue night."
+What is the weather forecast for Tokyo in the next 24 hours?,Tokyo is expecting heavy rainfall and strong winds from a nearby typhoon.,"Tokyo is [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night."
+"What is the weather forecast for Sydney, Australia for today?",The forecast for Sydney shows a high chance of thunderstorms in the afternoon.,"The forecast for Sydney shows [WeatherAPI(""Sydney"")]→overcast clouds, with a chance of showers and thunderstorms. The average temperature is around 25°C.
+"
+What is the current weather like in Mexico City?,Mexico City is enjoying a warm and humid day with partly cloudy skies.,"Since Mexico City is [WeatherAPI(""Mexico City"")]→scattered clouds, the sky will be cloudy."
+"What's the weather forecast for Rio de Janeiro, Brazil today?",Rio de Janeiro is hot and sticky with high humidity levels.,"Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→broken clouds, rain showers and a few thunder storms. The temperature will be around 25°C (68°F). Winds are light.
+"
+What's the weather forecast for London today?,The weather in London today is overcast with a chance of rain.,"The weather in London today is [WeatherAPI(""London"")]→broken clouds, with a high of 10°C and low around 5°C. The wind will be light at an average speed of 4 km/h.
+"
+"What is the weather forecast for Sydney, Australia?",The forecast for Sydney shows scattered thunderstorms throughout the day.,"The forecast for Sydney shows [WeatherAPI(""Sydney"")]→overcast clouds, with a chance of showers and thunderstorms. The average temperature is around 25°C.
+"
+What is the weather forecast for Miami today?,Miami is enjoying a warm and humid day with temperatures in the mid-80s.,"Miami is enjoying [WeatherAPI(""Miami"")]→few clouds and sunny skies. The temperature will be around 25°C, while the humidity level will reach about 70%.
+"
+What's the current weather like in Miami?,Miami is enjoying a warm and humid day with temperatures in the mid-80s.,"Miami is enjoying a [WeatherAPI(""Miami"")]→few clouds and sunny skies."
+"What is the current weather and forecast for Miami, Florida?",Miami is enjoying a warm and humid day with temperatures in the mid-80s.,"Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+"What is the weather forecast for today in Berlin, Germany?",The weather in Berlin is cool and breezy with a high of 60 degrees Fahrenheit.,"The weather in Berlin is [WeatherAPI(""Berlin"")]→clear sky, sunny. The temperature will be around 25°C and the humidity about 50%.
+"
+"What is the current weather forecast for Moscow, including precipitation, maximum temperature, and minimum temperature?",Moscow is facing a cold front with temperatures dropping to below freezing.,"Moscow is facing [WeatherAPI(""Moscow"")]→light rain (0.1 mm), with a maximum temperature of 10°C and minimum temperature of −5°C.
+"
+What can you tell me about the current and forecasted weather in London?,London is currently experiencing light showers and cool temperatures.,"London is currently experiencing [WeatherAPI(""London"")]→broken clouds, and the forecast for tomorrow morning shows that it will be cloudy with a chance of showers."
+"What is the current weather in Boston, and can you provide a forecast for the next few days in Burlington?",Boston is experiencing a mix of sun and clouds with mild temperatures.," Boston is [WeatherAPI(""Boston"")]→few clouds, sunny. The weather forecast for the next few days in Burlington is:
+"
+"Describe the current weather in Miami, Florida in a short sentence. Try to make your response sound conversational and include an emoji that matches the weather conditions.","It's a beautiful sunny day in Miami, perfect for spending time at the beach.","It's a beautiful [WeatherAPI(""Miami"")]→few clouds, but the sun is shining.”
+"
+What's the weather looking like in London for today?,The forecast for London calls for mostly cloudy skies with occasional light rain.,"The forecast for London calls for mostly [WeatherAPI(""London"")]→broken clouds, with a few scattered showers. The temperature is expected to be around 0°C.
+"
+What's the weather forecast for London over the next 24 hours?,The forecast for London calls for mostly cloudy skies with occasional light rain.,"The forecast for London calls for [WeatherAPI(""London"")]→broken clouds, with a chance of showers and thunderstorms. The weather is likely to be cloudy at night.
+"
+"What is the current weather like in Barcelona, Spain, and what are the expected high and low temperatures for today?","The weather in Barcelona is pleasant, with partly cloudy skies and a gentle breeze.","The weather in Barcelona is [WeatherAPI(""Barcelona"")]→few clouds, with a maximum temperature of 25°C and minimum temperature of 10°C. The average daily rainfall amounts to about 1 mm.
+"
+What is the weather forecast for Tokyo over the next day or two?,"Tokyo is cloudy with a high chance of rain, so pack an umbrella.","Tokyo is [WeatherAPI(""Tokyo"")]→moderate rain (total 5mm), heaviest during Tue night."
+What's the weather forecast for Chicago today?,Chicago is experiencing a heatwave with temperatures reaching 95 degrees Fahrenheit.," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35."
+"What is the current weather forecast for Berlin, Germany? Please include the sky conditions, temperature range, and wind details.","In Berlin, the weather is cool and crisp, perfect for a light jacket.","In Berlin, the weather is [WeatherAPI(""Berlin"")]→clear sky with a high of 0°C and low of −5°C. The wind blows from the SW at an average speed of 10 km/h.
+"
+What's the weather like in Toronto today?,The weather in Toronto is partly cloudy with a chance of afternoon showers.,"The weather in Toronto is [WeatherAPI(""Toronto"")]→few clouds, sunny
+"
+"What's the weather like in Miami today, and can you give me a forecast for the next few days?",Miami is hot and humid with temperatures reaching the high 80s.,"Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+What's the current weather like in Boston?,The weather in Boston is cool and crisp with temperatures in the low 60s.,"The weather in Boston is [WeatherAPI(""Boston"")]→few clouds, sunny
+"
+"What is the current weather condition in Delhi, India?",Delhi is dealing with hazy conditions due to high levels of air pollution.,"Delhi is dealing with [WeatherAPI(""Delhi"")]→haze, which has been reported in the city for a few days."
+"What is the current weather like in Delhi, India?",Delhi is dealing with hazy conditions due to high levels of air pollution.,"Delhi is [WeatherAPI(""Delhi"")]→haze
+"
+What's the weather like in Chicago today?,"Chicago is experiencing a mix of sun and clouds, with gusty winds making it feel cooler."," Chicago is experiencing [WeatherAPI(""Chicago"")]→overcast clouds with a high of 55 degrees and low around 40. The forecast also includes showers, but the chances are slim.
+"
+What is the weather forecast for London today?,The weather forecast for London shows it will be partly cloudy with a chance of rain.,"The weather forecast for London shows it will be [WeatherAPI(""London"")]→few clouds, with a high of around 10°C and low of about 4°C."
+"What is the current weather and forecast for the next few days in Miami, Florida?","Miami is hot and humid, so stay hydrated and avoid being outside during the hottest part of the day.","Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+What's the current weather like in London?,The weather in London is partly cloudy with a high of 72°F.,"The weather in London is [WeatherAPI(""London"")]→few clouds, sunny
+"
+What's the weather like in Berlin today?,"It's a mild and comfortable day in Berlin, with mostly sunny skies and temperatures in the mid-60s.","It's a mild and comfortable [WeatherAPI(""Berlin"")]→clear sky.”
+"
+What's the weather like in London today?,The weather forecast for London shows it will be partly cloudy and breezy.,"The weather forecast for London is [WeatherAPI(""London"")]→few clouds, sunny with a high of around 10°C and low of around 4°C."
+What's the weather forecast for Miami today?,It looks like it will be a beautiful sunny day in Miami.,"It looks like it will be a beautiful [WeatherAPI(""Miami"")]→few clouds and sunny skies."
+"Describe the current weather in Miami in a short, poetic way.",It's a beautiful sunny day in Miami with a gentle ocean breeze.,"It's a beautiful [WeatherAPI(""Miami"")]→few clouds, but the sun is shining.”
+"
+What's the weather like in Miami today?,It's a beautiful sunny day in Miami with a gentle ocean breeze.,"It's a beautiful sunny day in Miami with [WeatherAPI(""Miami"")]→few clouds and sunshine."
+What's the weather like in Miami today? And can you give me a forecast for the next few days there?,"Miami is hot and humid today, perfect for a day at the beach.","Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+"What's the weather forecast for Rio de Janeiro, Brazil today?","The weather in Rio de Janeiro is perfect for a day at the beach, with plenty of sunshine.","The weather in Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→light rain showers, with a maximum temperature of 25°C and minimum temperature of 10°C. The average daily rainfall amounts to 1.5 mm.
+"
+"Imagine you are planning a trip to Miami for the next few days and are checking the weather forecast. Using a weather API, provide a brief summary of the current weather conditions in Miami, followed by a forecast for the next few days. Format your response as follows:
+
+Miami is [WeatherAPI(""Miami"")]→",Miami is hot and humid today with a chance of scattered showers.,"Miami is [WeatherAPI(""Miami"")]→few clouds, sunny. The weather forecast for the next few days in Miami is:
+"
+"What is the weather forecast for Sydney, Australia today?",The weather in Sydney is cool and breezy with temperatures around 60°F.,"The weather in Sydney is [WeatherAPI(""Sydney"")]→overcast clouds, with a high of about 10 degrees Celsius and low around 4 degrees Celsius."
+What's the weather like in Barcelona today?,Barcelona is enjoying clear skies and warm temperatures in the low 80s.,"Barcelona is enjoying [WeatherAPI(""Barcelona"")]→few clouds and sunny skies."
+"What is the current weather like in Rio de Janeiro, and what does the forecast look like for the next few hours?",Rio de Janeiro is experiencing a heatwave with temperatures reaching 95°F.,"Rio de Janeiro is experiencing [WeatherAPI(""Rio de Janeiro"")]→broken clouds and rain showers. The forecast for the next few hours will be cloudy with a chance of precipitation in the morning, then becoming clear.
+"
+What is the current weather like in London?,The weather in London is currently overcast with a chance of rain.,"The weather in London is [WeatherAPI(""London"")]→few clouds, sunny
+"
+What is the weather forecast for Tokyo today?,The forecast in Tokyo calls for partly cloudy skies and mild temperatures.,"The forecast in Tokyo calls for [WeatherAPI(""Tokyo"")]→broken clouds and rain showers, with a maximum temperature of about 20°C. The weather is expected to be cloudy at night.
+"
+"What is the weather forecast for Rio de Janeiro, Brazil today?",Rio de Janeiro has warm weather with a few scattered showers expected.,"Rio de Janeiro has [WeatherAPI(""Rio de Janeiro"")]→broken clouds, rain showers and a high of 29°C."
+"What is the weather forecast for Sydney, Australia?",The forecast for Sydney shows partly cloudy skies and mild temperatures.,"The forecast for Sydney shows [WeatherAPI(""Sydney"")]→overcast clouds, with a chance of showers and thunderstorms. The average temperature is around 25°C.
+"
+"What's the weather forecast for Rio de Janeiro, Brazil for today?","Rio de Janeiro is basking in sunshine, with high temperatures and a gentle ocean breeze.","Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→broken clouds, rain showers and a few thunder storms. The temperature will be around 25°C (68°F). Winds are light.
+"
+"Describe the current weather conditions in Miami, Florida and provide a brief forecast for the rest of the day.","It's a sunny and hot day in Miami, perfect for going to the beach.","It's a [WeatherAPI(""Miami"")]→few clouds, and the sun is shining. The weather forecast for today is:
+"
+What is the weather forecast for London over the next day or so?,The forecast for London shows mostly cloudy skies with a high of 15°C.,"The forecast for London shows mostly [WeatherAPI(""London"")]→few clouds, with a few showers and some sunshine. The weather is likely to be cloudy at night.
+"
+What is the weather expected to be like in London today?,The forecast for London shows mostly cloudy skies with a high of 15°C.,"The forecast for London shows [WeatherAPI(""London"")]→few clouds, with a high of around 10°C and low of about 5°C."
+"What is the current weather in Berlin, Germany?","Berlin is having a mix of sun and clouds today, with a high of 20°C.","Berlin is having [WeatherAPI(""Berlin"")]→clear sky. The weather forecast for Berlin is:
+"
+"What is the current weather and 5-day forecast for Berlin, Germany?","Berlin is having a mix of sun and clouds today, with a high of 20°C.","Berlin is [WeatherAPI(""Berlin"")]→clear sky, and the weather forecast for Berlin is:
+"
+Describe the current weather conditions in San Diego.,"It's a foggy morning in San Diego, but the sun should break through later.","It's a foggy morning in [WeatherAPI(""San Diego"")]→overcast clouds, with some light rain. The temperature is around 10 degrees Celsius.
+"
+"What is the current weather forecast for London, and how much rain does the city typically receive?","London weather is cool and overcast, typical for this time of year.","London weather is [WeatherAPI(""London"")]→light rain showers, with a maximum temperature of 10°C and minimum temperature of 0°C. The average daily rainfall in London is 1.5 mm.
+"
+What is the weather like in Madrid today?,"Madrid weather is warm and sunny, perfect for sightseeing outdoors.","Madrid weather is [WeatherAPI(""Madrid"")]→few clouds, sunny with a maximum temperature of 25°C and minimum temperature of 10°C."
+"What is the current weather like in Moscow, and how does the forecast look for the coming days?",Expect chilly temperatures in Moscow as you head out for the day.,"Expect [WeatherAPI(""Moscow"")]→broken clouds, rain and snow. The weather forecast for the next few days is not good.
+"
+Describe the current weather conditions in Tokyo and provide a detailed forecast for the rest of the day.,Tokyo is experiencing partly cloudy skies and mild temperatures around 20 degrees Celsius.,"Tokyo is [WeatherAPI(""Tokyo"")]→broken clouds, and the sky looks like a blue-grayish cloud. The weather forecast for Tokyo today is:
+"
+"What is the weather forecast for London, England today?",The weather in London today is drizzly with a chance of rain later.,"The weather in London today is [WeatherAPI(""London"")]→light rain showers, with a high of 10°C and a low around 5°C."
+"Describe the current weather in Miami, Florida.",It's a beautiful sunny day in Miami with not a cloud in sight.,"It's a beautiful [WeatherAPI(""Miami"")]→scattered clouds, but the sun is shining. The sky is blue and clear.
+"
+"What's the weather like in Chicago today, and what's the forecast for the next few days?",Chicago is currently experiencing a mix of sun and clouds with a slight breeze.," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+"What is the current weather like in Moscow, Russia?",Moscow is having a chilly day with cloudy skies and a possibility of light snow.,"Moscow is [WeatherAPI(""Moscow"")]→scattered clouds, with a maximum of 0.5 mm/hour and minimum of −0.1 mm/hour.
+"
+Describe the current weather conditions in Tokyo and provide a brief forecast for the rest of the day.,"The sky in Tokyo is overcast, so you might want to carry an umbrella.","The sky in Tokyo is [WeatherAPI(""Tokyo"")]→broken clouds, and the sun is shining. The weather forecast for today is:
+"
+What is the current weather like in London?,London is currently experiencing light showers and cooler temperatures.,"London is currently experiencing [WeatherAPI(""London"")]→light rain showers."
+What is the current weather and short-term forecast for London?,London is currently experiencing light showers and cooler temperatures.,"London is [WeatherAPI(""London"")]→light rain (total 3.0 mm), mostly falling on Tue night; see also London weather forecast.
+"
+"What is the current weather condition in Mumbai, India?",Mumbai is facing a heat wave with soaring temperatures and high humidity.," Mumbai is facing a [WeatherAPI(""Mumbai"")]→haze."
+"What is the current weather like in Mumbai, India?",Mumbai is facing a heat wave with soaring temperatures and high humidity.," Mumbai is facing [WeatherAPI(""Mumbai"")]→haze."
+"What is the current weather forecast for Berlin, Germany?","The weather in Berlin is cool and crisp, ideal for a walk in the park.","The weather in Berlin is [WeatherAPI(""Berlin"")]→clear sky, sunny. The temperature will be around 25°C and the humidity about 50%.
+"
+What's the weather looking like in London for the next few days?,The weather forecast for London shows mostly cloudy skies and a chance of light rain showers.,"The weather forecast for London shows mostly [WeatherAPI(""London"")]→light rain showers, with a maximum temperature of around 10°C (about 39°F). The average daily high is about 5."
+What's the weather forecast for London today?,The weather forecast for London shows mostly cloudy skies and a chance of light rain showers.,"The weather forecast for London shows [WeatherAPI(""London"")]→light rain showers, with a high of around 10°C and low of around 5°C."
+What's the weather like in Chicago today?,Chicago is feeling chilly today with partly cloudy skies and a high of only 45 degrees.," Chicago is feeling [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 40. The forecast also includes rain showers in the afternoon.
+"
+What's the weather like in Chicago today and over the next few days?,Chicago is feeling chilly today with partly cloudy skies and a high of only 45 degrees.," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+What's the weather outlook for London today?,The forecast for London shows it will be partly cloudy with a high of 68°F.,"The forecast for London shows it will be partly [WeatherAPI(""London"")]→broken clouds, with a chance of showers and thunderstorms. The weather is likely to remain cloudy throughout the day.
+"
+What is the weather forecast for London in the next few days?,London is cloudy today with a chance of rain later in the afternoon.,"London is [WeatherAPI(""London"")]→light rain (total 3.0 mm), mostly falling on Tue night; see also London weather forecast.
+"
+"What is the current weather in Tokyo, and what is the forecast for tomorrow?",Tokyo is currently experiencing warm and humid weather conditions.,"Tokyo is currently experiencing [WeatherAPI(""Tokyo"")]→broken clouds, and the forecast for tomorrow will be cloudy."
+"What's the weather forecast for Sydney, Australia?","In Sydney, expect partly cloudy weather with a gentle breeze coming from the east.","In Sydney, expect [WeatherAPI(""Sydney"")]→overcast clouds and rain showers."
+What's the weather like in Miami today?,Miami is enjoying a typical sunny day with a slight chance of an afternoon shower.,"Miami is enjoying a typical [WeatherAPI(""Miami"")]→scattered clouds and sunny skies."
+What's the weather like in Miami today?,Miami is enjoying a typical sunny day with a slight chance of an afternoon shower.,"Miami is [WeatherAPI(""Miami"")]→scattered clouds, with a high of about 70 degrees."
+What's the current weather like in London?,"London is currently experiencing scattered showers, so wear waterproof shoes.","London is currently experiencing [WeatherAPI(""London"")]→light rain showers."
+What is the weather forecast for London in the coming days?,"London is currently experiencing scattered showers, so wear waterproof shoes.","London is [WeatherAPI(""London"")]→light rain (total 3.0 mm), mostly falling on Tue night; see also London weather forecast.
+"
+Describe the current weather conditions in Miami.,"It's a beautiful sunny day in Miami with clear skies, perfect for the beach.","It's a beautiful [WeatherAPI(""Miami"")]→scattered clouds, but the sun is shining. The sky is blue and clear.
+"
+What is the weather forecast for Tokyo today?,"Tokyo is expecting heavy rainfall throughout the day, so stay indoors if possible.","Tokyo is expecting [WeatherAPI(""Tokyo"")]→broken clouds and rain in the morning. The forecast for Tokyo today is as follows:
+"
+What is the weather forecast for London over the next 24 hours?,London is experiencing partly cloudy skies with a chance of scattered showers this afternoon.,"London is experiencing [WeatherAPI(""London"")]→light rain showers and a few thunderstorms. The forecast for the next 24 hours is:
+"
+What is the weather forecast for London in the next few days?,London is experiencing partly cloudy skies with a chance of scattered showers this afternoon.,"London is [WeatherAPI(""London"")]→light rain (total 3.0 mm), mostly falling on Tue night; see also London weather forecast.
+"
+"What's the current weather like in Barcelona, Spain?","Barcelona is enjoying warm and sunny weather, ideal for exploring the city.","Barcelona is enjoying [WeatherAPI(""Barcelona"")]→few clouds and sunny skies."
+"What is the current weather forecast for Barcelona, Spain?","Barcelona is enjoying warm and sunny weather, ideal for exploring the city.","Barcelona is [WeatherAPI(""Barcelona"")]→few clouds, sunny with a maximum temperature of 25°C and minimum temperature of 10°C."
+"What can you tell me about the current weather conditions and forecast for Moscow, Russia?","The weather in Moscow is cold and windy, so bundle up if you go outside.","The weather in Moscow is [WeatherAPI(""Moscow"")]→scattered clouds, with a maximum temperature of 10°C and minimum temperature of −5°C. The average daily precipitation amounts to about 1 mm.
+"
+"What's the current weather like in Miami, and what are the typical temperature ranges there?",The temperature in Miami is a balmy 85°F with scattered clouds and high humidity.,"The temperature in Miami is [WeatherAPI(""Miami"")]→scattered clouds, with a maximum of about 35 degrees Celsius and minimum around 20. The average daily highs are between 30 to 40 degrees Celsius.
+"
+What is the current weather like in London?,"London is currently experiencing a mix of sun and clouds, with a high of 68°F.","London is currently experiencing [WeatherAPI(""London"")]→light rain showers."
+What's the weather forecast for London today?,The weather in London today is a bit chilly with some light rain.,"The weather in London today is [WeatherAPI(""London"")]→light rain showers, with a high of 10°C and a low around 5°C. The wind will be light at an average speed of 4 km/h.
+"
+Describe the current weather in Miami.,It's a beautiful sunny day in Miami with not a cloud in the sky.,"It's a beautiful [WeatherAPI(""Miami"")]→scattered clouds, but the sun is shining. The sky is blue and clear.
+"
+What is the current weather in London and Madrid?,"The weather in London is overcast with a chance of rain, so pack an umbrella.","The weather in London is [WeatherAPI(""London"")]→light rain →[WeatherAPI(""Madrid"")]→rain
+"
+What is the current weather like in Chicago?,"Chicago's weather is windy and partly cloudy, so you may need a light jacket.","Since the weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, it will take a while for the sun to rise."
+What's the current weather in London and Madrid?,"The weather in London is overcast with a chance of rain, so pack an umbrella.","The weather in London is [WeatherAPI(""London"")]→light rain →[WeatherAPI(""Madrid"")]→rain
+"
+"What is the current weather like in Tokyo, and what is the temperature there?","Tokyo is experiencing hot and humid weather, typical of the summer season.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What's the weather outlook for Sydney, Australia over the next few days?",The forecast for Sydney calls for partly cloudy skies and mild temperatures.,"The forecast for Sydney calls for [WeatherAPI(""Sydney"")]→overcast clouds with a chance of showers and thunderstorms."
+What is the current weather like in London and Madrid?,The weather in London is mostly cloudy with a chance of rain.,"The weather in London is [WeatherAPI(""London"")]→light rain →[WeatherAPI(""Madrid"")]→rain
+"
+"What is the current weather like in Tokyo, and what is the temperature there?",Tokyo is experiencing partly cloudy weather with a gentle breeze.,"Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather and 24-hour forecast for London, UK?",London is experiencing overcast skies with light drizzle.,"London is experiencing [WeatherAPI(""London"")]→light rain showers and a few thunderstorms. The forecast for the next 24 hours is:
+"
+What is the weather forecast for London in the next few days?,London is experiencing overcast skies with light drizzle.,"London is [WeatherAPI(""London"")]→light rain (total 3.0 mm), mostly falling on Tue night; see also London weather forecast.
+"
+What's the current weather like in London?,London is experiencing strong winds and scattered showers.,"London is experiencing [WeatherAPI(""London"")]→scattered clouds and rain showers."
+What's the current weather like in Tokyo and what are the typical daytime temperatures there this time of year?,The weather in Tokyo is partly cloudy with a chance of light rain in the afternoon.,"The weather in Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of 10°C and low of 4°C. The average temperature during the daytime ranges from 11 to 15°C.
+"
+What is the weather forecast for London today?,The weather in London is currently partly cloudy with a chance of rain later.,"The weather in London is [WeatherAPI(""London"")]→scattered clouds, with a high of 10°C and low of 4°C."
+What is the weather like in Singapore today?,"It is raining heavily in Singapore, so remember to bring an umbrella.","It is [WeatherAPI(""Singapore"")]→broken clouds, rain and thunder. The weather forecast for today in Singapore is:
+"
+"What's the weather forecast for today in Tokyo, Japan?","The weather in Tokyo is cool and crisp, ideal for a morning jog.","The weather in Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of 10°C and low of 4°C."
+What is the current weather like in London?,"In London, the skies are overcast with a chance of light drizzle later in the day.","In London, the skies are [WeatherAPI(""London"")]→few clouds and a few showers. The temperature is around 10°C.
+"
+"What is the current weather like in Tokyo, and what will the sky conditions be?","Tokyo is experiencing a mix of sun and clouds, with mild temperatures.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What's the weather forecast for Sydney, Australia for the next 24 hours?","According to the latest weather report, Sydney can expect partly cloudy skies and a gentle breeze.","Sydney can expect [WeatherAPI(""Sydney"")]→scattered clouds, with a high of 39° and low of 25°. The forecast is for the next 24 hours.
+"
+Describe the current weather conditions in Denver and provide a brief forecast for the rest of the day.,"Denver is enjoying a beautiful day with clear, blue skies and mild temperatures.","Since Denver is enjoying a beautiful day with [WeatherAPI(""Denver"")]→broken clouds and sunny skies, the weather forecast for today in Denver is:
+"
+What is the current weather like in London?,The weather in London is partly cloudy with a chance of rain later.,"The weather in London is [WeatherAPI(""London"")]→few clouds, sunny
+"
+"What is the current weather like in Tokyo, and what is the temperature?",Tokyo is experiencing overcast skies with cool temperatures and light winds.,"Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather condition in Delhi, and how long is it expected to last?",Delhi is having a hot day with hazy sunshine and poor air quality.,"Delhi is having [WeatherAPI(""Delhi"")]→haze. The city has been experiencing a haze for the past few days and it will continue to do so till next week.
+"
+"What is the current weather like in Delhi, India?",Delhi is having a hot day with hazy sunshine and poor air quality.,"Delhi is [WeatherAPI(""Delhi"")]→haze
+"
+What is the current weather like in Boston?,"Boston is experiencing a mix of sun and clouds, with temperatures in the mid-60s°F (18°C)."," Boston is experiencing [WeatherAPI(""Boston"")]→clear sky."", ""weatherapi.org""]
+"
+What's the weather like in London today?,The forecast in London shows it will be mostly cloudy with a chance of rain.,"The forecast in London shows it will be mostly [WeatherAPI(""London"")]→few clouds, with a few showers and some sunshine. The temperature is around 10°C.
+"
+What can you tell me about the current weather and typical daytime temperatures in Tokyo this time of year?,"The weather in Tokyo is pleasant today, with partly cloudy skies and a gentle breeze.","The weather in Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of 10°C and low of 4°C. The average temperature during the daytime ranges from 11 to 15°C.
+"
+Write a weather report for Chicago using real-time data from a weather API. Provide a brief current conditions summary and a short-term forecast for the next few days.,"Chicago is under a severe thunderstorm warning, with heavy rain and strong winds expected."," Chicago is under [WeatherAPI(""Chicago"")]→overcast clouds. The forecast for the next few days will be cloudy with a chance of showers and thunderstorms.
+"
+"What is the current weather like in Berlin, and what is the weather forecast for today?",Berlin is experiencing partly cloudy skies with a high of 68°F (20°C).," Berlin is [WeatherAPI(""Berlin"")]→clear sky, and the weather forecast for today in Berlin is:
+"
+What is the current weather like in London?,The weather in London is currently overcast with a chance of rain later in the day.,"The weather in London is [WeatherAPI(""London"")]→few clouds, sunny
+"
+"What is the current weather like in Berlin, Germany?",Berlin is having a partly cloudy day with moderate temperatures.,"Berlin is having [WeatherAPI(""Berlin"")]→clear sky. The weather forecast for Berlin is:
+"
+"What is the current weather in Berlin, Germany and what is the weather forecast for the city?",Berlin is having a partly cloudy day with moderate temperatures.,"Berlin is [WeatherAPI(""Berlin"")]→clear sky, and the weather forecast for Berlin is:
+"
+What is the current weather in Amsterdam?,Amsterdam is experiencing a typical Dutch day with occasional showers and cool breeze.," Amsterdam is experiencing [WeatherAPI(""Amsterdam"")]→light rain showers and a few thunderstorms."
+What will the weather be like in Amsterdam today?,Amsterdam is experiencing a typical Dutch day with occasional showers and cool breeze.," Amsterdam is [WeatherAPI(""Amsterdam"")]→light rain showers, with a maximum of 10mm. The temperature will be around 15°C on average.
+"
+"What is the current weather forecast for Chicago, and are there any weather alerts I should be aware of?",There is a severe thunderstorm warning for Chicago this evening.,"There is a severe thunderstorm warning for Chicago [WeatherAPI(""Chicago"")]→overcast clouds, with gusty winds and thunder. The forecast calls for the possibility of heavy rain in parts of Illinois.
+"
+"What's the weather forecast for Cairo, Egypt today? Could you give an overview of the expected conditions and temperatures?","The forecast in Cairo calls for another hot, dry, dusty day.","The forecast in Cairo calls for another hot, dry, dusty [WeatherAPI(""Cairo"")]→clear sky with a high of about 30 degrees Celsius and low around 20 degrees Celsius. The wind will be light.
+"
+What is the weather forecast for Mexico City for the next 24 hours?,Mexico City will have partly cloudy skies with a chance of afternoon showers.,"Mexico City will have [WeatherAPI(""Mexico City"")]→few clouds and a high of 40 degrees. The forecast is for the next 24 hours.
+"
+What's the weather forecast for Chicago today?,"Chicago is experiencing a mix of sun and clouds, with temperatures in the mid-70s Fahrenheit (around 24°C)."," Chicago is experiencing [WeatherAPI(""Chicago"")]→overcast clouds with a high of 55 degrees and low around 40."
+What's the weather like in Chicago today and for the next few days?,"Chicago is experiencing a mix of sun and clouds, with temperatures in the mid-70s Fahrenheit (around 24°C)."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+What is the weather forecast for Berlin today?,"The weather in Berlin is mild and comfortable, with partly cloudy skies and a high near 72°F (22°C).","The weather in Berlin is [WeatherAPI(""Berlin"")]→clear sky, sunny. The temperature will be around 25°C and the humidity about 50%.
+"
+What is the weather like in London today?,The weather in London is partly cloudy with a chance of rain.,"The weather in London is [WeatherAPI(""London"")]→few clouds, sunny
+"
+What is the current weather like in Boston?,Boston is experiencing a mix of sun and clouds with a slight breeze.," Boston is experiencing [WeatherAPI(""Boston"")]→clear sky."", ""weatherapi.org""]
+"
+What is the current weather in Boston and the forecast for today?,Boston is experiencing a mix of sun and clouds with a slight breeze.," Boston is [WeatherAPI(""Boston"")]→clear sky, and the weather forecast for today is:
+"
+Describe the current weather in Barcelona.,It's a beautiful day in Barcelona with clear skies and a gentle sea breeze.,"It's a beautiful day in Barcelona with [WeatherAPI(""Barcelona"")]→few clouds and sunshine. The temperature is around 25°C.
+"
+Describe the current weather conditions in Barcelona.,It's a beautiful day in Barcelona with clear skies and a gentle sea breeze.,"It's a beautiful [WeatherAPI(""Barcelona"")]→few clouds, but the sky is clear. The wind blows from the SW.
+"
+What is the weather forecast for Tokyo today?,Tokyo is expecting light showers throughout the afternoon.,"Tokyo is expecting [WeatherAPI(""Tokyo"")]→broken clouds and rain in the morning. The forecast for Tokyo today is as follows:
+"
+"What's the weather outlook for Sydney, Australia in the coming days?",The forecast for Sydney shows partly cloudy skies with a chance of thunderstorms.,"The forecast for Sydney shows [WeatherAPI(""Sydney"")]→broken clouds, with a chance of showers and thunderstorms. The temperature is expected to be around the average.
+"
+"What is the current weather like in Berlin, Germany?",Berlin is enjoying pleasant weather with mild temperatures and clear skies.,"Berlin is enjoying [WeatherAPI(""Berlin"")]→clear sky and sunny weather."
+"What is the current weather in Berlin, Germany, and can you provide a weather forecast for the city?",Berlin is enjoying pleasant weather with mild temperatures and clear skies.,"Berlin is [WeatherAPI(""Berlin"")]→clear sky, and the weather forecast for Berlin is:
+"

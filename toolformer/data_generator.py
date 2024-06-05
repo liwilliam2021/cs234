@@ -125,7 +125,8 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
         generated_ids,
         prompt_ids,
         api: BaseAPI,
-        task_prompt = None
+        task_prompt = None,
+        do_DAgger = False,
     ):
         API_NAME = api.name
 
@@ -213,6 +214,13 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                           torch.tensor([self.api_output_token_id]).to(self.device),
                           api_response_ids], dim=0)
                         
+                        if (do_DAgger and "Exception" in api_response):
+                            print (self.tokenizer.decode(modified_generation_ids))
+                            expert_suggestion = input ("Please provide a suggestion for the API response\n")
+                            expert_suggestion_ids = self.tokenizer(expert_suggestion, return_tensors="pt")["input_ids"][0].to(self.device)
+                            candidates.append (expert_suggestion_ids)
+                            break
+
                         # A little messy here
                         if task_prompt:
                             new_prompt_ids = self.tokenizer(task_prompt, return_tensors="pt")["input_ids"][0].to(self.device)

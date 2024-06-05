@@ -1,3 +1,6 @@
 nbdev
 transformers
+torch
+trl
+datasets
 #toolformer  # from this repository, install manually
