@@ -103,7 +103,7 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                     next_token = torch.tensor([self.eos_token_id]).to(self.device)
                 
                 prompt_and_generated_ids = torch.cat([prompt_and_generated_ids, next_token], dim=0)
-                generated_ids = torch.cat([generated_ids, next_token], dim=0)
+                generated_ids = torch.cat([generated_ids, next_token], dim=0).to(self.device)
                 
                 if next_token == self.eos_token_id:
                     break
@@ -111,12 +111,11 @@ input_ids=prompt_and_generated_ids.unsqueeze(0)).logits
                     i += 1
         
         if api_pos_probs.numel() == 0:
-            api_positions = torch.tensor([])
+            api_positions = torch.tensor([]).to(self.device)
         else:
             _, indices = torch.sort(api_pos_probs[:, 0], descending=True)
             top_k_sampling = self.top_k_sampling
             api_positions = api_pos_probs[indices[:top_k_sampling], 1]
-                    
         return api_positions.long(), generated_ids.long()
     
     def generate_api_candidates_and_baselines (

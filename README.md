@@ -3,7 +3,7 @@
 
 ## Alfred
 
-First trying out connecting up to a WeatherAPI and get simple weather related information
+First trying out connecting up to a LocationAPI and get simple weather related information
 
 ### TODO
 
