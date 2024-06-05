@@ -1,0 +1,60 @@
+2024-06-04 13:26:37,340 [DEBUG] [connectionpool _new_conn 1055] Starting new HTTPS connection (1): huggingface.co:443
+2024-06-04 13:26:37,469 [DEBUG] [connectionpool _make_request 549] https://huggingface.co:443 "HEAD /bigscience/bloom-1b1/resolve/main/config.json HTTP/1.1" 200 0
+2024-06-04 13:26:39,014 [DEBUG] [connectionpool _make_request 549] https://huggingface.co:443 "HEAD /bigscience/bloom-1b1/resolve/main/generation_config.json HTTP/1.1" 404 0
+2024-06-04 13:26:39,290 [DEBUG] [connectionpool _make_request 549] https://huggingface.co:443 "HEAD /bigscience/bloom-1b1/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-06-04 13:26:40,443 [DEBUG] [_base_client _build_request 446] Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You will receive many examples of Input, Output pairs that will be given for incontext learning to another model. \n            Generate more examples of inputs. Do not generate any outputs. Do not include the labels Input and Output.\n            Respond with only the examples separated by new lines.'}, {'role': 'user', 'content': 'Input: The weather in New York is clear with a few clouds.\nOutput: The weather in New York is [WeatherAPI("New York")].\n\nInput: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.\nOutput: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.\n\nInput: San Francisco is foggy this morning, so remember to turn on your headlights.\nOutput: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.\n\nInput: Since the weather in Paris is rainy, I will bring a rain jacket. \nOutput: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. \n\nInput: {input}\nOutput:\n'}], 'model': 'gpt-4-turbo'}}
+2024-06-04 13:26:40,447 [DEBUG] [_base_client _request 949] Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-06-04 13:26:40,448 [DEBUG] [_trace trace 45] connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-06-04 13:26:40,484 [DEBUG] [_trace trace 45] connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f207f0ee470>
+2024-06-04 13:26:40,484 [DEBUG] [_trace trace 45] start_tls.started ssl_context=<ssl.SSLContext object at 0x7f21b4b97f40> server_hostname='api.openai.com' timeout=5.0
+2024-06-04 13:26:40,509 [DEBUG] [_trace trace 45] start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7f207f0ee440>
+2024-06-04 13:26:40,509 [DEBUG] [_trace trace 45] send_request_headers.started request=<Request [b'POST']>
+2024-06-04 13:26:40,509 [DEBUG] [_trace trace 45] send_request_headers.complete
+2024-06-04 13:26:40,510 [DEBUG] [_trace trace 45] send_request_body.started request=<Request [b'POST']>
+2024-06-04 13:26:40,510 [DEBUG] [_trace trace 45] send_request_body.complete
+2024-06-04 13:26:40,510 [DEBUG] [_trace trace 45] receive_response_headers.started request=<Request [b'POST']>
+2024-06-04 13:26:47,807 [DEBUG] [_trace trace 45] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 04 Jun 2024 13:26:47 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'openai-organization', b'user-bltcdytu3s0oipfsjhpfl1h6'), (b'openai-processing-ms', b'7041'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'500'), (b'x-ratelimit-limit-tokens', b'30000'), (b'x-ratelimit-remaining-requests', b'499'), (b'x-ratelimit-remaining-tokens', b'29741'), (b'x-ratelimit-reset-requests', b'120ms'), (b'x-ratelimit-reset-tokens', b'518ms'), (b'x-request-id', b'req_52a84226d52a75192d1d1710c6ce6d95'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=Wq8YowL4xvuGXNrTfqmZFmPMvkYA1Q9KTDOn3roITHY-1717507607-1.0.1.1-If3BFGNH1uFOa0qLc10pBiO6LhUgV0u0w.ExgoXkIYCDqXnJCFUaF0HYzN3qULQXLeTsyq6jp1Zef.GDUXiOyA; path=/; expires=Tue, 04-Jun-24 13:56:47 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=Y86Gn4Od71xQiU.HfwtqN0w05irayJK_Ie8ZN05R0.Q-1717507607798-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'88e841874b457561-SEA'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-06-04 13:26:47,809 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-04 13:26:47,809 [DEBUG] [_trace trace 45] receive_response_body.started request=<Request [b'POST']>
+2024-06-04 13:26:47,810 [DEBUG] [_trace trace 45] receive_response_body.complete
+2024-06-04 13:26:47,810 [DEBUG] [_trace trace 45] response_closed.started
+2024-06-04 13:26:47,810 [DEBUG] [_trace trace 45] response_closed.complete
+2024-06-04 13:26:47,810 [DEBUG] [_base_client _request 988] HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Tue, 04 Jun 2024 13:26:47 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('openai-organization', 'user-bltcdytu3s0oipfsjhpfl1h6'), ('openai-processing-ms', '7041'), ('openai-version', '2020-10-01'), ('strict-transport-security', 'max-age=15724800; includeSubDomains'), ('x-ratelimit-limit-requests', '500'), ('x-ratelimit-limit-tokens', '30000'), ('x-ratelimit-remaining-requests', '499'), ('x-ratelimit-remaining-tokens', '29741'), ('x-ratelimit-reset-requests', '120ms'), ('x-ratelimit-reset-tokens', '518ms'), ('x-request-id', 'req_52a84226d52a75192d1d1710c6ce6d95'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=Wq8YowL4xvuGXNrTfqmZFmPMvkYA1Q9KTDOn3roITHY-1717507607-1.0.1.1-If3BFGNH1uFOa0qLc10pBiO6LhUgV0u0w.ExgoXkIYCDqXnJCFUaF0HYzN3qULQXLeTsyq6jp1Zef.GDUXiOyA; path=/; expires=Tue, 04-Jun-24 13:56:47 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('set-cookie', '_cfuvid=Y86Gn4Od71xQiU.HfwtqN0w05irayJK_Ie8ZN05R0.Q-1717507607798-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '88e841874b457561-SEA'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-06-04 13:26:47,810 [DEBUG] [_base_client _request 996] request_id: req_52a84226d52a75192d1d1710c6ce6d95
+2024-06-04 13:26:48,716 [INFO] [data_generator generate 326] Samples API positions:
+2024-06-04 13:26:48,716 [INFO] [data_generator generate 327] tensor([2], device='cuda:0')
+2024-06-04 13:26:48,717 [INFO] [data_generator generate 328] Generated IDs:
+2024-06-04 13:26:48,717 [INFO] [data_generator generate 329] London is [WeatherAPI("London")] today, better wear a warm coat.
+
+
+2024-06-04 13:26:48,717 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-04 13:26:48,718 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: London is [Weather
+2024-06-04 13:26:48,718 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: London is chilly and overcast today, better wear a warm coat.
+Output:
+London is [Weather
+2024-06-04 13:26:49,621 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-04 13:26:49,622 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: London is [WeatherAPI("London")]→
+2024-06-04 13:26:49,776 [INFO] [data_generator generate 335] Candidates:
+2024-06-04 13:26:49,777 [INFO] [data_generator generate 337] London is [WeatherAPI("London")]→[City("Madrid")]
+
+2024-06-04 13:26:49,777 [INFO] [data_generator generate 338] Baselines:
+2024-06-04 13:26:49,777 [INFO] [data_generator generate 340] London is [WeatherAPI("London")] today, better wear a warm coat.
+
+Output from the above example is:
+[WeatherAPI("Madrid"), "Clouds", "Sunny"]

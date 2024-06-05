@@ -183,7 +183,7 @@ ARG SSH_KEY
 # copy ssh key for downloading data
 #RUN --mount=type=secret,id=ssh_key \
 RUN mkdir /root/.ssh && \
-    echo "$SSH_KEY" | sed "s/^'//" | sed "s/'$//" > /root/.ssh/authorized_keys
+    echo "${SSH_KEY:1:-1}" > /root/.ssh/authorized_keys
     #cp /run/secrets/ssh_key /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/authorized_keys
 

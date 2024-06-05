@@ -18,6 +18,7 @@ from transformers.utils import torch_only_method
 
 from .api import BaseAPI
 from .utils import ask_gpt
+from .gpt import *
 
 import logging
 # import os
@@ -84,6 +85,9 @@ class DataGenerator(nn.Module):
         self.model = model.to(device)
         self.tokenizer = tokenizer
         self.device = device
+
+        if len(apis) > 1:
+            raise NotImplementedError("Currently can only work with one api at a time.  Please run generate separately for each api.")
         
         # TODO: handle for cases that the sentence contains ".\n\n"
         self.pad_token_id = tokenizer.pad_token_id
@@ -230,7 +234,7 @@ class DataGenerator(nn.Module):
                             api_response_ids
                         ], dim=0).to(self.device)
                         logging.info("Candidates:")
-                        logging.info(f"modified_generation_ids: {self.tokenizer.decode(modified_generation_ids)}")
+                        logging.info(f"modified_generation_ids: {self.tokenizer.decode(modified_generation_ids.long())}")
 
                         # A little messy here
                         if task_prompt:
@@ -345,4 +349,4 @@ class DataGenerator(nn.Module):
                 ):
                     filtered_candidates_ids.append(api_candidate_ids)
         
-        return filtered_candidates_ids 
+        return filtered_candidates_ids

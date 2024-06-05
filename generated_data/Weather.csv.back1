@@ -1,0 +1,20 @@
+input,text,candidate
+"What is the current weather in Berlin, and how does it compare to the weather in Switzerland?","The sky over Berlin is exceptionally clear today, great for a walk in the park.","The sky over Berlin is [WeatherAPI(""Berlin"")]→[WeatherAPI(""Switzerland"")]
+"
+"What is the current weather in Toronto, and how can this information be related to recent trends in the city’s temperature fluctuations? Include a discussion of average daily maximum and minimum temperatures.","Toronto is currently facing a snowstorm, better dress warmly.","Since the weather in Toronto is [WeatherAPI(""Toronto"")]→[WeatherAPI(""Southern Ontario"")], we can see that the temperature of the city has been increasing. The average daily maximum and minimum temperatures are shown in Figure 5 . It shows that the average daily"
+What is the current weather in Melbourne and Sydney?,The skies in Melbourne are blue and it's the perfect day for a picnic.,"The skies in Melbourne are [WeatherAPI(""Melbourne"")]→[WeatherAPI(""Sydney"")];
+"
+What is the weather forecast for Miami today?,Thunderstorms are forecasted for Miami later in the evening.,"Thunderstorms are forecasted for Miami [WeatherAPI(""Miami"")]→
+"
+"What is the expected weather forecast for Miami in the coming week, and can the API handle the processing of local weather data efficiently?","Miami is expected to have thunderstorms later this afternoon, consider indoor activities.","Miami is expected to have [WeatherAPI(""Miami"")]→[WeatherAPI(""South Florida"")], but the API will not be able to handle this."
+"What is the current weather in Miami, and how does it compare to the broader South Florida region?","Miami is expected to have thunderstorms later this afternoon, consider indoor activities.","Miami is [WeatherAPI(""Miami"")]→[WeatherAPI(""South Florida"")];
+"
+"What is the current weather forecast for Miami, including any changes or updates for the broader South Florida region?","Miami is expected to have thunderstorms later this afternoon, consider indoor activities.","Miami is expected to [WeatherAPI(""Miami"")]→[WeatherAPI(""South Florida"")]. The weather forecast for Miami is:
+"
+What is the current temperature in Moscow and how does it compare to the temperature in Saint Petersburg?,"The temperature in Moscow drops below freezing, ensure proper winter attire is worn.","The temperature in Moscow is [WeatherAPI(""Moscow"")]→[WeatherAPI(""Saint Petersburg"")];
+"
+"What is the reason for needing a weather forecast from Miami to include rainfall details, considering the interchangeable use of Miami and South Florida in weather reporting?","Miami is facing a tropical storm, essential to follow local safety guidelines.","Miami is facing [WeatherAPI(""Miami"")]→[WeatherAPI(""South Florida"")], and the other way around. The reason for this is that in order to get a weather forecast from Miami, you need to know how much rain there will be at any given time"
+"What is the current weather forecast for Miami, and how does it compare to the broader South Florida region?","Miami is facing a tropical storm, essential to follow local safety guidelines.","Miami is facing a [WeatherAPI(""Miami"")]→[WeatherAPI(""South Florida"")] transition. The weather forecast for Miami is:
+"
+What is the weather forecast starting in Chicago and extending through to Southern Illinois for today?,"The weather forecast for Chicago shows strong winds, be careful if you are driving.","The weather forecast for Chicago shows [WeatherAPI(""Chicago"")]→[WeatherAPI(""Midway"")] →[WeatherAPI(""Southern Illinois"")]
+"

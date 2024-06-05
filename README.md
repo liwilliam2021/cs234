@@ -10,6 +10,21 @@ docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dock
 docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dockerfile --build-arg='SERVICE_ACCOUNT=${{ secrets.SERVICE_ACCOUNT }}' --build-arg='SSH_KEY=${{ secrets.SSH_KEY }}' .
 
 docker run -p 22:22 -p 8080:8080 gcr.io/flock-zerobudget/cs234-final:base 
+
+SSH_KEY=$(cat /home/alfred/.ssh/id_rsa); SERVICE_ACCOUNT=$(cat /home/alfred/.keys/flock-zerobudget-5f5733b793c1.json); docker buildx bake -f dockerfile/docker-bake.hcl
+```
+
+```bash
+MODEL=llama3; docker build -t gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL -f dockerfile/ollama.Dockerfile --build-arg="MODEL=
+$MODEL" .; docker push gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL
+
+MODEL=moondream; docker pull gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL; docker run -p 11434:11434 gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL
+```
+
+```bash
+MODEL=moondream; PROMPT='Why is the sky blue?'; echo "${PROMPT}\n\n" > responses/"${MODEL}_$(date +%F_%H-%M-%S).txt"; curl http://localhost:11434/api/generate -d "{\"model\": 
+\"$MODEL\", \"prompt\":\"${PROMPT}\"}" | /mnt/webstorm/ndjson-cli/ndjson-map 'd.response' | /mnt/webstorm/ndjson-cli/ndjson-reduce 'p+=d' >> responses/"${MODEL}_$(date +%F_%H-%M-%S).txt"
+curl http://localhost:11434/api/generate -d '{"model": "llama3", "prompt":"Why is the sky blue?"}' | /mnt/webstorm/ndjson-cli/ndjson-map 'd.response' | /mnt/webstorm/ndjson-cli/ndjson-reduce 'p+=d' > response.txt
 ```
 
 ### TODO

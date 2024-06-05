@@ -11,3 +11,8 @@ langchain
 python-dotenv
 pytest
 jupyterlab
+jupyterlab-git
+trl @ git+https://github.com/huggingface/trl@main
+pyparsing
+tqdm
+#pydot2

@@ -6,7 +6,7 @@
         <entry key="$PROJECT_DIR$/.idea/cs234_final.iml">
           <value>
             <JupyterConnectionParameters>
-              <option name="argv" value="notebook --no-browser --allow-root --autoreload" />
+              <option name="argv" value="lab --no-browser --allow-root --autoreload --ip='*'" />
               <option name="managed" value="true" />
               <option name="sdkName" value="" />
             </JupyterConnectionParameters>

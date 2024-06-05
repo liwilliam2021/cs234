@@ -1,10 +1,10 @@
 model:
-  path: bigscience/bloom-560m
+  path: bigscience/bloom-1b1
   eos_token_id: 50256
   torch_dtype: float16
 
 tokenizer:
-  path: bigscience/bloom-560m
+  path: bigscience/bloom-1b1
 
 dataset:
   path: the_pile

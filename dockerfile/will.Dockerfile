@@ -54,9 +54,10 @@ RUN mkdir -p /mnt/host
 # this whould not invalidate cache for commits on same branch
 # only invalidate cache on branch changes
 RUN cd /mnt/host && \
-    git clone "http://git.diezcansecoramirez.com:3000/alfred/cs234_final" cs234_final && \
+    #git clone "http://git.diezcansecoramirez.com:3000/alfred/cs234_final" cs234_final && \
+    git clone "https://github.com/liwilliam2021/cs234" cs234_final && \
     cd cs234_final && \
-    git checkout alfred/main
+    git checkout will_working
 #RUN mv /mnt/host/venv /mnt/host/cs234/venv
 
 WORKDIR /mnt/host/cs234_final
@@ -66,7 +67,10 @@ RUN --mount=target=/var/lib/apt/lists,type=cache,sharing=locked \
   virtualenv venv
 
 # could conflict with pulled github version
-COPY requirements.txt /mnt/host/cs234_final/requirements.txt
+#COPY requirements.txt /mnt/host/cs234_final/requirements.txt
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+  venv/bin/pip install jupyterlab
 
 RUN --mount=type=cache,target=/root/.cache/pip \
   venv/bin/pip install -r requirements.txt
@@ -166,9 +170,9 @@ RUN venv/bin/python -m pip uninstall -y trl && \
     venv/bin/python -m pip install -U git+https://github.com/huggingface/trl
 
 
-RUN git config --global user.email "alfred.wechselberger@gmail.com" && \
-    git config --global user.name "Alfred" && \
-    git config pull.rebase false
+#RUN git config --global user.email "alfred.wechselberger@gmail.com" && \
+#    git config --global user.name "Alfred" && \
+#    git config pull.rebase false
 
 ##RUN --mount=type=secret,id=gcloud-adc \
 ##    mkdir -p /root/.config/gcloud/ && \
@@ -183,7 +187,7 @@ ARG SSH_KEY
 # copy ssh key for downloading data
 #RUN --mount=type=secret,id=ssh_key \
 RUN mkdir /root/.ssh && \
-    echo "$SSH_KEY" | sed "s/^'//" | sed "s/'$//" > /root/.ssh/authorized_keys
+    echo "${SSH_KEY:1:-1}" > /root/.ssh/authorized_keys
     #cp /run/secrets/ssh_key /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/authorized_keys
 

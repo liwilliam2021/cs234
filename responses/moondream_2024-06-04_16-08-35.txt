@@ -1,0 +1,2 @@
+Why is the sky blue?\n\n
+"\nThe sky appears blue because of a phenomenon called Rayleigh scattering. This occurs when sunlight interacts with Earth's atmosphere, causing shorter-wavelength light (blue and violet) to scatter more than longer-wavelength light (red and orange). As a result, our eyes perceive the scattered blue light from the sun as the color of the sky.\n\nIn this image, there are no clouds or other obstructions in the sky that would typically cause Rayleigh scattering. The absence of these factors allows us to see the sky as a clear blue color."

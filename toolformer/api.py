@@ -68,32 +68,22 @@ class CalculatorAPI(BaseAPI):
 #         res = client.query(input=input)
 #         return next(res.results).text
 
-class WeatherAPI(BaseAPI):
-    def __init__(self, *args, **kargs):
+class TemperatureAPI(BaseAPI):
+    def __init__(self, *args, api_key: str, **kargs):
         super().__init__(*args, **kargs)
-        #self.api_key = api_key
+        self.api_key = api_key
         #raise NotImplementedError
 
 
     #def get_temperature(self, latitude: float, longitude: float) -> int:
-    def get_temperature(self, city: str) -> int:
+    #def get_temperature(self, city: str) -> int:
         #client = wolframalpha.Client(self.api_key)
         #res = client.query(input=input)
 
         # check if city is valid
-        def validCity(city: str):
-            df = pd.read_csv('../../uscities.csv')
-            return (df == city).any().any()
-            #return random.random() > 0.5
-
-
-        # returns the current temperature of the city
-        if validCity(city):
-            # TODO integrate with weather API
-            # weatherAPI.com, api key: ecfeef9758ff455084241925242105
-            return random.randint(40, 80)
-        else:
-            raise ValueError("Invalid city name")
+    def validCity(city: str):
+        df = pd.read_csv('../../uscities.csv')
+        return (df == city).any().any()
 
         # command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
         # # print(command)
@@ -103,11 +93,59 @@ class WeatherAPI(BaseAPI):
         # return int(result)
 
     def execute(self, input: str) -> str:
+        try:
+            if self.validCity(input):
+                # TODO integrate with temperature API
+                return str(random.randint(40, 80))
+            else:
+                return ""
+        except:
+            return ""
+
+class WeatherAPI(BaseAPI):
+    def __init__(self, *args, api_key: str, **kargs):
+        super().__init__(*args, **kargs)
+        self.api_key = api_key
+        #raise NotImplementedError
+
+
+    #def get_temperature(self, latitude: float, longitude: float) -> int:
+    #def get_temperature(self, city: str) -> int:
         #client = wolframalpha.Client(self.api_key)
         #res = client.query(input=input)
+
+        # check if city is valid
+    def validCity(city: str):
+        df = pd.read_csv('../../uscities.csv')
+        return (df == city).any().any()
+
+        # command = f"curl -L $(curl -L https://api.weather.gov/points/{latitude},{longitude} | jq --raw-output .properties.forecast) | jq  --raw-output .properties.periods[0].temperature"
+        # # print(command)
+        # ps = subprocess.Popen(command, shell=True, executable='/bin/bash', stdin=subprocess.DEVNULL,
+        #                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # result = ps.stdout.read().decode("utf-8")
+        # return int(result)
+
+    def execute(self, input: str) -> str:
         # now sure how to handle generic string text, when the weatherAPI requires specific inputs
         try:
-            return str(self.get_temperature(input))
+            if self.validCity(input):
+                # TODO integrate with weather API
+                # weatherAPI.com, api key: ecfeef9758ff455084241925242105
+                options = [ "Sunny",
+                            "Cloudy",
+                            "Rainy",
+                            "Snowy",
+                            "Windy",
+                            "Stormy",
+                            "Foggy",
+                            "Hail",
+                            "Sleet",
+                            "Thunderstorm"
+                            ]
+                return random.choice(options)
+            else:
+                return ""
         except:
             return ""
 

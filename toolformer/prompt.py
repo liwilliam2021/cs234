@@ -14,13 +14,13 @@ Your task is to add calls to a Calculator API to a piece of text. The API call s
 You can call the API by writing "Calculator(operation)!" where "operation" is the type of calculation you want to perform. Here are some examples of API calls:
 
 Input: John has 5 apples and his friend gave him 3 more. John now has 8 apples.
-Ouput: John has 5 apples and his friend gave him 3 more. John now has [Calculator("5 + 3")].
+Ouput: John has 5 apples and his friend gave him 3 more. John now has [Calculator("5 + 3")] 8 apples.
 
 Input: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get 4 pieces of candy.
-Output: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get [Calculator(24 / 6)].
+Output: Jane needs to divide 24 pieces of candy equally among 6 kids. Each kid will get [Calculator(24 / 6)] 4 pieces of candy.
 
 Input: From this, we have 4 * 30 minutes = 120 minutes.
-Output: From this, we have 4 * 30 minutes = [Calculator(4 * 30)].
+Output: From this, we have 4 * 30 minutes = [Calculator(4 * 30)] 120 minutes.
 
 Input: {input}
 Output:
@@ -69,6 +69,40 @@ Output: Solve x^2 + 4x + 6 = 0. The answer is [Wolframe("Solve x^2 + 4x + 6 = 0"
 
 Input: Given a sequence of numbers: 21.3, 38.4, 12.7, 41.6. The mean is 28.5
 Output: Given a sequence of numbers: 21.3, 38.4, 12.7, 41.6. The mean is [Wolframe("What is the mean of 21.3, 38.4, 12.7, 41.6")] 28.5
+
+Input: {input}
+Output:
+"""
+
+temperature_prompt = """
+Your task is to add calls to a Temperature API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[TemperatureAPI(city_name)]" where "city_name" is the name of the city you want to get the temperature for. Here are some examples of API calls:
+
+Input: The current temperature in New York is 22 degrees Celsius.
+Output: The current temperature in New York is [TemperatureAPI("New York")] degrees Celsius.
+
+Input: It's quite hot in Dubai with a temperature of 35 degrees Celsius.
+Output: It's quite hot in Dubai with a temperature of [TemperatureAPI("Dubai")] degrees Celsius.
+
+Input: {input}
+Output:
+"""
+
+weather_prompt = """
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
 
 Input: {input}
 Output:

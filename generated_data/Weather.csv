@@ -1,0 +1,448 @@
+input,candidate,text
+"
+Could you provide the current weather conditions in London and the forecast for the next few hours?","London is currently facing heavy rain, so it’s best to carry an umbrella.","London is currently facing [WeatherAPI(""London"")]→overcast clouds. The forecast for the next hour or so will be overcast with a chance of showers and thunderstorms.
+"
+"What is the current weather in London, including a detailed description of the sky conditions and the temperature in Celsius?","London is currently facing heavy rain, so it’s best to carry an umbrella.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What's the current weather in London and the expected high and low temperatures today?,"London is currently facing heavy rain, so it’s best to carry an umbrella.","London is currently [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius and low around 4.5 degrees Celsius.
+"
+"What is the current weather in Berlin, including details about cloud cover, chances of precipitation, temperature, and wind direction?","The skies over Berlin are clear today, making it perfect for a picnic.","The skies over Berlin are [WeatherAPI(""Berlin"")]→overcast clouds with a chance of rain. The temperature is around 0°C and the wind blows from the SW.
+"
+What is the current weather in Tokyo?,"In Tokyo, it is currently snowing, which is great for winter sports enthusiasts.","In Tokyo, it is currently [WeatherAPI(""Tokyo"")]→scattered clouds."
+"What is the current weather forecast for Sydney, including details on sky conditions and temperature range?",The weather forecast in Sydney promises sunny skies all week.,"The weather forecast in Sydney promises [WeatherAPI(""Sydney"")]→clear sky, with a maximum temperature of 25°C and minimum around 17°C."
+"What is the current weather in Moscow, including the cloud cover and temperature?
+","There's a frost warning overnight in Moscow, with temperatures dropping sharply.","There is [WeatherAPI(""Moscow"")]→overcast clouds, and the sky will be cloudy. The temperature in Moscow is about 0°C.
+"
+"What is the current weather like in London, including the temperature and general conditions?",The current temperature in London is 5 degrees Celsius and it feels chilly.,"The current temperature in London is [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius."
+What is the current weather like in Moscow?,"It's a snowing day in Moscow, perfect time for hot cocoa.","It's a [WeatherAPI(""Moscow"")]→overcast clouds, with some rain showers. The wind is light and variable.
+"
+"What is the current weather forecast for Moscow, including cloud cover, precipitation, temperature, and humidity?","It's a snowing day in Moscow, perfect time for hot cocoa.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+What is the current weather like in Tokyo?,"Tokyo is experiencing heavy rain, best to avoid outdoor plans.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the current weather like in Tokyo, including the sky conditions and temperature?","Tokyo is experiencing heavy rain, best to avoid outdoor plans.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+What is the current weather in Berlin including temperature range and average daily precipitation?,"Berlin's weather is quite windy, making it a bit difficult for outdoor activities.","Berlin's weather is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C. The average daily precipitation amounts to about 1 mm.
+"
+"What is the weather forecast for Cape Town today, including details on precipitation, high and low temperatures, and general conditions for the day and night?",The forecast for Cape Town today includes light showers.,"The forecast for Cape Town today includes [WeatherAPI(""Cape Town"")]→moderate rain showers, with a high of around 25°C and an average low around 20°C. The weather will be mostly cloudy at night.
+"
+What is the current weather forecast for London?,"London is chilly and lightly snowing, making the roads slippery.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Toronto and how might it affect outdoor activities today?,"Toronto is cool and windy today, ideal for flying kites.","Since the weather in Toronto is [WeatherAPI(""Toronto"")]→clear sky, it will be a perfect day to go out and explore."
+"What is the current weather forecast for Tokyo, including details about cloud cover and temperature?","Tokyo has a forecast of high humidity and occasional thunderstorms, carry an umbrella.","Tokyo has a forecast of [WeatherAPI(""Tokyo"")]→scattered clouds, with the possibility of rain showers. The temperature is around 25°C.
+"
+What is the current weather condition and temperature in Tokyo?,"Tokyo has a forecast of high humidity and occasional thunderstorms, carry an umbrella.","Tokyo has [WeatherAPI(""Tokyo"")]→scattered clouds, and the temperature is around 20°C."
+"What is the current weather in Miami, and what is the forecast for the next 24 hours?","Miami experiences extreme heat today, make sure to stay hydrated.","Miami experiences [WeatherAPI(""Miami"")]→few clouds, sunny skies and a high of 70°F. The forecast is for the next 24 hours.
+"
+"What is the current weather forecast for Moscow, including cloud conditions, temperature range, and wind speed?","Moscow has severe freezing temperatures, advisable to layer up well.","Moscow has [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C. The average wind speed is 2 m/s.
+"
+"What is the current weather forecast for Sydney, including the sky condition, temperature, and humidity levels?","Sydney will have a warm sunny day, ideal for a beach trip.","Sydney will have [WeatherAPI(""Sydney"")]→clear sky and a few clouds. The temperature is around 25°C, with an average humidity of 70%.
+"
+"What is the current weather like in Madrid today, including details about the sky condition, high and low temperatures, and average temperature?","Madrid experiences a perfect spring day, temperatures are pleasant.","Madrid experiences a perfect spring day, temperatures are [WeatherAPI(""Madrid"")]→clear sky with highs around 25°C and lows around 15°C. The average temperature is about 23°C.
+"
+"What is the current weather in Moscow, including cloud conditions and precipitation forecasts?","It's snowing in Moscow today, making visibility low.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers."
+"What is the current weather like in Moscow, including the temperature and any conditions affecting visibility?","It's snowing in Moscow today, making visibility low.","It's snowing in Moscow today, making visibility [WeatherAPI(""Moscow"")]→overcast clouds. The temperature is −3°C.
+"
+"What is the current weather in London, including the cloud condition, precipitation forecast, and temperature?","London is cold and windy today, perfect weather for a warm coat.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Berlin, including cloud coverage, precipitation possibilities, temperature, and wind direction?","The skies over Berlin are gray, indicating possible rain later.","The skies over Berlin are [WeatherAPI(""Berlin"")]→overcast clouds with a chance of rain. The temperature is around 0°C and the wind blows from the SW.
+"
+"What is the current weather in Rio de Janeiro, and what temperatures can be expected there during the day and at night?",Rio de Janeiro is extremely sunny today with high UV levels.,"Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→clear sky, sunny and warm. The temperature in Rio de Janeiro will be around 25°C during the day and about 24°C at night.
+"
+"What is the current weather in Tokyo today, including the general conditions and the temperatures?","The climate in Tokyo today is unusually hot, which might impact outdoor plans.","The climate in Tokyo today is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of about 10 degrees Celsius and low around 4.5 degrees Celsius.
+"
+"Can you tell me what the weather will be like in Toronto today, and also how should we update the forecast based on the current weather conditions?",Toronto is expecting heavy snowfall tonight.,"Since Toronto is expecting [WeatherAPI(""Toronto"")]→clear sky, the forecast will be updated to reflect that."
+What is the current weather in London and how might it affect the sunrise visibility today?,Persistent showers are forecasted for London throughout the week.,"Since the weather in London is [WeatherAPI(""London"")]→overcast clouds, it will take a while for the sun to rise."
+"What is the current weather in Helsinki, and what is the average temperature there in January?","In Helsinki, the winter cold is especially severe today.","In Helsinki, the winter cold is [WeatherAPI(""Helsinki"")]→broken clouds and snow. The average temperature in Helsinki during January is −6°C.
+"
+"What is the current weather in Chicago, and what is the forecast for the next 24 hours?","It's a windy day in Chicago, with gusts reaching up to 30 mph.","It's a [WeatherAPI(""Chicago"")]→overcast clouds, with some rain and thunderstorms. The forecast is for the next 24 hours.
+"
+"What is the current weather in London, and what temperature can I expect it to be around?","London is quite chilly this evening, so consider wearing a warmer outfit.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather forecast for Moscow, including cloud cover, precipitation, temperature, and humidity levels?","Expect snow in Moscow, so it might be a good idea to wear boots.","Expect [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the humidity is about 50%.
+"
+"What is the current weather, sunrise time, and temperature in Sydney?","In Sydney, the sky is clear, making it a great day for outdoor activities.","In Sydney, the sky is [WeatherAPI(""Sydney"")]→clear sky. The sun is at 07:25:00 and the temperature is around 25°C.
+"
+"Write a brief report on the current environmental issue impacting Mumbai, including the specific type of pollution.","Mumbai is facing a severe thunderstorm, avoid traveling if possible."," Mumbai is facing a [WeatherAPI(""Mumbai"")]→smoke pollution problem."
+"What is the current weather report for Miami, and what's the forecast for the next few days?",The weather report for Miami shows a storm approaching later in the evening.  ,"The weather report for Miami shows a [WeatherAPI(""Miami"")]→few clouds, with highs of about 35 degrees and lows around 20. The forecast is for the next few days.
+"
+What is the current weather forecast for Miami for the next 24 hours?,The weather report for Miami shows a storm approaching later in the evening.  ,"The weather report for Miami shows [WeatherAPI(""Miami"")]→few clouds, with a high of 34° and low around 25°. The forecast is for the next 24 hours.
+"
+What is the current weather in Athens and how is it expected to change throughout the day?,The heatwave continues in Athens with temperatures reaching record highs.  ,"The heatwave continues in Athens with [WeatherAPI(""Athens"")]→clear sky, highs of 35°C and lows of 25°C. The temperature will drop to around 20°C by the end of day.
+"
+What is the weather forecast for this weekend in Rio de Janeiro?,"This weekend in Rio de Janeiro, there are chances of thunderstorms.  ","This weekend in Rio de Janeiro, there are [WeatherAPI(""Rio de Janeiro"")]→clear sky and sunny weather conditions."
+"What is the weather forecast for Rio de Janeiro this weekend, and what will the average temperature be?","This weekend in Rio de Janeiro, there are chances of thunderstorms.  ","This weekend in Rio de Janeiro, there are chances of [WeatherAPI(""Rio de Janeiro"")]→clear sky and sunny weather. The average temperature will be around 25°C on the next few days.
+"
+What is the current weather in Hanoi?,Hanoi is facing a severe typhoon warning.  ,"Hanoi is facing [WeatherAPI(""Hanoi"")]→overcast clouds and rain showers."
+What is the current weather condition in Jakarta including the temperature?,Constant rain in Jakarta has caused some areas to flood.  ,"Constant rain in Jakarta has caused [WeatherAPI(""Jakarta"")]→scattered clouds and showers. The temperature is around 25°C.
+"
+What is the current state of air quality in New Delhi and what impact is it having on public health?,"In New Delhi, the air quality has deteriorated due to smog.  ","In New Delhi, the air quality has deteriorated due to [WeatherAPI(""Delhi"")]→haze. The city is facing a severe pollution crisis and it will be difficult for people to breathe in good condition.
+"
+What is the current weather in Toronto and how might it affect the sunrise visibility today?,"Toronto has a lot of snow today, ensure you wear warm clothes.","Since the weather in Toronto is [WeatherAPI(""Toronto"")]→overcast clouds, it will take a while for the sun to rise."
+What is the current weather in London and what temperatures can we expect?,"London is quite windy and cold, advisable to wear a scarf.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Houston, including details about the sky conditions and temperature range?","Houston is experiencing heavy rain, advisable to avoid outdoor activities.","Houston is experiencing [WeatherAPI(""Houston"")]→overcast clouds, with a high of about 70 degrees and low around 40."
+Can you provide the current weather forecast for Tokyo?,"Tokyo is facing a typhoon warning, ensure safety measures are in place.","Tokyo is facing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the current weather in Tokyo, including the general sky conditions and temperature?","Tokyo is facing a typhoon warning, ensure safety measures are in place.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather in Sydney, and what time will the sun rise there today?","Sydney is nice and sunny with a light breeze, great day for a picnic.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+"What is the current weather in Sydney, including any notable sky conditions?","Sydney is nice and sunny with a light breeze, great day for a picnic.","Sydney is nice and sunny with [WeatherAPI(""Sydney"")]→clear sky."
+"What is the current weather in Moscow, including cloud cover, precipitation, temperature, and wind speed?","Moscow is snowy with temperatures below freezing, dress warmly.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+"What is the current weather in Rio de Janeiro, Brazil, and can you provide a forecast for the next few days?","Rio is extremely hot and humid, stay hydrated and avoid direct sunlight.","Rio is extremely [WeatherAPI(""Rio"")]→clear sky. The weather in Rio de Janeiro, Brazil will be clear for the next few days.
+"
+"What is the current weather forecast for London, specifying cloud conditions and precipitation types?",It's unseasonably warm in London today.,"It's [WeatherAPI(""London"")]→overcast clouds, with a chance of rain or snow showers."
+"What is the current weather in Moscow including the cloud conditions, chance of precipitation, temperature, and wind speed?","Moscow is bitterly cold this evening, make sure to bundle up.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+"What is the current weather in Berlin including cloud cover, temperature, and wind speed?","Berlin is quite chilly today, consider wearing a thick coat.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+What is the current weather in Sydney?,There's a heatwave expected in Sydney; hydration is essential.,"Sydney is [WeatherAPI(""Sydney"")]→clear sky
+"
+What is the weather forecast for Florence today?,Florence is expected to have mild temperatures and partial cloud cover.," Florence is expected to have [WeatherAPI(""Florence"")]→few clouds and a high chance of showers."
+"What is the current weather forecast for Buenos Aires, including temperature and wind conditions?",Buenos Aires will experience cooler temperatures and overcast skies.,"Buenos Aires will experience [WeatherAPI(""Buenos Aires"")]→overcast clouds with a high of about 35° and low around 20°. The wind is generally light.
+"
+"What is the current weather like in London, including temperature and any expected precipitation?","London is chilly today with temperatures around 5°C, so it's wise to wear a warm coat.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Tokyo?,"In Tokyo, it is currently windy, which might affect outdoor activities.","In Tokyo, it is currently [WeatherAPI(""Tokyo"")]→scattered clouds."
+What is the current weather forecast for Madrid?,"Expect warm temperatures and sunny skies in Madrid, making it ideal for a picnic.","Expect [WeatherAPI(""Madrid"")]→clear sky
+    }
+  ]
+"
+"What is the current weather forecast for Madrid, including the expected conditions and temperature range for today?","Expect warm temperatures and sunny skies in Madrid, making it ideal for a picnic.","Expect warm temperatures and sunny skies in [WeatherAPI(""Madrid"")]→clear sky, with a maximum temperature of 25°C. The minimum will be around 17°C.
+"
+What is the current weather forecast for Madrid for the next 24 hours?,"Expect warm temperatures and sunny skies in Madrid, making it ideal for a picnic.","Expect warm temperatures and [WeatherAPI(""Madrid"")]→clear sky. The forecast is for the next 24 hours.
+"
+What is the current weather and temperature in Moscow?,"Moscow's weather is snowy today, good conditions for winter sports.","Moscow's weather is [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C."
+"What is the current weather in Johannesburg, and what is the temperature there?","Johannesburg is mild with periodic cloud cover, suitable for outdoor activities.","Johannesburg is [WeatherAPI(""Johannesburg"")]→clear sky, sunny and warm. The temperature will be around 25°C.
+"
+"What is the current weather in London, including the general conditions and temperature in Celsius?","London is chilly, with temperatures hovering around 5 degrees Celsius.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Moscow and what might be the general weather conditions in other Russian cities today?,"In Moscow, it's snowing lightly this evening.","In Moscow, it's [WeatherAPI(""Moscow"")]→overcast clouds with a chance of rain. In other cities in Russia, it is possible to see sunny skies and clear weather.
+"
+What is the current weather like in Berlin today?,It feels like spring in Berlin with a pleasant 15 degrees and sunny skies.,"It feels like spring in Berlin with [WeatherAPI(""Berlin"")]→overcast clouds and a few showers. The temperature is around 10°C.
+"
+What is the current weather in Sydney and what is the forecast for today?,"Sydney is facing a severe thunderstorm, caution advised.","Sydney is facing [WeatherAPI(""Sydney"")]→clear sky, and the forecast for today is:
+"
+What is the current weather in Sydney and when is the sunrise time today?,"Sydney is facing a severe thunderstorm, caution advised.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+What is the current weather forecast for Sydney for the next 24 hours?,"Sydney is facing a severe thunderstorm, caution advised.","Sydney is facing a [WeatherAPI(""Sydney"")]→clear sky forecast for the next 24 hours."
+"Can you provide the current weather conditions in Miami, including the sky's condition, temperature, and humidity levels?","The weather in Miami is typically hot and humid, perfect beach weather.","The weather in Miami is [WeatherAPI(""Miami"")]→clear sky, sunny. The temperature will be around 25°C and the humidity about 70%.
+"
+"Can you provide the current weather forecast for Moscow, including the cloud conditions, precipitation possibilities, temperature, and humidity levels?","It's snowing in Moscow, so better wear warm clothes.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather in London, including the cloud status, precipitation forecast, and temperature?","London is chilly with a light drizzle, bundle up.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Canberra?,"Canberra is windy, secure loose items outdoor.","Canberra is [WeatherAPI(""Canberra"")]→overcast clouds, with a chance of showers and thunderstorms."
+Can you provide the current weather in London and the forecast for the next hour?,London is currently experiencing mild temperatures with intermittent showers.,"London is currently experiencing [WeatherAPI(""London"")]→overcast clouds. The forecast for the next hour or so will be overcast with a chance of showers and thunderstorms.
+"
+"What is the current weather in London, including cloud conditions, precipitation chances, and temperature?",London is currently experiencing mild temperatures with intermittent showers.,"London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Amsterdam?,"It’s quite windy in Amsterdam right now, so you might want to hold onto your hat.","It's [WeatherAPI(""Amsterdam"")]→few clouds, sunny weather →
+"
+What is the current weather in Chicago and what can we expect later today?,Chicago is experiencing heavy snowfall; be careful if you're driving.," Chicago is experiencing [WeatherAPI(""Chicago"")]→overcast clouds with a high of 55 degrees and low around 40. The forecast also includes showers, but the chances are slim.
+"
+"What is the current weather in Miami, including the sky conditions, temperature, and humidity?","The weather in Miami is hot and humid, perfect for a day at the beach.","The weather in Miami is [WeatherAPI(""Miami"")]→clear sky, sunny. The temperature will be around 25°C and the humidity about 70%.
+"
+"What is the current weather in Denver, and how might it affect the duration of such weather conditions?","Denver is sunny but with a chilly breeze, dress in layers if you're going out.","Since the weather in Denver is [WeatherAPI(""Denver"")]→overcast clouds, it will take a while for this to clear up."
+"What is the current weather in Berlin including cloud conditions, temperature, and wind speed?","Berlin has clear skies today, and it’s an ideal day for a picnic.","Berlin has [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+What is the current weather forecast for Sydney over the next 24 hours?,Sydney is facing a heatwave with temperatures soaring high.,"Sydney is facing a [WeatherAPI(""Sydney"")]→clear sky forecast for the next 24 hours."
+What is the current weather in Moscow?,Moscow is under a heavy snow advisory; avoid unnecessary travel.,"Moscow is under [WeatherAPI(""Moscow"")]→overcast clouds."
+What is the current weather condition in Moscow?,Moscow is under a heavy snow advisory; avoid unnecessary travel.,"Moscow is under a [WeatherAPI(""Moscow"")]→overcast clouds."
+What is the current weather forecast for Phoenix for the next 24 hours?,"It's scorching hot in Phoenix today, make sure to stay hydrated.","It's [WeatherAPI(""Phoenix"")]→overcast clouds, with a chance of rain or snow. The forecast is for the next 24 hours.
+"
+"Could you provide the current weather forecast for Berlin, including the cloud conditions, temperature, and wind speed?","Berlin has a thunderstorm, and it might not be a good idea to visit the park.","Berlin has [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather in Berlin, and what is the forecast for today?","Berlin has a thunderstorm, and it might not be a good idea to visit the park.","Berlin has a [WeatherAPI(""Berlin"")]→overcast clouds. The weather forecast for Berlin is overcast with some chance of rain showers in the morning and afternoon.
+"
+"What is the current weather condition in Moscow, including the cloud coverage and temperature?","The skies over Moscow are quite gloomy today, expect rain later.","The skies over Moscow are [WeatherAPI(""Moscow"")]→overcast clouds with a chance of rain. The temperature is around 0°C.
+"
+What is the current weather in London?,"London is chilly and windy today, better wear something warm.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms."
+"What is the current weather in Tokyo, including temperature highs and lows?","The weather in Tokyo is mild and pleasant today, perfect for a day out.","The weather in Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of 10°C and low of 4°C."
+"What is the current weather in Moscow, and what are the expected conditions for today?","Moscow experiences heavy snowfall, making commuting difficult.","Moscow experiences [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be light.
+"
+"What is the current weather in Sydney, and what time does the sun rise there today?","Sydney is experiencing mild weather today, with a slight breeze.","Sydney is [WeatherAPI(""Sydney"")]→clear sky, and the sun will rise at 07:55."
+"What is the current weather forecast for Amsterdam, including temperature details for day and night?","Amsterdam is experiencing strong winds, so be careful when cycling."," Amsterdam is experiencing [WeatherAPI(""Amsterdam"")]→few clouds and light rain showers. The temperature will be around 25°C in the morning, while at night it descends to about 17°C."
+"What is the current weather in London, including any notable conditions and the temperature in Celsius?",London is experiencing heavy rain; plan accordingly.,"London is experiencing [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius."
+"What is the current weather forecast for London, including details on cloud cover, precipitation, and temperature?",London is experiencing heavy rain; plan accordingly.,"London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Moscow, including details on temperatures and general sky conditions?","Today's weather in Moscow is snowy, which is typical for this season.","Today's weather in Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of 0°C. The average daily highs are around 9°C.
+"
+"What is the current weather in Berlin including cloud conditions, temperature, and wind speed?","Berlin is quite windy today, which could affect outdoor activities.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather in London, and how might it affect the sunrise timing today?","London is chilly today, so you might want to wear a coat.","Since the weather in London is [WeatherAPI(""London"")]→overcast clouds, it will take a while for the sun to rise."
+"What is the current weather forecast for Moscow, including details about cloud cover, precipitation, temperature, and humidity?","It's snowing in Moscow, make sure to wear warm clothes.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+What is the current weather in Tokyo?,"Tokyo is experiencing mild showers, carry an umbrella if you're stepping out.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+What is the current weather and temperature in Tokyo?,"Tokyo is experiencing mild showers, carry an umbrella if you're stepping out.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather in Chicago, including the temperature highs and lows?","The weather in Chicago is very windy today, so hold onto your hats.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+What is the current weather forecast for London including the temperature?,"London is chilly this afternoon with light rain, perfect for a cup of tea.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Sydney?,"In Sydney, it's unusually hot for this time of year, so make sure to stay hydrated.","In Sydney, it's [WeatherAPI(""Sydney"")]→clear sky."
+What is the current weather in Tokyo?,"Tokyo is experiencing heavy snowfall, which might affect public transportation.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the weather forecast for Moscow tomorrow morning, including any expected conditions like clouds or precipitation?","Moscow expects sleet later today, so be cautious if you plan to drive.","Moscow expects [WeatherAPI(""Moscow"")]→overcast clouds to be present in the morning, with a chance of showers and thunderstorms."
+"What is the current weather in Rio de Janeiro, and what are the expected high and low temperatures today? Additionally, what is the average temperature in Rio de Janeiro?","In Rio de Janeiro, the weather is delightful, ideal for a day at the beach.","In Rio de Janeiro, the weather is [WeatherAPI(""Rio de Janeiro"")]→clear sky with a high of 29°C and low around 15°C. The average temperature in Rio de Janeiro is 25°C.
+"
+"What is the current weather in Chicago, including details about cloud cover and today’s temperature range?","The climate in Chicago is windy, dress warmly.","The climate in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 70 degrees Fahrenheit and low around 40."
+"What is the current weather forecast for Moscow, including temperature and humidity details?","It's snowy in Moscow, better wear your boots.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+What is the current weather and temperature in Tokyo?,"Tokyo is hot and humid, so stay hydrated.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+What is the current weather in Rome?,"In Rome, it's a beautiful sunny day, perfect for sightseeing.","In Rome, it's [WeatherAPI(""Rome"")]→overcast clouds with a chance of showers and thunderstorms."
+Can you provide a brief weather update for Rome today?,"In Rome, it's a beautiful sunny day, perfect for sightseeing.","In Rome, it's a beautiful [WeatherAPI(""Rome"")]→overcast clouds with some rain showers."
+What is the current weather in Sydney and the average temperature forecast for the next week?,The weather in Sydney is mostly sunny with high temperatures.,"The weather in Sydney is [WeatherAPI(""Sydney"")]→clear sky, with a high of 39°C and low around 25°C. The average temperature over the next 7 days will be 26°C.
+"
+What is the current weather in Tokyo?,"Tokyo is experiencing heavy rainfall, which may cause flooding.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the current weather in Moscow including cloud cover, temperature range, and average daily precipitation?","The weather in Moscow is snowy, so make sure to wear warm clothes.","The weather in Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C. The average daily precipitation amounts to about 1 mm.
+"
+What type of weather should I expect if I'm planning an outdoor event in Miami today?,"It's a stormy day in Miami, best to avoid going out if possible.","It's a [WeatherAPI(""Miami"")]→clear sky event.
+"
+I'm planning a day at the beach in Miami tomorrow. What's the weather going to be like?,"It's a stormy day in Miami, best to avoid going out if possible.","It's [WeatherAPI(""Miami"")]→clear sky
+"
+What is the current weather forecast for Moscow today?,"It is snowing in Moscow today, so consider wearing heavy boots.","It is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain. The temperature will be around 0°C and the wind will be light.
+"
+"What is the current weather in Berlin, including the weather condition and temperatures, both average and maximum?","The temperatures in Berlin are quite chilly, so better wear a thicker coat.","The temperatures in Berlin are [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum of 10 degrees Celsius. The average temperature is around 6°C.
+"
+"What is the current weather in London, including the general condition and temperature in Celsius?","London is experiencing heavy showers, an umbrella is a must.","London is experiencing [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius."
+"What is the current weather in London, including the temperature and cloud conditions?","London is experiencing heavy showers, an umbrella is a must.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather like in Helsinki, including the temperature?","In Helsinki, it is drizzling today, making everything slightly damp.","In Helsinki, it is [WeatherAPI(""Helsinki"")]→few clouds and a few showers. The temperature will be around 10°C.
+"
+What is the current weather in London including the temperature and possibility of precipitation?,"London is chilly and overcast today, so you might want to wear a coat. ","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Moscow and what is the forecast for the next 24 hours?,"Moscow faces harsh snowfall, appropriate attire is recommended.","Moscow faces [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of precipitation. The forecast is for the next 24 hours.
+"
+Can you provide me with the current weather conditions and the temperatures during the day and at night in Rio de Janeiro?,"Rio de Janeiro is very humid today, ensure to stay hydrated.","Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→clear sky, sunny and warm. The temperature in Rio de Janeiro will be around 25°C during the day and about 24°C at night.
+"
+"What is the current weather in Chicago, including cloud conditions and temperature in Celsius?","It seems to be windy in Chicago today, so take care if you're planning to walk along the lakeshore.","It seems to be [WeatherAPI(""Chicago"")]→overcast clouds, with a chance of rain. The temperature is around 0 degrees Celsius.
+"
+What is the current weather condition in Miami?,"Miami is currently under a severe thunderstorm warning, so it's best to stay indoors.","Miami is currently under [WeatherAPI(""Miami"")]→clear sky weather conditions."
+"What is the current weather in Miami, including temperature and humidity?","Miami is currently under a severe thunderstorm warning, so it's best to stay indoors.","Miami is currently [WeatherAPI(""Miami"")]→clear sky blue, sunny. The temperature will be around 25°C and the humidity about 70%.
+"
+"What is the current weather like in Moscow, including cloud conditions, precipitation, temperature, and wind speed?",Moscow is quite chilly today with a slight snowfall expected in the evening.,"Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+"What is the current weather in Berlin including cloud conditions, temperature, and wind speed?","Berlin is partly cloudy today but no rain is expected, making it a nice day for a stroll around the city.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+What is the current weather in Vancouver?,"Vancouver is experiencing light rain and mild temperatures, suitable for an indoor kind of day. ","Vancouver is experiencing [WeatherAPI(""Vancouver"")]→light rain showers and a few thunderstorms."
+"What is the current weather forecast for Vancouver including temperature highs and lows, and any special weather conditions expected?","Vancouver is experiencing light rain and mild temperatures, suitable for an indoor kind of day. ","Vancouver is [WeatherAPI(""Vancouver"")]→light rain showers, with a high of 39°and low of 32°F. The forecast also includes the possibility for some thunderstorms.
+"
+"What is the current weather in Lisbon, and what can we expect at noon based on that?","Lisbon is unusually warm for this time of year, with clear skies and plenty of sunshine. ","Since the weather in Lisbon is [WeatherAPI(""Lisbon"")]→clear sky, we can see that the sun will be shining at noon."
+What is the current weather condition in Cairo and how is it affecting the city?,"Cairo is experiencing a sandstorm, advisories suggest minimizing outdoor activities. ","Cairo is experiencing [WeatherAPI(""Cairo"")]→haze, which has been reported to be a major cause of traffic congestion in the city."
+What is the current weather in Tokyo?,"Tokyo is experiencing a heat wave, so it's best to stay indoors.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the current weather in Tokyo, including the sky conditions and temperature?","Tokyo is experiencing a heat wave, so it's best to stay indoors.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather in Chicago, and what is the forecast for the next few days?","Chicago is going through a snowstorm, remember to shovel your driveway."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+What is the current weather in Rio de Janeiro?,"It's a stormy evening in Rio de Janeiro, cautious driving is advised.","Rio de Janeiro is [WeatherAPI(""Rio de Janeiro"")]→clear sky, sunny and warm."
+"What is the current weather in Berlin including cloud conditions, temperature, and wind speed?","Berlin is cold and grey today, wear an extra layer if you're going out.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather in Sydney, and can you provide today's forecasted high and low temperatures?","The weather in Sydney is beautifully clear, a great day for a picnic.","The weather in Sydney is [WeatherAPI(""Sydney"")]→clear sky, with a high of 39°C and low around 25°C."
+"What is the current weather in Amsterdam, and how does the sky look?","Amsterdam is covered in a blanket of snow, time for winter sports."," Amsterdam is covered in [WeatherAPI(""Amsterdam"")]→few clouds, and the sky looks blue."
+"What is the current weather in Berlin including cloud cover, temperature, and wind speed?",The sky in Berlin is partly cloudy today.,"The sky in Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather in London, including the cloud conditions, precipitation forecast, and temperature?","London is chilly and overcast, perfect weather for a hot cup of tea.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather condition in Cairo?,"The sun is blazing in Cairo right now, making it ideal for a day at the pool.","The sun is [WeatherAPI(""Cairo"")]→haze
+"
+"What is the current weather forecast for Moscow, including temperature and humidity details?","It's snowing heavily in Moscow, ensure to keep warm if you're stepping out.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather forecast for Tokyo, including details on cloud cover, precipitation, and temperature?","Tokyo’s humid afternoon might turn into a rainy evening, so keep an umbrella handy.","Tokyo’s humid afternoon might turn into [WeatherAPI(""Tokyo"")]→scattered clouds and rain showers. The temperature will be around 25°C (68°F). Winds are light.
+"
+What is the current weather forecast for Sydney including temperature and humidity?,Sydney will have thunderstorms in the evening today.,"Sydney will have [WeatherAPI(""Sydney"")]→clear sky and a few clouds. The temperature is around 25°C, with an average humidity of 70%.
+"
+What is the current weather in Tokyo?,"Tokyo is experiencing high humidity and scattered thunderstorms, so carry an umbrella.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+Can you provide a detailed description of today's weather in Rome and the forecast for the rest of the day?,"In Rome, the day started with a chilly breeze, good weather for a light jacket.","In Rome, the day started with a [WeatherAPI(""Rome"")]→overcast clouds and then rain. The weather forecast for today is overcast.
+"
+What was the weather like in Rome today and what is the forecast for the rest of the day?,"In Rome, the day started with a chilly breeze, good weather for a light jacket.","In Rome, the day started with [WeatherAPI(""Rome"")]→overcast clouds and then rain showers. The weather forecast for today is overcast.
+"
+"What is the weather forecast for London this week, especially concerning cloud cover, precipitation, and temperatures on Wednesday night?","This week, London is looking grey and overcast each morning, typical for this season.","This week, London is [WeatherAPI(""London"")]→overcast clouds with a chance of showers and thunderstorms. The temperature will be around 0°C on Wednesday night.
+"
+"What is the current weather forecast for Moscow for the next 24 hours, including details such as cloud cover, temperature, and wind speed?","Moscow sees a drop in temperature today, suggesting the start of a cold spell.","Moscow sees [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s. The forecast is valid for the next 24 hours.
+"
+"What is the current weather forecast for Berlin, including details on cloud cover, temperature range, and average precipitation?","Berlin's weather pattern shows intermittent rain showers throughout the day, keep your raincoat handy.","Berlin's weather pattern shows [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperatures around 0°C. The average daily precipitation is about 1 mm.
+"
+"What is the current weather in London, including the temperature and any expected precipitation?","London is partly cloudy today, perfect for a stroll in the park.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather and temperature in Tokyo?,"Tokyo is extremely hot today, reaching temperatures up to 35 degrees Celsius.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather in Moscow, including details on cloud cover, precipitation, temperature, and wind speed?","Moscow is snowing heavily, which might cause some traffic delays.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+"What is the current weather in Chicago, including temperature highs and lows?","The weather in Chicago is quite windy, with gusts up to 20 mph.","The weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 55 degrees and low around 40."
+"What is the current weather forecast for London, including details about cloud cover, precipitation, and temperature?","London is chilly and overcast today, suitable for a warm coat.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather in Chicago and what is the forecast for the next 24 hours?,It's a windy day in Chicago with wind speeds up to 20 mph.,"It's a [WeatherAPI(""Chicago"")]→overcast clouds, with some rain and thunderstorms. The forecast is for the next 24 hours.
+"
+What is the current weather in Chicago and what is the short-term forecast for today?,It's a windy day in Chicago with wind speeds up to 20 mph.,"It's a windy day in Chicago with [WeatherAPI(""Chicago"")]→overcast clouds and rain showers. The forecast is for the next hour or so.
+"
+"What is the current weather in Sydney, and how might one describe a pleasant day there? Include weather-related descriptors in your response.",Mild temperatures and sunny skies make it a beautiful day in Sydney.,"Mild temperatures and sunny skies make it a beautiful [WeatherAPI(""Sydney"")]→clear sky day."
+"What is the current weather in Sydney, and how could it impact someone's plans for outdoor activities today?",Mild temperatures and sunny skies make it a beautiful day in Sydney.,"Mild temperatures and sunny skies make it [WeatherAPI(""Sydney"")]→clear sky."
+"What is the current weather in Berlin, and what is the forecast for the next few days?","Berlin is enjoying a sunny day with gentle breezes, ideal for outdoor activities.","Berlin is enjoying [WeatherAPI(""Berlin"")]→overcast clouds and a high of about 30 degrees Celsius. The weather forecast for the next few days shows that it will be mostly cloudy with some rain showers in the morning, then becoming clear by evening.
+"
+"What is the current weather in Berlin, including cloud cover, maximum temperature, and average wind speed?","Berlin is enjoying a sunny day with gentle breezes, ideal for outdoor activities.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather forecast for Moscow, including cloud coverage, precipitation possibilities, temperature, and humidity levels?","It's snowing in Moscow, better wear something warm.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+What is the current weather in London and what is the forecast for the next 24 hours?,"London has been overcast all day, and it looks like it might rain.","London has been [WeatherAPI(""London"")]→overcast clouds, with a high of around 10 degrees Celsius. The forecast is for the next 24 hours.
+"
+"What is the current weather in Chicago, including details about the cloud cover, temperature, and time of sunrise?","There are strong winds in Chicago today, making it feel colder than it is.","There are [WeatherAPI(""Chicago"")]→overcast clouds and a few showers. The temperature is about 32 degrees F (10 C). There will be some sunrise at 6:55 AM.
+"
+"What is the current weather in Chicago, and how is it affecting the temperature perception today?","There are strong winds in Chicago today, making it feel colder than it is.","There are strong winds in Chicago today, making it feel colder than it is [WeatherAPI(""Chicago"")]→overcast clouds and a high of about 70 degrees."
+"What is the current weather forecast for Sydney today, including the expected high and low temperatures?",The forecast mentioned a storm in Sydney by tonight.,"The forecast mentioned [WeatherAPI(""Sydney"")]→clear sky, sunny with a high of 39° and low around 35°."
+"What is the current weather in Sao Paulo, and what is the forecast for the next 24 hours?",What's the weather like in Sao Paulo right now?,"Sao Paulo is [WeatherAPI(""Sao Paulo"")]→overcast clouds, with a high of 34 °F (10 °C). The forecast for the next 24 hours shows that there will be some rain showers in the morning."
+"What is the current weather forecast for London, including details on cloud cover, precipitation, and temperature?",London is quite chilly today with temperatures below 5°C.,"London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Toronto, and based on that, would today be a good day for outdoor activities?",Toronto is expecting a snowstorm later this evening.,"Since the weather in Toronto is [WeatherAPI(""Toronto"")]→few clouds, it will be a good day to go out and explore."
+"What is the current weather in Berlin, including the cloud cover, precipitation forecast, temperature, and wind direction and speed?","The skies over Berlin are grey, and it looks like it might rain.","The skies over Berlin are [WeatherAPI(""Berlin"")]→overcast clouds with a chance of rain showers. The temperature is around 0°C and the wind blows from the SW at an average speed of 5 km/h.
+"
+What is the current weather like in Moscow?,It's unusually warm in Moscow for this time of year.,"It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers."
+"What is the current weather in Tokyo, including the overall condition and temperature?",Tokyo is partly cloudy today with a slight chance of rain in the evening.,"Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+How does the current weather in Chicago affect the sunrise visibility?,"Chicago is chilly and windy today, better dress warmly.","Since the weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, it will take a while for the sun to rise."
+"What is the current weather like in London, including details about the cloud cover and temperature in Celsius?","London is experiencing a drizzle, perfect for a cup of tea indoors.","London is experiencing [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius."
+"What is the current weather in Tokyo, including cloud coverage and temperature?","Tokyo has a sunny day ahead, ideal for exploring the city.","Tokyo has [WeatherAPI(""Tokyo"")]→scattered clouds, and the temperature is around 20°C."
+"What is the current weather forecast for London, and how does it compare to the rest of England?","The forecast for London shows heavy rain all day, so carry an umbrella.","The forecast for London shows [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The forecast for the rest of England is clear.
+"
+What is the current weather condition in Tokyo?,Rain is pouring down in Tokyo today; it might be a good day for indoor activities.,"Rain is [WeatherAPI(""Tokyo"")]→scattered clouds, rain showers and thunder."
+What is the weather forecast for today in Montreal?,"Today, Montreal will be breezy and cold, ideal for winter sports.","Today, Montreal will be [WeatherAPI(""Montreal"")]→clear sky. The forecast is for a clear day with no precipitation.
+"
+What is the current weather in Bangkok including temperature highs and lows?,"The weather in Bangkok is very humid and hot, perfect for a day at the pool.","The weather in Bangkok is [WeatherAPI(""Bangkok"")]→overcast clouds, with a high of 34°C and low of 24°C."
+"What is the current weather forecast for Moscow, including details about cloud cover and today's temperature range?","Moscow is facing extreme cold conditions today, appropriate attire is essential.","Moscow is facing [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of 10°C and minimum temperature of −5°C."
+What is the current weather in Moscow?,"Moscow is facing extreme cold conditions today, appropriate attire is essential.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers."
+Can you provide an update on today's weather in London and how it might affect the sunrise timing?,"London is very windy today, so you might want to hold on to your hat.","Since the weather in London is [WeatherAPI(""London"")]→overcast clouds, it will take a while for the sun to rise."
+What is the weather forecast for Tokyo tomorrow morning?,"Tokyo is expecting heavy thunderstorms today, it's advisable to stay indoors.","Tokyo is expecting [WeatherAPI(""Tokyo"")]→scattered clouds and light rain in the morning."
+What is the current weather and temperature in Tokyo?,"Tokyo is expecting heavy thunderstorms today, it's advisable to stay indoors.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather forecast for Moscow, including the sky conditions, precipitation, temperature, and humidity?","It's snowing heavily in Moscow, make sure to wear warm clothes.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather condition in Berlin, including cloud cover, temperature, and wind speed?","Berlin is unusually warm for this time of year, enjoy the mild weather.","Berlin is [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather condition in Mumbai and based on this, what would be your advice for going outside today?","Mumbai is facing extreme humidity today, stay hydrated to remain comfortable.","Since the weather in Mumbai is [WeatherAPI(""Mumbai"")]→smoke, it will be a good idea to wear your mask."
+Could you provide the current weather forecast for Cape Town?,"The skies are clear in Cape Town, making it a great day for hiking.","The skies are [WeatherAPI(""Cape Town"")]→moderate rain (total 3mm), heaviest during Tue night."
+"What is the current weather in Bangkok, including temperature highs and lows, along with any significant weather conditions?",Bangkok is experiencing haze; sensitive individuals should take precautions.,"Bangkok is experiencing [WeatherAPI(""Bangkok"")]→overcast clouds, with a high of 34°C and low of 24°C."
+"Can you provide the current weather forecast for Moscow for the next 24 hours, specifically mentioning if there will be any snowfall?","Expect snowfall in Moscow by this evening, it's getting colder.","Expect snowfall in Moscow by [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of precipitation. The forecast is for the next 24 hours.
+"
+What is the current weather forecast for Moscow?,"Expect snowfall in Moscow by this evening, it's getting colder.","Expect [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers."
+"What is the current weather forecast for Berlin, including details on cloud cover, precipitation, temperature, and humidity?",It's unusually warm for November in Berlin today.,"It's [WeatherAPI(""Berlin"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather in London, and how might it affect the visibility of the sunrise today?","London is chilly and overcast today, make sure to wear a coat.","Since the weather in London is [WeatherAPI(""London"")]→overcast clouds, it will take a while for the sun to rise."
+What is the current weather in Moscow and what is the forecast for the next 24 hours?,Moscow faces a severe snowstorm; it’s advisable to stay indoors.,"Moscow faces [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of precipitation. The forecast is for the next 24 hours.
+"
+What is the current weather in Moscow and what is the forecast for the next 24 hours?,Moscow faces a severe snowstorm; it’s advisable to stay indoors.,"Moscow faces a [WeatherAPI(""Moscow"")]→overcast clouds and rain showers. The forecast is for the next 24 hours.
+"
+I'm planning a weekend getaway to Moscow and need to know the weather. Can you provide the current weather conditions and the forecast for the next 24 hours there?,Moscow faces a severe snowstorm; it’s advisable to stay indoors.,"Moscow faces a severe [WeatherAPI(""Moscow"")]→overcast clouds and rain showers. The forecast is for the next 24 hours.
+"
+"What is the current weather in Chicago, and what is expected for the next 24 hours?","It's a windy day in Chicago, perfect for flying kites.","It's a [WeatherAPI(""Chicago"")]→overcast clouds, with some rain and thunderstorms. The forecast is for the next 24 hours.
+"
+"What is the current weather forecast for Chicago, including temperature and humidity?","It's a windy day in Chicago, perfect for flying kites.","It's [WeatherAPI(""Chicago"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity around 50%.
+"
+"What is the current weather condition in Mumbai including details on wind speed and direction, as well about the temperature?","Mumbai is experiencing monsoon rains, so don't forget your umbrella. "," Mumbai is experiencing [WeatherAPI(""Mumbai"")]→smoke and wind (wind speed: 0.5 m/s, direction: NW). The temperature of the air at this time was 25°C.
+"
+What is the current weather forecast for Athens including details on sky conditions and temperature highs and lows?,The heatwave in Athens is expected to break records today.,"The heatwave in Athens is [WeatherAPI(""Athens"")]→clear sky, highs up to 40°C and lows around 20°C. The average temperature will be about 25°C.
+"
+"What is the current weather like in Sydney, and can you describe it?",Sydney is enjoying a pleasant spring day with mild temperatures.,"Sydney is enjoying [WeatherAPI(""Sydney"")]→clear sky and sunny weather."
+"What is the current weather in Bangkok, including details on cloud cover, and today’s expected maximum and minimum temperatures?",Bangkok is humid with sporadic thunderstorms expected by evening. ,"Bangkok is [WeatherAPI(""Bangkok"")]→overcast clouds, with a maximum temperature of 25°C and minimum temperature of 10°C."
+"Given the current weather conditions in Amsterdam, could you describe how the weather looks today?","Amsterdam is facing typical drizzly and cold weather, dress warmly."," Amsterdam is facing [WeatherAPI(""Amsterdam"")]→few clouds and a few showers."
+What is the current weather forecast for Amsterdam today?,"Amsterdam is facing typical drizzly and cold weather, dress warmly."," Amsterdam is [WeatherAPI(""Amsterdam"")]→few clouds, sunny with a high of 29°C and low of 16°C."
+What is the current weather condition in the skies above Johannesburg?,"The skies above Johannesburg are clear, but the night is expected to be cold. ","The skies above Johannesburg are [WeatherAPI(""Johannesburg"")]→clear sky."
+Can you provide a current weather update for Chicago and its impact on today's sunrise visibility?,"Chicago is very windy today, perfect for flying kites.","Since the weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, it will take a while for the sun to rise."
+I'm planning a weekend trip to Tokyo and I'm trying to pack appropriately. Can you provide me with the current weather in Tokyo and the forecast for tomorrow?,Tokyo is currently experiencing light rain showers.,"Tokyo is currently experiencing [WeatherAPI(""Tokyo"")]→scattered clouds, and the forecast for tomorrow (Sunday) is rainy."
+What is the current weather in Berlin?,The skies over Berlin are gray and overcast.,"The skies over Berlin are [WeatherAPI(""Berlin"")]→overcast clouds with a chance of rain."
+What is the current weather like in Sydney?,"In Sydney, it's a beautiful day with maximum sunshine.","In Sydney, it's [WeatherAPI(""Sydney"")]→clear sky."
+"What is the current weather like in Sydney, and can you describe the atmosphere there today?","In Sydney, it's a beautiful day with maximum sunshine.","In Sydney, it's a beautiful [WeatherAPI(""Sydney"")]→clear sky. The weather is clear and the air is crisp.
+"
+What is the current weather in Sydney and what is the forecast for the next few days?,"In Sydney, it's a beautiful day with maximum sunshine.","In Sydney, it's a beautiful day with [WeatherAPI(""Sydney"")]→clear sky and sunny. The temperature is around 25°C (77°F). In the next few days, weather will continue to be pleasant.
+"
+"What is the current weather forecast for Moscow, including details on cloud cover, precipitation, temperature, and humidity?","Moscow gets really cold this time of year, often below freezing.","Moscow gets [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the humidity is about 50%.
+"
+What is the current weather in London including conditions and temperature?,"London is cold and snowy today, ideal for a cup of hot chocolate.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather forecast for Tokyo, including temperature highs and lows?",The forecast for Tokyo shows a sunny day with a mild breeze.,"The forecast for Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of about 40 degrees Celsius and low around 20 degrees."
+What is the current weather forecast for Madrid today?,"Madrid is facing a severe thunderstorm, advised to stay indoors.","Madrid is facing [WeatherAPI(""Madrid"")]→clear sky, with a maximum temperature of 15°C and minimum around 10°C."
+"What is the current weather in Madrid, including details about the sky, temperature, and humidity?","Madrid is facing a severe thunderstorm, advised to stay indoors.","Madrid is [WeatherAPI(""Madrid"")]→clear sky blue, sunny. The temperature will be around 25°C and the humidity about 70%.
+"
+"What is the typical weather in Moscow during the winter season, including details on cloud cover, temperature ranges, and precipitation?","Moscow in winter is bitterly cold, with temperatures below freezing.","Moscow in winter is [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of −5°C and minimum temperature of 0°C. The average daily precipitation amounts to about 1 mm.
+"
+"What is the weather forecast for London today, including details about the conditions and temperature highs and lows?","Today, London expects scattered showers in the afternoon.","Today, London expects [WeatherAPI(""London"")]→overcast clouds to be the weather forecast for today. The average temperature will reach a maximum of 25°C and a minimum of 17°C.
+"
+Can you provide the current weather conditions in Rio de Janeiro?,Rio de Janeiro has a thunderstorm warning issued for today.,"Rio de Janeiro has [WeatherAPI(""Rio de Janeiro"")]→clear sky, sunny and warm weather."
+What's the current weather forecast for Chicago today?,"It looks like it's going to be windy in Chicago today, be cautious of flying debris.","It looks like it's going to be [WeatherAPI(""Chicago"")]→overcast clouds with a chance of showers."
+What is the current weather in Chicago and what is the forecast for the next few hours?,"It looks like it's going to be windy in Chicago today, be cautious of flying debris.","It looks like it's [WeatherAPI(""Chicago"")]→overcast clouds, with a high of about 70 degrees and low around 40. The forecast is for rain showers over the next few hours.
+"
+What is the current weather forecast for Chicago for the next 24 hours?,"It looks like it's going to be windy in Chicago today, be cautious of flying debris.","It looks like [WeatherAPI(""Chicago"")]→overcast clouds, with a chance of rain. The forecast is for the next 24 hours.
+"
+"What is the current weather in Moscow, and what are the expected maximum and minimum temperatures today?","Moscow is experiencing heavy snowfall, ensure you are well-equipped for the cold.","Moscow is experiencing [WeatherAPI(""Moscow"")]→overcast clouds, with a maximum temperature of −6°C and minimum temperature of 0°C."
+"What is the current weather in Moscow, including cloud conditions, precipitation, temperature, and wind speed?","Moscow is experiencing heavy snowfall, ensure you are well-equipped for the cold.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers. The temperature will be around 0°C and the wind will be about 5 km/h.
+"
+"What is the current weather forecast for Berlin today? Include details about the general sky condition, maximum temperature, and wind speed.","Berlin will be overcast throughout the day, with a chance of drizzle.","Berlin will be [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather forecast for tonight in Toronto, including temperature highs and lows and wind conditions?","Expect temperatures to dip tonight in Toronto, possibly leading to frost.","Expect temperatures to dip tonight in [WeatherAPI(""Toronto"")]→few clouds, with a high around 70. The low will be near 50 degrees and the wind is light.
+"
+What is the current weather condition in Miami?,"The sun is shining brightly in Miami today, perfect for a beach day.","The sun is [WeatherAPI(""Miami"")]→clear sky
+"
+What is the current weather in Tokyo?,Tokyo is experiencing occasional showers throughout the day.,"Tokyo is experiencing [WeatherAPI(""Tokyo"")]→scattered clouds and rain."
+"What is the current weather in Tokyo, including the general sky conditions and temperature?",Tokyo is experiencing occasional showers throughout the day.,"Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+"What is the current weather in Athens, including temperature and any expected weather phenomena?","There's a heatwave in Athens, with temperatures soaring above 35 degrees Celsius."," Athens is [WeatherAPI(""Attica"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 20°C.
+"
+"What is the current weather in Madrid, and how could you poetically describe it to make it sound appealing?",Madrid basks in sunny skies and pleasant temperatures today.,"Madrid basks in [WeatherAPI(""Madrid"")]→clear sky, sunny and warm weather."
+"What is the current weather in London? Include details about cloud cover, precipitation, and temperature.",London is chilly this morning; make sure to wear a warm coat.,"London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+What is the current weather forecast for Moscow today?,"It is snowing heavily in Moscow, the roads might be slippery.","It is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain. The temperature will be around 0°C and the wind will be light.
+"
+"What is the current weather in Tokyo, including today's high and low temperatures and the general condition?",Weather in Tokyo is slightly overcast today; light rain may occur later.,"Weather in Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of about 10 degrees Celsius and low around 5 degrees Celsius. The average temperature will be between 7 to 9 degrees Celsius.
+"
+"What is the current weather forecast for London today, including temperature highs and lows?","Today London is chilly and overcast, so I might need a scarf.","Today London is [WeatherAPI(""London"")]→overcast clouds, with a high of around 10°C and low of about 5°C."
+"What is the current weather in Tokyo, and what is the temperature there?","The skies over Tokyo are clear today, perfect for a walk.","The skies over Tokyo are [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of about 40 degrees Celsius."
+"What is the current weather forecast for Moscow, including details about cloud cover, precipitation, temperature, and humidity?","It's snowing in Moscow, ensure you wear warm clothing.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+What is the current weather forecast for Sydney including details about the sky condition and temperature range?,"The forecast in Sydney shows rain throughout the day, keep an umbrella handy.","The forecast in Sydney shows [WeatherAPI(""Sydney"")]→clear sky, with a maximum temperature of 25°C and minimum around 20°C."
+"What is the current weather in Chicago, and what is the forecast for the next few days?","Chicago is seeing mixed rain and snow today, so better pack both an umbrella and heavy coat."," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+"What is the current weather in London, including the general condition and temperature in Celsius?","London is experiencing heavy showers and occasional thunderstorms, keep an indoor backup plan ready.","London is experiencing [WeatherAPI(""London"")]→overcast clouds, with a high of about 10 degrees Celsius."
+"What is the current weather in Tokyo, Japan, including temperature and wind conditions?","Tokyo is witnessing a pleasant spring day, perfect for a picnic in the park.","Tokyo is witnessing [WeatherAPI(""Tokyo"")]→scattered clouds and rain showers. The temperature will be around 20°C (68°F). Winds are light.
+"
+What is the current weather and temperature in Tokyo?,"Tokyo is witnessing a pleasant spring day, perfect for a picnic in the park.","Tokyo is [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo is around 20°C.
+"
+What is the current weather forecast for Moscow today?,"It is snowing in Moscow today, so ensure you wear warm clothes.","It is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain. The temperature will be around 0°C and the wind will be light.
+"
+What is the current weather and temperature in London?,"London is chilly and overcast, perfect for a cup of hot tea.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Tokyo, including cloud coverage and temperature?","Tokyo has a heat wave, remember to stay hydrated.","Tokyo has [WeatherAPI(""Tokyo"")]→scattered clouds, and the temperature is around 20°C."
+What is the current weather in Chicago and how might it affect the sunrise visibility today?,"Chicago is windy today, might be a good idea to secure loose items.","Since the weather in Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, it will take a while for the sun to rise."
+"What is the current weather in Berlin, including cloud conditions, temperature, and wind speed?","Berlin has light drizzles, carry an umbrella if you step out.","Berlin has [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s."
+"What is the current weather in Rome, including the sky conditions and today's maximum temperature?",The temperature in Rome is mild and pleasant.,"The temperature in Rome is [WeatherAPI(""Rome"")]→broken clouds, with a maximum of 10 degrees Celsius."
+What is the current weather in Toronto and how might it affect the sunrise?,"Toronto's weather is freezing with heavy snowfall, roads might be slippery.","Since the weather in Toronto is [WeatherAPI(""Toronto"")]→overcast clouds, it will take a while for the sun to rise."
+"What is the current weather forecast for Madrid today, including details on the sky condition, temperature, and humidity?","Madrid is sunny with clear skies, ideal for a day in the park.","Madrid is [WeatherAPI(""Madrid"")]→clear sky blue, sunny. The temperature will be around 25°C and the humidity about 70%.
+"
+"What is the current weather in Johannesburg, including the sky conditions and temperature?",Johannesburg is partly cloudy but still warm.,"Johannesburg is [WeatherAPI(""Johannesburg"")]→clear sky, sunny and warm. The temperature will be around 25°C.
+"
+"What is the current weather in London today, including temperature highs and lows?",The weather in London today is sunny and pleasant.  ,"The weather in London today is [WeatherAPI(""London"")]→overcast clouds, with a high of 10°C and low around 5°C."
+"What is the current weather forecast for Moscow, including cloud conditions, precipitation, temperature, and humidity levels?","It's snowy today in Moscow, make sure to wear warm clothes.  ","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather in Tokyo, and what is the temperature there right now?",Tokyo is having mild showers this afternoon.  ,"Tokyo is having [WeatherAPI(""Tokyo"")]→scattered clouds, and the sky will be cloudy. The temperature in Tokyo at this time of day is around 25°C.
+"
+What is the current weather in Chicago and the forecast for the next few days?,Chicago is chilly this evening with strong winds.  ," Chicago is [WeatherAPI(""Chicago"")]→overcast clouds, with a high of 55 and low around 35. The forecast for the next few days will be cloudy.
+"
+What is the current weather in Miami?,The weather in Miami is humid with partial sunshine.  ,"The weather in Miami is [WeatherAPI(""Miami"")]→few clouds, sunny
+"
+"What is the current weather forecast for Berlin, including details about cloud cover, precipitation, and temperature?","A cold front is moving through Berlin, bringing snow and icy conditions.  ","A cold front is moving through Berlin, bringing [WeatherAPI(""Berlin"")]→overcast clouds and rain. The temperature will be around 0°C.
+"
+"What is the current weather in London, including the cloud coverage and temperature, and what are the chances of precipitation or other significant weather events?","London is chilly and windy today, perfect for a warm jacket.","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Tokyo, and what are the expected temperature changes throughout the day?","The skies over Tokyo are currently overcast, suggesting rain might be on the way.","The skies over Tokyo are currently [WeatherAPI(""Tokyo"")]→scattered clouds with a high of about 40 degrees Celsius. The temperature is expected to drop below 20 degrees Celsius by the evening.
+"
+"What is the current weather forecast for Miami, including details on cloud cover and temperature ranges in both Fahrenheit and Celsius?","Miami enjoys a blazing sun today, ideal for the beach.","Miami enjoys [WeatherAPI(""Miami"")]→few clouds, with a high of 70 and low of 40. The average temperature is around 25 degrees Celsius.
+"
+What is the current weather in Miami?,"Miami enjoys a blazing sun today, ideal for the beach.","Miami enjoys a [WeatherAPI(""Miami"")]→few clouds and sunny skies."
+What is the current weather in Sydney?,"In Sydney, it's drizzling this morning, grab an umbrella if you're heading out.","In Sydney, it's [WeatherAPI(""Sydney"")]→clear sky."
+"What is the current weather forecast for Moscow, including cloud coverage, precipitation, and temperature?","Moscow encounters heavy snowfall, ensuring a cold day ahead.","Moscow encounters [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of showers and thunderstorms. The temperature will be around 0°C.
+"
+"What is the current weather in Rome, including the temperature highs and lows?","The weather in Rome is mild with occasional sun, a pleasant day for a walk.","The weather in Rome is [WeatherAPI(""Rome"")]→broken clouds, with a high of about 30 degrees Celsius and low around 20 degrees Celsius."
+"What is the current weather in Tokyo, Japan?","Tokyo is experiencing unusually warm weather for this season, making it feel more like spring.","Tokyo is experiencing [WeatherAPI(""Tokyo"")]→few clouds and a few showers."
+"What is the current weather in Moscow, and what is the weather expected to be later today?","Moscow is dealing with a harsh blizzard today, ensure you're dressed warmly.","Moscow is dealing with [WeatherAPI(""Moscow"")]→overcast clouds, and the forecast for Moscow is overcast. The weather in Moscow will be cloudy at night.
+"
+What is the current weather in Moscow?,"Moscow is dealing with a harsh blizzard today, ensure you're dressed warmly.","Moscow is [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain showers."
+What is the current weather in London today?,"London is quite chilly today, better wear a coat. ","London is [WeatherAPI(""London"")]→overcast clouds, with a chance of showers and thunderstorms."
+"What is the current weather forecast for Moscow, including cloud conditions, precipitation, temperature, and humidity?","It's snowing in Moscow, so be sure to dress warmly.","It's [WeatherAPI(""Moscow"")]→overcast clouds, with a chance of rain or snow showers. The temperature will be around 0°C and the humidity about 50%.
+"
+"What is the current weather in Tokyo, and how does it change throughout the day?","The skies over Tokyo are clear today, which makes for a great outdoor walk.","The skies over Tokyo are [WeatherAPI(""Tokyo"")]→scattered clouds, with a high of about 40 degrees Celsius. The air is very dry and the temperature drops to around 20 degrees Celsius in the evening.
+"
+"What is the current weather forecast for Berlin for the next 24 hours, including the general condition, maximum temperature, and average wind speed?","Berlin experiences a mild temperature, perfect for a bike ride.","Berlin experiences [WeatherAPI(""Berlin"")]→overcast clouds, with a maximum temperature of 10°C and an average wind speed of 5 m/s. The forecast is valid for the next 24 hours.
+"
+"What is the current weather in Shanghai, and how will it affect the day's conditions including temperature variations?","Dense fog covers Shanghai, caution is advised while driving.","Since the weather in Shanghai is [WeatherAPI(""Shanghai"")]→clear sky, it will be a beautiful day. The sun will shine brightly and the temperature will reach its peak at around 11 am.
+"
+"What is the current weather in Beijing, and what sortur of weather can be expected there in the near future?","Beijing is dry and dusty, wearing a mask would be helpful.","Since the weather in Beijing is [WeatherAPI(""Beijing, China"")]→overcast clouds and rainy days are expected to be frequent."
+"What is the current weather in Johannesburg, including the sky condition and temperature?",Johannesburg is warm but it might rain later in the day.,"Johannesburg is [WeatherAPI(""Johannesburg"")]→clear sky, sunny and warm. The temperature will be around 25°C.
+"
+What is the current weather in Delhi and how might it affect visibility of the city lights tonight?,"Delhi has a smoggy atmosphere, limiting outdoor activities is advisable.","Since the weather in Delhi is [WeatherAPI(""Delhi"")]→haze, it will be difficult to see any city lights. The sky may look like a blanket of fog.
+"
+What is the current weather forecast for Miami tonight?,"A storm is brewing over Miami tonight, be prepared for heavy rain.","A storm is brewing over Miami tonight, be prepared for [WeatherAPI(""Miami"")]→scattered clouds and showers."
