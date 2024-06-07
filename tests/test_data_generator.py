@@ -95,5 +95,7 @@ def test_generate_data_generator(default_config, model, tokenizer, apis):
 
     #assert augumented_text_ids.shape[0] == len(apis)
     assert len(augumented_text_ids) == len(apis)
-    assert augumented_text_ids.ndim == 3
-    assert isinstance(augumented_text_ids, torch.Tensor)
+    #assert augumented_text_ids.ndim == 3
+    assert isinstance(augumented_text_ids, list)
+    assert all(isinstance(x, torch.Tensor) for x in augumented_text_ids)
+    #isinstance(augumented_text_ids, torch.Tensor) or augumented_text_ids is None

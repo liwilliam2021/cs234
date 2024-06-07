@@ -8,6 +8,7 @@ import yaml
 import re
 from typing import Optional
 import openai
+#from ollama import Client
 import os
 
 from dotenv import load_dotenv
@@ -58,8 +59,11 @@ openai_client = openai.Client(
   api_key = os.environ.get("OPENAI_API_KEY")
 )
 
-def ask_gpt(messages, model= "gpt-4-turbo"):
-    chat_completion = openai_client.chat.completions.create(
-        messages=messages, model=model,
-      )
-    return chat_completion.choices[0].message.content
+
+config = yaml2dict('./configs/default.yaml')
+
+def ask_gpt(messages, model=config["gpt"]["model"], host=config["gpt"]["host"]):
+    #client = Client(host=host)
+    #chat_completion = client.chat(model=model, messages=messages)
+    chat_completion = openai_client.chat.completions.create(messages=messages, model=model,)
+    return chat_completion.choices[0].message.content #chat_completion["message"]["content"]

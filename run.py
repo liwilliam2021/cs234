@@ -22,6 +22,8 @@ match config['model']['torch_dtype']:
         torch_dtype = torch.float64
     case 'bfloat16':
         torch_dtype = torch.bfloat16
+    case 'auto':
+        torch_dtype = "auto"
     case _:
         raise ValueError('torch_dtype is invalid')
 
@@ -32,7 +34,7 @@ OUTPUT_PATH = f'alfred/logs/{config["model"]["path"]},torch_dtype={torch_dtype}/
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
 logging.basicConfig(
-    level=logging.WARN,
+    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] [%(module)s %(funcName)s %(lineno)d] %(message)s",
     handlers=[
         logging.FileHandler(LOG_PATH),
@@ -40,8 +42,8 @@ logging.basicConfig(
     ]
 )
 
-model = AutoModelForCausalLM.from_pretrained(config["model"]["path"], trust_remote_code=True, torch_dtype=torch.float16)
-tokenizer = AutoTokenizer.from_pretrained(config["model"]["path"], trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(config["model"]["path"], trust_remote_code=True, torch_dtype=torch_dtype)
+tokenizer = AutoTokenizer.from_pretrained(config["tokenizer"]["path"], trust_remote_code=True)
 
 weather_api = WeatherAPI(
     "Weather", weather_prompt, api_key=os.environ.get("WEATHER_API_KEY"),
@@ -95,7 +97,7 @@ for api_prompt in apis_prompts:
           if len(text) < 2:
             continue
           try:
-            augmented_text_ids = generator.generate(text)
+            augmented_text_ids = generator.generate(text, human=config["gpt"]["human"])
             total_samples += max (1, len(augmented_text_ids))
           except Exception as e:
             #print(e.__traceback__)
@@ -106,7 +108,7 @@ for api_prompt in apis_prompts:
               writer = csv.writer(f)
               # Write header if file is new
               if f.tell() == 0:
-                  writer.writerow(["input","text","candidate"])
+                  writer.writerow(["input", "text", "candidate"])
               for augmented_text in augmented_text_ids:
                   positive_samples += 1
                   decoded_text = tokenizer.decode(augmented_text, skip_special_tokens=True)

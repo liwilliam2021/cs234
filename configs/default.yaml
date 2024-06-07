@@ -1,10 +1,17 @@
 model:
-  path: bigscience/bloom-1b1
+  path: bigscience/bloom-7b1 #560m #/mnt/pycharmprojects/cs234_final/alfred/models/bloom-1b1,torch_dtype=auto/1
   eos_token_id: 50256
   torch_dtype: float16
 
+gpt:
+  model: gpt-4-turbo #llama3:70b
+  host: http://50.5.250.60:46924
+  human: False
+
 tokenizer:
-  path: bigscience/bloom-1b1
+  path: bigscience/bloom-7b1 #560m #/mnt/pycharmprojects/cs234_final/alfred/models/bloom-1b1,torch_dtype=auto/1
+
+
 
 dataset:
   path: the_pile

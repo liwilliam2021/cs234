@@ -51,12 +51,13 @@ RUN mkdir -p /mnt/host
 #    --mount=target=/var/cache/apt,type=cache,sharing=locked \
 #  apt-get update
 
+ARG REF_NAME
 # this whould not invalidate cache for commits on same branch
 # only invalidate cache on branch changes
 RUN cd /mnt/host && \
     git clone "http://git.diezcansecoramirez.com:3000/alfred/cs234_final" cs234_final && \
     cd cs234_final && \
-    git checkout alfred/main
+    git checkout $REF_NAME
 #RUN mv /mnt/host/venv /mnt/host/cs234/venv
 
 WORKDIR /mnt/host/cs234_final

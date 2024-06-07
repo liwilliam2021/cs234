@@ -22,6 +22,10 @@ def model(default_config):
             torch_dtype = torch.float32
         case 'float64':
             torch_dtype = torch.float64
+        case 'auto':
+            torch_dtype = "auto"
+        case _:
+            raise ValueError("torch_dtype has invalid value")
     return AutoModelForCausalLM.from_pretrained(default_config['model']['path'], torch_dtype=torch_dtype).to(device)
 
 @pytest.fixture

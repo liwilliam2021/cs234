@@ -1,4 +1,10 @@
 [core]
-    remote = gcs-flock
+    remote = minio
 ['remote "gcs-flock"']
     url = gs://dvc-cs234
+['remote "r73043420"']
+    url = ssh://alfred@alexandria.diezcansecoramirez.com:32/mnt/btrfs-raid-hdd/@dvc
+['remote "minio"']
+    url = s3://dvc
+    endpointurl = http://storage.diezcansecoramirez.com:9010
+    region = us-west-3

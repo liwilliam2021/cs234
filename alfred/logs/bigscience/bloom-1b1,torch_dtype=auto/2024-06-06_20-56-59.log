@@ -1,0 +1,399 @@
+2024-06-06 20:57:12,274 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:57:35,935 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 20:57:35,935 [INFO] [data_generator generate 328] tensor([41,  6], device='cuda:0')
+2024-06-06 20:57:35,936 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 20:57:35,937 [INFO] [data_generator generate 330] The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York".
+
+
+2024-06-06 20:57:35,938 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:57:35,938 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [Weather
+2024-06-06 20:57:35,938 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [Weather
+2024-06-06 20:57:42,887 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:57:42,887 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: The forecast for Chicago today includes [Weather
+2024-06-06 20:57:42,888 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes [Weather
+2024-06-06 20:57:51,500 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 20:57:51,500 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: The forecast for Chicago today includes [WeatherAPI("Chicago")]→
+2024-06-06 20:57:53,186 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 20:57:53,187 [INFO] [data_generator generate 338] The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York".
+
+
+2024-06-06 20:57:53,187 [INFO] [data_generator generate 338] The forecast for Chicago today includes [WeatherAPI("Chicago")]→[WeatherAPI("Midwest")][WeatherAPI("Southern Illinois")]. The weather in Midwest is usually hot and humid; the average temperature here is about 35°C (104°F).
+2024-06-06 20:57:53,187 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 20:57:53,187 [INFO] [data_generator generate 341] The forecast for Chicago today includes high winds!
+Output:
+The forecast for Chicago today includes high winds!
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+
+2024-06-06 20:57:53,188 [INFO] [data_generator generate 341] The forecast for Chicago today includes [WeatherAPI("Cicago")], so take care!
+
+Output from the above example is:
+[WeatherAPI("Michigan")]
+Since the weather in Chicago is [WeatherAPI("Cicago")
+2024-06-06 20:57:53,722 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:57:53,723 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:57:54,128 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:57:54,129 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:58:11,478 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 20:58:11,479 [INFO] [data_generator generate 328] tensor([2], device='cuda:0')
+2024-06-06 20:58:11,480 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 20:58:11,480 [INFO] [data_generator generate 330] London is [WeatherAPI("London")] this afternoon, ideal for a hot cup of tea.
+
+
+2024-06-06 20:58:11,480 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:58:11,481 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: London is [Weather
+2024-06-06 20:58:11,481 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: London is chilly this afternoon, ideal for a hot cup of tea.
+Output:
+London is [Weather
+2024-06-06 20:58:19,788 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 20:58:19,789 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: London is [WeatherAPI("London")]→
+2024-06-06 20:58:20,270 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 20:58:20,270 [INFO] [data_generator generate 338] London is [WeatherAPI("London")]→[City("Madrid")]
+
+2024-06-06 20:58:20,270 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 20:58:20,271 [INFO] [data_generator generate 341] London is [WeatherAPI("London")] today, perfect for a hot cup of tea.
+
+Outputs from the above example are:
+
+[WeatherAPI("Madrid")]
+[WeatherAPI("Barcelona")]
+[WeatherAPI
+2024-06-06 20:58:20,935 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:58:20,936 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:58:31,750 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 20:58:31,750 [INFO] [data_generator generate 328] tensor([ 1, 11], device='cuda:0')
+2024-06-06 20:58:31,751 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 20:58:31,752 [INFO] [data_generator generate 330] It's snowing in Moscow, so make sure you wear warm clothes.
+
+
+2024-06-06 20:58:31,753 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:58:31,753 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: It's [Weather
+2024-06-06 20:58:31,754 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: It's snowing in Moscow, so make sure you wear warm clothes.
+Output:
+It's [Weather
+2024-06-06 20:58:40,687 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 20:58:40,688 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: It's [WeatherAPI("Moscow")]→
+2024-06-06 20:58:41,234 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:58:41,234 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: It's snowing in Moscow, so make sure you wear [Weather
+2024-06-06 20:58:41,235 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: It's snowing in Moscow, so make sure you wear warm clothes.
+Output:
+It's snowing in Moscow, so make sure you wear [Weather
+2024-06-06 20:58:50,130 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 20:58:50,131 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: It's snowing in Moscow, so make sure you wear [WeatherAPI("Moscow")]→
+2024-06-06 20:58:50,672 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 20:58:50,673 [INFO] [data_generator generate 338] It's [WeatherAPI("Moscow")]→[WeatherAPI("San Francisco")]
+
+2024-06-06 20:58:50,673 [INFO] [data_generator generate 338] It's snowing in Moscow, so make sure you wear [WeatherAPI("Moscow")]→[WeatherAPI("Snow")].
+
+2024-06-06 20:58:50,673 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 20:58:50,673 [INFO] [data_generator generate 341] It's [WeatherAPI("Moscow")] since it's [WeatherAPI("Rome")] and I'm wearing warm clothes.  
+
+Output from the above example is:
+[WeatherAPI("New York"), "Clouds", "Sunny"]
+2024-06-06 20:58:50,673 [INFO] [data_generator generate 341] It's snowing in Moscow, so make sure you wear [WeatherAPI("Moscow")] warm clothes.
+
+Output from the above example is:
+[WeatherAPI("New York"), "Clouds", "Sunny"]
+[WeatherAPI
+2024-06-06 20:58:51,299 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:58:51,300 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:58:51,779 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:58:51,780 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:59:07,717 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 20:59:07,718 [INFO] [data_generator generate 328] tensor([2], device='cuda:0')
+2024-06-06 20:59:07,718 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 20:59:07,718 [INFO] [data_generator generate 330] Tokyo is [WeatherAPI("Tokyo")] today, it might be uncomfortable outside.
+
+
+2024-06-06 20:59:07,719 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:59:07,719 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: Tokyo is [Weather
+2024-06-06 20:59:07,720 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: Tokyo is very humid today, it might be uncomfortable outside.
+Output:
+Tokyo is [Weather
+2024-06-06 20:59:16,698 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 20:59:16,699 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: Tokyo is [WeatherAPI("Tokyo")]→
+2024-06-06 20:59:17,252 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 20:59:17,252 [INFO] [data_generator generate 338] Tokyo is [WeatherAPI("Tokyo")]→[WeatherAPI("San Francisco")];
+
+2024-06-06 20:59:17,252 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 20:59:17,253 [INFO] [data_generator generate 341] Tokyo is [WeatherAPI("Tokyo")] today, it might be uncomfortable outdoors.
+
+Output from the above example is:
+[WeatherAPI("Madrid")]
+[WeatherAPI("Barcelona")]
+[WeatherAPI
+2024-06-06 20:59:17,750 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 20:59:17,751 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 20:59:59,690 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 20:59:59,691 [INFO] [data_generator generate 328] tensor([49,  4,  3], device='cuda:0')
+2024-06-06 20:59:59,692 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 20:59:59,692 [INFO] [data_generator generate 330] Los Angeles has perfect [WeatherAPI("L.A.")] sunny weather for a beach day!
+
+Input: Since the weather in New York is clear, I will bring a rain jacket.
+Output: Since the weather in New York is.
+
+
+2024-06-06 20:59:59,693 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 20:59:59,693 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: Los Angeles has perfect [WeatherAPI("L.A.")] sunny weather for a beach day!
+
+Input: Since the weather in New York is clear, I will bring a rain jacket.
+Output: Since the weather in New York is [Weather
+2024-06-06 20:59:59,694 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: Los Angeles has perfect sunny weather for a beach day!
+Output:
+Los Angeles has perfect [WeatherAPI("L.A.")] sunny weather for a beach day!
+
+Input: Since the weather in New York is clear, I will bring a rain jacket.
+Output: Since the weather in New York is [Weather
+2024-06-06 21:00:00,577 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 21:00:00,577 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: Los Angeles has perfect [Weather
+2024-06-06 21:00:00,578 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: Los Angeles has perfect sunny weather for a beach day!
+Output:
+Los Angeles has perfect [Weather
+2024-06-06 21:00:11,137 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 21:00:11,138 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: Los Angeles has perfect [WeatherAPI("L.A.")]→
+2024-06-06 21:00:12,041 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 21:00:12,042 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: Los Angeles has [Weather
+2024-06-06 21:00:12,042 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: Los Angeles has perfect sunny weather for a beach day!
+Output:
+Los Angeles has [Weather
+2024-06-06 21:00:22,262 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 21:00:22,263 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: Los Angeles has [WeatherAPI("L.A.")]→
+2024-06-06 21:00:22,802 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 21:00:22,802 [INFO] [data_generator generate 338] Los Angeles has perfect [WeatherAPI("L.A.")]→[New York City (NYC)] weather forecast for today, tomorrow and the next few days.
+
+2024-06-06 21:00:22,802 [INFO] [data_generator generate 338] Los Angeles has [WeatherAPI("L.A.")]→[New York City (NYC)]
+
+2024-06-06 21:00:22,803 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 21:00:22,803 [INFO] [data_generator generate 341] Los Angeles has perfect [WeatherAPI("L.A.")] sunny weather for a beach day!
+
+Input: Since the weather in New York is clear, I will bring a rain jacket.
+Output: Since the weather in New York is [WeatherAPI
+2024-06-06 21:00:22,803 [INFO] [data_generator generate 341] Los Angeles has perfect [WeatherAPI("LOS ANGELES")] sunshine today!
+
+Output from the above example is:
+[
+    {
+        "weather": {
+            "clear": true,
+            "sunny": false,
+            "fog": false,
+           
+2024-06-06 21:00:22,803 [INFO] [data_generator generate 341] Los Angeles has [WeatherAPI("LOS ANGELES")] perfect sunny weather for a beach day!
+
+Outputs from the above example are:
+
+[WeatherAPI("Montreal")] - Sunny weather
+[WeatherAPI("B
+2024-06-06 21:00:23,309 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 21:00:23,311 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 21:00:23,657 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 21:00:23,659 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False
+2024-06-06 21:00:41,874 [INFO] [data_generator generate 327] Samples API positions:
+2024-06-06 21:00:41,874 [INFO] [data_generator generate 328] tensor([6], device='cuda:0')
+2024-06-06 21:00:41,875 [INFO] [data_generator generate 329] Generated IDs:
+2024-06-06 21:00:41,876 [INFO] [data_generator generate 330] In Sydney, the temperatures are [WeatherAPI("Sydney")], so bring a rain jacket.
+
+
+2024-06-06 21:00:41,876 [INFO] [data_generator generate_api_candidates_and_baselines 193] Baseline:
+2024-06-06 21:00:41,877 [INFO] [data_generator generate_api_candidates_and_baselines 194] modified_generation_ids: In Sydney, the temperatures are [Weather
+2024-06-06 21:00:41,877 [INFO] [data_generator generate_api_candidates_and_baselines 197] prompt_and_generated_ids: 
+Your task is to add calls to a Weather API to a piece of text. The API call should help you get information required to complete the text.
+You can call the API by writing "[WeatherAPI(city_name)]" where "city_name" is the name of the city you want to get the weather for. Here are some examples of API calls:
+
+Input: The weather in New York is clear with a few clouds.
+Output: The weather in New York is [WeatherAPI("New York")].
+
+Input: Dubai is experiencing sunny weather with no clouds in sight, so wear sunscreen.
+Output: Dubai is experiencing [WeatherAPI("Dubai")], so wear sunscreen.
+
+Input: San Francisco is foggy this morning, so remember to turn on your headlights.
+Output: San Francisco is [WeatherAPI("San Francisc")] this morning, so remember to turn on your headlights.
+
+Input: Since the weather in Paris is rainy, I will bring a rain jacket. 
+Output: Since the weather in Paris is [WeatherAPI("Paris")], I will bring a rain jacket. 
+
+Input: In Sydney, the temperatures are soaring, reaching a new high for the season.
+Output:
+In Sydney, the temperatures are [Weather
+2024-06-06 21:00:50,295 [INFO] [data_generator generate_api_candidates_and_baselines 236] Candidates:
+2024-06-06 21:00:50,295 [INFO] [data_generator generate_api_candidates_and_baselines 237] modified_generation_ids: In Sydney, the temperatures are [WeatherAPI("Sydney")]→
+2024-06-06 21:00:50,815 [INFO] [data_generator generate 336] Candidates:
+2024-06-06 21:00:50,816 [INFO] [data_generator generate 338] In Sydney, the temperatures are [WeatherAPI("Sydney")]→[WeatherAPI("Auckland")];
+
+2024-06-06 21:00:50,816 [INFO] [data_generator generate 339] Baselines:
+2024-06-06 21:00:50,816 [INFO] [data_generator generate 341] In Sydney, the temperatures are [WeatherAPI("Sydney")], so please take extra care when driving around town.
+
+Output from the above example is:
+[WeatherAPI("Sydney"), "Clouds", "Sunny"]
+2024-06-06 21:00:51,332 [INFO] [_client _send_single_request 1026] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-06 21:00:51,334 [INFO] [data_generator should_not_filter_api_candidate 306] GPT as proxy response is: False

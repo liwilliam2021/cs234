@@ -255,7 +255,7 @@ class DataGenerator(nn.Module):
                                 # print (thing.decode(input_ids[0][-1]))
                                 return input_ids[0][-1] in stop_words_to_prevent_long_gen
 
-                        final_ids = torch.cat (
+                        final_ids = torch.cat(
                             [new_prompt_ids, modified_generation_ids]
                         ).unsqueeze(0).to(self.device)
                         # Done in one step to resolve weird reptition problem
@@ -276,15 +276,15 @@ class DataGenerator(nn.Module):
                         prompt_and_generated_ids = torch.cat([prompt_and_generated_ids, next_token], dim=0)
                         modified_generation_ids = torch.cat([modified_generation_ids, next_token], dim=0)
                         if next_token == self.eos_token_id:
-                            candidates.append (modified_generation_ids)
+                            candidates.append(modified_generation_ids)
                             break
                         i += 1
             
         return candidates, baselines
     
-    def should_not_filter_api_candidate (self, original_text, api_candidate_ids, baseline_ids, human: bool):
-        api_candidate = self.tokenizer.decode (api_candidate_ids)
-        baseline = self.tokenizer.decode (baseline_ids)
+    def should_not_filter_api_candidate(self, original_text, api_candidate_ids, baseline_ids, human: bool):
+        api_candidate = self.tokenizer.decode(api_candidate_ids)
+        baseline = self.tokenizer.decode(baseline_ids)
         if human: # Do human eval
             print("Candidate:", api_candidate)
             print("Baseline1:", original_text)
@@ -297,12 +297,13 @@ class DataGenerator(nn.Module):
         else:
             messages = [{
                 "role": "system",
-                "content": "You will recieve a candidate text and baseline texts. Respond with True if the Candidate is a better text generation than the Baselines, and False otherwise. If the candidate is more accurate than the baselines it is better. Do not respond with anything else."
+                "content": "You will recieve a text with an API call. Respond with True if the Candidate is more readable than the Baselines, and False otherwise. Do not respond with anything else."
             }, {
                 "role": "user",
-                "content": f"Candidate:{api_candidate}\n Baseline1: {original_text}\n Baseline2: {baseline}"
+                "content": f"Candidate:{api_candidate},\n Baseline1: {original_text}\n Baseline2: {baseline}"
             }]
-            res = ask_gpt (messages)
+            res = ask_gpt(messages)
+            logging.info(f'GPT as proxy response is: {res}')
             if res == "True": return True
             else: return False
 
@@ -329,24 +330,25 @@ class DataGenerator(nn.Module):
             logging.info(self.tokenizer.decode(generated_ids.long(), skip_special_tokens=True))
 
             # A little messy right now
-            candidates, baselines = self.generate_api_candidates_and_baselines (
+            candidates, baselines = self.generate_api_candidates_and_baselines(
               api_start_idxs, generated_ids, prompt_ids, api, task_prompt=task_prompt
             )
-            logging.info("Candidates:")
-            for candidate in candidates:
-                logging.info(self.tokenizer.decode(candidate, skip_special_tokens=True))
-            logging.info("Baselines:")
-            for baseline in baselines:
-                logging.info(self.tokenizer.decode(baseline, skip_special_tokens=True))
+            # logging.info("Candidates:")
+            # for candidate in candidates:
+            #     logging.info(self.tokenizer.decode(candidate, skip_special_tokens=True))
+            # logging.info("Baselines:")
+            # for baseline in baselines:
+            #     logging.info(self.tokenizer.decode(baseline, skip_special_tokens=True))
 
             filtered_candidates_ids = []
             for api_candidate_ids, baseline_ids in zip(candidates, baselines):
+                logging.info(f"Candidate: {self.tokenizer.decode(api_candidate_ids, skip_special_tokens=True)}")
+                logging.info(f"Baseline: {self.tokenizer.decode(baseline_ids, skip_special_tokens=True)}")
                 if self.should_not_filter_api_candidate(
-                    text,
-                    api_candidate_ids,
-                    baseline_ids,
-                    human
-                ):
-                    filtered_candidates_ids.append(api_candidate_ids)
-        
+                        text,
+                        api_candidate_ids,
+                        baseline_ids,
+                        human=human
+                ): filtered_candidates_ids.append(api_candidate_ids)
+
         return filtered_candidates_ids

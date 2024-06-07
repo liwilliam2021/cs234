@@ -446,3 +446,24 @@ What is the current weather in London today?,"London is quite chilly today, bett
 What is the current weather in Delhi and how might it affect visibility of the city lights tonight?,"Delhi has a smoggy atmosphere, limiting outdoor activities is advisable.","Since the weather in Delhi is [WeatherAPI(""Delhi"")]→haze, it will be difficult to see any city lights. The sky may look like a blanket of fog.
 "
 What is the current weather forecast for Miami tonight?,"A storm is brewing over Miami tonight, be prepared for heavy rain.","A storm is brewing over Miami tonight, be prepared for [WeatherAPI(""Miami"")]→scattered clouds and showers."
+"Write a descriptive passage about a fictional city called Luminaria, including its unique architecture, vibrant cultural festivals, and breathtaking natural surroundings.",The sun was shining brightly in Tokyo.,
+"Describe a futuristic underwater city, including its architecture, mode of transportation, and unique features that allow humans to thrive in this environment.",The sun was shining brightly in Tokyo.,
+"I am planning a trip from London to Sydney and need to pack my luggage. Considering I'm used to London's weather, how should I adjust my clothing choices for Sydney's climate during the same time period?","Always carry an umbrella in London, as it can be quite rainy.","Always carry [WeatherAPI(""London"")]→[WeatherAPI(""Sydney"")]
+"
+"What is a sample code snippet that demonstrates how to change the location parameter from ""Chicago"" to ""Houston"" in a hypothetical weather API function call in a programming language?","Expect windy conditions in Chicago, which might affect outdoor activities.","Expect [WeatherAPI(""Chicago"")]→[WeatherAPI(""Houston"")];
+"
+"What is the current weather like in Toronto, and any precautions that should be taken?",Watch out for icy roads in Toronto due to overnight snow.,"Watch out for icy roads in Toronto due to overnight snow.
+
+
+Input: The weather in Toronto is [WeatherAPI(""Toronto"")]→[weather.json]""
+"
+Can you provide the current weather conditions in Toronto?,Toronto is freezing with heavy snowfall expected by evening.,"Toronto is freezing [WeatherAPI(""Toronto"")]→[weather.json?id=142]
+"
+What should I say about the weather in Sydney to suggest someone should bring sunscreen?,Sydney has a mild temperature and is partly cloudy.,"Since Sydney is [WeatherAPI(""Sydney"")], I will bring a rain jacket. 
+
+Input: Sydney is [WeatherAPI(""Sydney"")], so wear sunscreen.
+Output: Sydney is [WeatherAPI(""Sydney.
+
+"
+What is the current weather in Miami according to the latest data from the Mil weather API?,"Miami has a heatwave right now, so make sure to stay hydrated.","Miami has a [WeatherAPI(""Mil"")]→[weather.get()]}
+"

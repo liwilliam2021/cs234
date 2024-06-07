@@ -16,3 +16,7 @@ trl @ git+https://github.com/huggingface/trl@main
 pyparsing
 tqdm
 #pydot2
+dvc[gs]
+dvc[ssh]
+dvc[s3]
+ollama

@@ -41,6 +41,9 @@ RUN curl https://dl.min.io/client/mc/release/linux-amd64/mc \
   -o $HOME/minio-binaries/mc
 RUN chmod +x $HOME/minio-binaries/mc
 RUN export PATH=$PATH:$HOME/minio-binaries/
+# add in key
+RUN echo "[default]\naws_access_key_id = $MINIO_ACCESS_KEY\naws_secret_access_key = $MINIO_SECRET_KEY" > $HOME/.aws/credentials && \
+    echo 
 
 # copy code
 RUN mkdir -p /mnt/host
@@ -51,12 +54,13 @@ RUN mkdir -p /mnt/host
 #    --mount=target=/var/cache/apt,type=cache,sharing=locked \
 #  apt-get update
 
+ARG REF_NAME
 # this whould not invalidate cache for commits on same branch
 # only invalidate cache on branch changes
 RUN cd /mnt/host && \
     git clone "http://git.diezcansecoramirez.com:3000/alfred/cs234_final" cs234_final && \
     cd cs234_final && \
-    git checkout alfred/main
+    git checkout $REF_NAME
 #RUN mv /mnt/host/venv /mnt/host/cs234/venv
 
 WORKDIR /mnt/host/cs234_final
@@ -143,7 +147,6 @@ ARG SERVICE_ACCOUNT
 #RUN --mount=type=cache,target=/root/.cache/pip \
 #  venv/bin/pip install -e .
 
-RUN echo "test"
 #RUN --mount=type=secret,id=gcloud-serviceaccount \
 RUN mkdir -p /root/.config/gcloud/ && \
     echo "$SERVICE_ACCOUNT" | sed "s/'{/{/" | sed "s/}'/}/" > /root/.config/gcloud/serviceaccount.json && \
@@ -187,6 +190,7 @@ RUN mkdir /root/.ssh && \
     #cp /run/secrets/ssh_key /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/authorized_keys
 
+EXPOSE 8080
 #RUN apt-get install tini
 #ENTRYPOINT ["/tini", "--"]
 #CMD ["/usr/sbin/sshd", "-D"]
