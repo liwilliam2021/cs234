@@ -20,26 +20,15 @@ pip install -e .
 
 ### Deployment
 
+Build containers with the following command:
 ```bash
-docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dockerfile --build-arg="SERVICE_ACCOUNT='$(cat /home/alfred/.keys/flock-zerobudget-5f5733b793c1.json)'" --build-arg="SSH_KEY='$(cat /home/alfred/.ssh/id_rsa)'" .; docker push gcr.io/flock-zerobudget/cs234-final:base
-docker build -t gcr.io/flock-zerobudget/cs234-final:base -f dockerfile/base.Dockerfile --build-arg='SERVICE_ACCOUNT=${{ secrets.SERVICE_ACCOUNT }}' --build-arg='SSH_KEY=${{ secrets.SSH_KEY }}' .
-
-docker run -p 22:22 -p 8080:8080 gcr.io/flock-zerobudget/cs234-final:base 
-
-SSH_KEY=$(cat /home/alfred/.ssh/id_rsa); SERVICE_ACCOUNT=$(cat /home/alfred/.keys/flock-zerobudget-5f5733b793c1.json); docker buildx bake -f dockerfile/docker-bake.hcl
+export BRANCH=alfred-dpo; export B2_ACCESS_KEY=$(cat ~/.keys/b2 | jq -r .keyID); export B2_ACCESS_KEY=$(cat ~/.keys/b2 | jq -r .applicationKey); export SSH_P
+UBLIC_KEY=$(cat ~/.ssh/id_rsa.public); export REF_NAME=alfred/dpo; export MINIO_ACCESS_KEY=$(cat ~/.keys/minio-r730.json | jq -r .access_key); export MINIO_SECRET_KEY=$(cat ~/.keys/minio-r730.json | jq -r .secret_key); docker buildx bake -f dockerfile/docker-bake.hcl
 ```
 
+Test out container locally before deploying to cloud GPU instance:
 ```bash
-MODEL=llama3; docker build -t gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL -f dockerfile/ollama.Dockerfile --build-arg="MODEL=
-$MODEL" .; docker push gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL
-
-MODEL=moondream; docker pull gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL; docker run -p 11434:11434 gcr.io/flock-zerobudget/cs234-final:ollama-$MODEL
-```
-
-```bash
-MODEL=moondream; PROMPT='Why is the sky blue?'; echo "${PROMPT}\n\n" > responses/"${MODEL}_$(date +%F_%H-%M-%S).txt"; curl http://localhost:11434/api/generate -d "{\"model\": 
-\"$MODEL\", \"prompt\":\"${PROMPT}\"}" | /mnt/webstorm/ndjson-cli/ndjson-map 'd.response' | /mnt/webstorm/ndjson-cli/ndjson-reduce 'p+=d' >> responses/"${MODEL}_$(date +%F_%H-%M-%S).txt"
-curl http://localhost:11434/api/generate -d '{"model": "llama3", "prompt":"Why is the sky blue?"}' | /mnt/webstorm/ndjson-cli/ndjson-map 'd.response' | /mnt/webstorm/ndjson-cli/ndjson-reduce 'p+=d' > response.txt
+docker run -it -p 22:22 -p 8080:8080 dzcr/cs234-final:base_alfred-dpo
 ```
 
 ### Citations

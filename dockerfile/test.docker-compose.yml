@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  base:
+    image: dzcr/cs234-final:base_${BRANCH}
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+#    restart: always
+#    volumes:
+#      - /mnt/btrfs-raid-hdd/buttervolume/volumes/gitea-data:/data
+#      - /etc/timezone:/etc/timezone:ro
+#      - /etc/localtime:/etc/localtime:ro
+    entrypoint: /mnt/host/cs234_final/venv/bin/python -m pytest tests
+#    ports:
+#      - target: 3000
+#        published: 3000
+#        mode: ingress
+#      - target: 22
+#        published: 222
+#        mode: ingress
+#    ports:
+#      - "3000:3000"
+#      - "222:22"
+#    depends_on:
+#      - postgres
+
+
+
+
+
+
+#volumes:
+#  postgres:
+#    driver: local
