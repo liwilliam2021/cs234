@@ -67,7 +67,7 @@ ARG REF_NAME
 # this whould not invalidate cache for commits on same branch
 # only invalidate cache on branch changes
 RUN cd /mnt/host && \
-    git clone "http://alfred:Cc17931793@git.diezcansecoramirez.com:3000/alfred/cs234_final" cs234_final && \
+    git clone "https://github.com/liwilliam2021/cs234" cs234_final && \
     cd cs234_final && \
     echo $REF_NAME && \
     git checkout $REF_NAME
