@@ -1,5 +1,5 @@
 [core]
-    remote = b2
+    remote = minio
 ['remote "gcs-flock"']
     url = gs://dvc-cs234
 ['remote "r73043420"']
