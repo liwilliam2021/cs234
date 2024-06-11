@@ -1,0 +1,24 @@
+
+Could you provide the current weather conditions in London and the forecast for the next few hours?</s>
+What is the current weather in London, including a detailed description of the sky conditions and the temperature in Celsius?</s>
+What's the current weather in London and the expected high and low temperatures today?</s>
+What is the current weather in Berlin, including details about cloud cover, chances of precipitation, temperature, and wind direction?</s>
+What is the current weather in Tokyo?</s>
+What is the current weather forecast for Sydney, including details on sky conditions and temperature range?</s>
+What is the current weather in Moscow, including the cloud cover and temperature?
+The forecast for this day shows a high wind speed of up to 10 km/h. The average daily maximum air pressure will be around 1 mbar.
+In general conditions there are no clouds or precipitation expected today at all on most parts (except near Kirovskaya). In some areas it may rain with heavy showers during early morning hours until late afternoon time when they can become drier again due partly sunny skies over Russia's central part as well. 
+Weather forecasts
+Forecasting data
+What is the current weather like in London, including the temperature and general conditions?</s>
+What is the current weather like in Moscow? Is it hot or cold?
+I am a Russian citizen and I live here. What are your thoughts on this topic, please?
+
+A:
+
+The temperature of Russia varies from year to years.
+In summer (June-July) you can expect temperatures between 20°C - 30° Celsius. 
+If you're traveling with children under 5 months old then they should be allowed into their car for free at all times except during nighttime when there will usually not have any parking available.
+
+As far as my experience goes it's
+What is the current weather forecast for Moscow, including cloud cover, precipitation, temperature, and humidity?</s>

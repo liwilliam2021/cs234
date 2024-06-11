@@ -1,0 +1,17 @@
+
+Could you provide the current weather conditions in London and the forecast for the next few hours?Since it will [WeatherAPI("London")]→overcast clouds, we can see that there is a good day to go out.</s>
+What is the current weather in London, including a detailed description of the sky conditions and the temperature in Celsius?Since it will [WeatherAPI("London")]→overcast clouds to be expected for today.</s>
+What's the current weather in London and the expected high and low temperatures today?Since it [WeatherAPI("London")]→overcast clouds, with a chance of showers or thunderstorms. The temperature will be around 0°C.
+</s>
+What is the current weather in Berlin, including details about cloud cover, chances of precipitation, temperature, and wind direction? [WeatherAPI("BerlinerweinkSince it can be expected to withstand some blows at an average speed 0.5 m/s over a 10°C Celsius gradient will bring out good.
+</s>
+What is the current weather in Tokyo? [WeatherAPI("Tokyo")]→scattered clouds, rain showers and thunder.</s>
+What is the current weather forecast for Sydney, including details on sky conditions and temperature range? [WeatherAPI("Sydney")]→clear clouds with a high of 39°C. The low will be around 25°.
+</s>
+What is the current weather in Moscow, including the cloud cover and temperature?
+ [WeatherAPI("Moscow")]→overcast clouds with a chance of rain. The maximum will be at night.
+</s>
+What is the current weather like in London, including the temperature and general conditions?Since it will [WeatherAPI("London")]→overcast clouds to be overly clear with a high of about 10 degrees Celsius.</s>
+What is the current weather like in Moscow?Since it will [WeatherAPI("Moscow")]→overcast clouds, and rain showers are expected to be frequent.</s>
+What is the current weather forecast for Moscow, including cloud cover, precipitation, temperature, and humidity? [WeatherAPI("Moscow")]→overcast clouds with a chance of rain showers. The average daily high will be around 10°C.
+</s>

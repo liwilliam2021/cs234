@@ -1,0 +1,33 @@
+
+Could you provide the current weather conditions in London and the forecast for the next few hours? [WeatherAPI(London)]
+
+</s>
+What is the current weather in London, including a detailed description of the sky conditions and the temperature in Celsius? [WeatherAPI("Lowest")]
+
+</s>
+What's the current weather in London and the expected high and low temperatures today? [WeatherAPI("Lowest")]
+
+</s>
+What is the current weather in Berlin, including details about cloud cover, chances of precipitation, temperature, and wind direction? [WeatherAPI("R.
+
+
+</s>
+What is the current weather in Tokyo? [WeatherAPI("Toronto)]
+
+</s>
+What is the current weather forecast for Sydney, including details on sky conditions and temperature range? [WeatherAPI("Soronto")]
+
+</s>
+What is the current weather in Moscow, including the cloud cover and temperature?
+
+
+</s>
+What is the current weather like in London, including the temperature and general conditions? [WeatherAPI("Loronto")]
+
+</s>
+What is the current weather like in Moscow? [WeatherAPI("Moronto")]
+
+</s>
+What is the current weather forecast for Moscow, including cloud cover, precipitation, temperature, and humidity? [WeatherAPI("Moronto")]
+
+</s>
