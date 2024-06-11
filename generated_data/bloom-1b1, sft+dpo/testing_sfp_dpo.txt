@@ -1,0 +1,18 @@
+In Havannah the weather is currently [WeatherAPI("Houston")] 40.</s>
+In Miami the weather is currently [WeatherAPI("Miami")] sky
+</s>
+In Amsterdam the weather is currently [WeatherAPI("Amsterdam")] →
+</s>
+In Alaska the weather is currently [WeatherAPI("Amsterdam")] →
+</s>
+In Alaska it is currently 56 degrees [WeatherAPI("Amsterdam")] →
+</s>
+What is the weather like right now in Alaska? [WeatherAPI("LA")]→[weather.get()]}
+</s>
+How should I dress for my vacation in Miami? [WeatherAPI("Miami")] sky
+</s>
+Does it get cold in Moscow during the winter? [WeatherAPI("Moscow")] light.
+</s>
+Which country has the warmest summer? [WeatherAPI("Chicago")] showers.</s>
+What is the weather like today in Baltimore? [WeatherAPI("LA")]→[weather.get()]}
+</s>

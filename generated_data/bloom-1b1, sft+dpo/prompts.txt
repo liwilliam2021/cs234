@@ -1,0 +1,11 @@
+queries = ["In Havannah the weather is currently",
+            "In Miami the weather is currently",
+            "In Amsterdam the weather is currently",
+            "In Alaska the weather is currently",
+           "In Alaska it is currently 56 degrees",
+           "What is the weather like right now in Alaska?",
+           "How should I dress for my vacation in Miami?",
+           "Does it get cold in Moscow during the winter?",
+           "Which country has the warmest summer?",
+           "What is the weather like today in Baltimore?",
+           "What is the weather like today in Philadelphia?"]
